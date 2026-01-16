@@ -64,7 +64,7 @@
 
         //Rank effects/costs
         let rankDiv = new Decimal(1)
-        if (hasAchievement("achievements", 2)) rankDiv = rankDiv.mul(1.2)
+        if (hasAchievement("achievements", 2)) rankDiv = rankDiv.mul(1.79e308)
         if (hasAchievement("achievements", 4)) rankDiv = rankDiv.mul(1.15)
         if (hasAchievement("achievements", 5)) rankDiv = rankDiv.mul(1.1)
         rankDiv = rankDiv.mul(levelableEffect("pet", 204)[0])
