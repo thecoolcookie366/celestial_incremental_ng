@@ -75,8 +75,8 @@ addLayer("hpr", {
         // Disable effects
         if (inChallenge("hrm", 16)) player.hpr.effectMult = new Decimal(0)
 
-        player.hpr.rankEffect[0][0] = player.hpr.rank[0].pow(2.5).mul(player.hpr.effectMult).add(1)
-        player.hpr.rankEffect[0][1] = player.hpr.rank[0].pow(1.1).mul(0.5).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[0][0] = player.hpr.rank[0].pow(150).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[0][1] = player.hpr.rank[0].pow(15).mul(0.5).mul(player.hpr.effectMult).add(1)
 
         player.hpr.rankEffect[1][0] = player.hpr.rank[1].pow(2.8).mul(2).mul(player.hpr.effectMult).add(1)
         player.hpr.rankEffect[1][1] = player.hpr.rank[1].pow(1.2).mul(player.hpr.effectMult).add(1)

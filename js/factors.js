@@ -436,7 +436,7 @@
         11: {
             costBase() { return new Decimal(10) },
             costGrowth() { return new Decimal(1.25) },
-            purchaseLimit() { return new Decimal(2500) },
+            purchaseLimit() { return new Decimal(1) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -475,7 +475,7 @@
         12: {
             costBase() { return new Decimal(25) },
             costGrowth() { return new Decimal(1.28) },
-            purchaseLimit() { return new Decimal(2500) },
+            purchaseLimit() { return new Decimal(2) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -513,7 +513,7 @@
         13: {
             costBase() { return new Decimal(60) },
             costGrowth() { return new Decimal(1.31) },
-            purchaseLimit() { return new Decimal(2500) },
+            purchaseLimit() { return new Decimal(4) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -551,7 +551,7 @@
         14: {
             costBase() { return new Decimal(200) },
             costGrowth() { return new Decimal(1.34) },
-            purchaseLimit() { return new Decimal(2500) },
+            purchaseLimit() { return new Decimal(8) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -587,9 +587,9 @@
             style: { width: '275px', height: '150px', backgroundColor: "#83cecf" }
         },
         15: {
-            costBase() { return new Decimal(800) },
-            costGrowth() { return new Decimal(1.37) },
-            purchaseLimit() { return new Decimal(2500) },
+            costBase() { return new Decimal(0.001) },
+            costGrowth() { return new Decimal(1.001) },
+            purchaseLimit() { return new Decimal(1e9) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -600,7 +600,7 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Factor V"
+                return "Factor V- sorry, EVIL FACTOR I!!"
             },
             display() {
                 return "which are boosting celestial points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
@@ -624,9 +624,9 @@
             style: { width: '275px', height: '150px', backgroundColor: "#83cecf" }
         },
         16: {
-            costBase() { return new Decimal(3000) },
-            costGrowth() { return new Decimal(1.4) },
-            purchaseLimit() { return new Decimal(2500) },
+            costBase() { return new Decimal(0.001) },
+            costGrowth() { return new Decimal(1.000001) },
+            purchaseLimit() { return new Decimal(1e33) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -637,10 +637,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Factor VI"
+                return "EVIL FACTOR II."
             },
             display() {
-                return "which are boosting celestial points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are INFLATING celestial points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Celestial Points"
             },
             buy(mult) {
@@ -661,9 +661,9 @@
             style: { width: '275px', height: '150px', backgroundColor: "#83cecf" }
         },
         17: {
-            costBase() { return new Decimal(10000) },
-            costGrowth() { return new Decimal(1.43) },
-            purchaseLimit() { return new Decimal(2500) },
+            costBase() { return new Decimal(0.001) },
+            costGrowth() { return new Decimal(1.000000001) },
+            purchaseLimit() { return new Decimal(1.79e308) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -674,10 +674,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Factor VII"
+                return "EVIL FACTOR III OMG"
             },
             display() {
-                return "which are boosting celestial points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are TETRATING- wait how do i tetrate celestial points by " + format(tmp[this.layer].buyables[this.id].effect) + "?\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Celestial Points"
             },
             buy(mult) {
@@ -698,8 +698,8 @@
             style: { width: '275px', height: '150px', backgroundColor: "#83cecf" }
         },
         18: {
-            costBase() { return new Decimal(50000) },
-            costGrowth() { return new Decimal(1.46) },
+            costBase() { return new Decimal(5) },
+            costGrowth() { return new Decimal(1.5) },
             purchaseLimit() { return new Decimal(2500) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },

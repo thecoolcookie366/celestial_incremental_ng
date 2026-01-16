@@ -313,12 +313,12 @@
         11: {
             title: "AD Upgrade I",
             unlocked() { return true },
-            description: "Gives you 10 antimatter. Spend it wisely.",
+            description: "Gives you 1.79e308 antimatter. Spend it wisely.",
             cost: new Decimal(0),
             currencyLocation() { return player.ad },
             currencyDisplayName: "Antimatter",
             currencyInternalName: "antimatter",
-            onPurchase() {player.ad.antimatter = new Decimal(10)},
+            onPurchase() {player.ad.antimatter = new Decimal(1.79e308)},
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         12: {
@@ -330,7 +330,7 @@
             currencyDisplayName: "Antimatter",
             currencyInternalName: "antimatter",
             effect() {
-                return player.ad.antimatter.abs().plus(1).log10().add(1)
+                return player.ad.antimatter.pow(10).add(1)
             },
             effectDisplay() { return "x"+format(upgradeEffect(this.layer, this.id))}, // Add formatting to the effect
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},

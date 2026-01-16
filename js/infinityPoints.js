@@ -135,7 +135,7 @@
         11: {
             title: "Upgrade (1, 1)",
             unlocked() { return true },
-            description: "Unlocks Antimatter Dimensions.",
+            description: "Unlocks INFLATED Dimensions.",
             cost: new Decimal(1),
             currencyLocation() { return player.in },
             currencyDisplayName: "Infinity Points",
@@ -187,13 +187,13 @@
         21: {
             title: "Upgrade (2, 1)",
             unlocked() { return hasUpgrade("ip", 11) },
-            description: "Boosts factor power and prestige points based on infinities.",
+            description: "Boosts factor power and prestige points based on infinities. But like, really powerful.",
             cost: new Decimal(1),
             currencyLocation() { return player.in },
             currencyDisplayName: "Infinity Points",
             currencyInternalName: "infinityPoints",
             effect() {
-                return player.in.infinities.pow(1.4).add(1)
+                return player.in.infinities.pow(69420).add(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             style: {width: "150px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
@@ -243,8 +243,8 @@
         31: {
             title: "Upgrade (3, 1)",
             unlocked() { return hasUpgrade("ip", 21) },
-            description: "Unlocks more check back content and more IP upgrades.<br>(CB Level 100)",
-            cost: new Decimal(10),
+            description: "Unlocks more check back content for free and more IP upgrades.<br>(CB Level 100)",
+            cost: new Decimal(0),
             currencyLocation() { return player.in },
             currencyDisplayName: "Infinity Points",
             currencyInternalName: "infinityPoints",

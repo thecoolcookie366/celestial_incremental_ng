@@ -256,14 +256,14 @@ addLayer("cb", {
             if (player.po.halter.xp.enabled == 2 && player.cb.xpTimers[i].base.gt(player.po.halter.xp.halt)) player.cb.xpTimers[i].base = player.po.halter.xp.halt
         }
 
-        player.cb.xpTimers[0].max = new Decimal(60).div(buyableEffect("ev1", 102))
-        player.cb.xpTimers[1].max = new Decimal(180).div(buyableEffect("ev1", 112))
-        player.cb.xpTimers[2].max = new Decimal(300).div(buyableEffect("ev1", 122))
-        player.cb.xpTimers[3].max = new Decimal(5).div(buyableEffect("ev1", 132))
-        player.cb.xpTimers[4].max = new Decimal(1200).div(buyableEffect("ev1", 142))
-        player.cb.xpTimers[5].max = new Decimal(3600).div(buyableEffect("ev1", 152))
-        player.cb.xpTimers[6].max = new Decimal(14400).div(buyableEffect("ev1", 162))
-        player.cb.xpTimers[7].max = new Decimal(86400).div(buyableEffect("ev1", 172))
+        player.cb.xpTimers[0].max = new Decimal(0.01).div(buyableEffect("ev1", 102))
+        player.cb.xpTimers[1].max = new Decimal(0.01).div(buyableEffect("ev1", 112))
+        player.cb.xpTimers[2].max = new Decimal(0.01).div(buyableEffect("ev1", 122))
+        player.cb.xpTimers[3].max = new Decimal(0.01).div(buyableEffect("ev1", 132))
+        player.cb.xpTimers[4].max = new Decimal(0.01).div(buyableEffect("ev1", 142))
+        player.cb.xpTimers[5].max = new Decimal(0.01).div(buyableEffect("ev1", 152))
+        player.cb.xpTimers[6].max = new Decimal(0.01).div(buyableEffect("ev1", 162))
+        player.cb.xpTimers[7].max = new Decimal(0.01).div(buyableEffect("ev1", 172))
 
         for (let i in player.cb.xpTimers) {
             player.cb.xpTimers[i].max = player.cb.xpTimers[i].max.div(buyableEffect("gh", 22))
@@ -321,13 +321,13 @@ addLayer("cb", {
             player.cb.crateTimers[i].base = player.cb.crateTimers[i].base.mul(buyableEffect("cof", 32))
         }
 
-        player.cb.crateTimers[0].max = new Decimal(900).div(buyableEffect("ev1", 202)).mul(buyableEffect("ev1", 204))
-        player.cb.crateTimers[1].max = new Decimal(2700).div(buyableEffect("ev1", 212)).mul(buyableEffect("ev1", 214))
-        player.cb.crateTimers[2].max = new Decimal(5400).div(buyableEffect("ev1", 222)).mul(buyableEffect("ev1", 224))
-        player.cb.crateTimers[3].max = new Decimal(28800).div(buyableEffect("ev1", 232)).mul(buyableEffect("ev1", 234))
-        player.cb.crateTimers[4].max = new Decimal(7200).div(buyableEffect("ev1", 242)).mul(buyableEffect("ev1", 244))
-        player.cb.crateTimers[5].max = new Decimal(42000).div(buyableEffect("ev1", 252)).mul(buyableEffect("ev1", 254))
-        player.cb.crateTimers[6].max = new Decimal(86400).div(buyableEffect("ev1", 262)).mul(buyableEffect("ev1", 264))
+        player.cb.crateTimers[0].max = new Decimal(0.1).div(buyableEffect("ev1", 202)).mul(buyableEffect("ev1", 204))
+        player.cb.crateTimers[1].max = new Decimal(0.1).div(buyableEffect("ev1", 212)).mul(buyableEffect("ev1", 214))
+        player.cb.crateTimers[2].max = new Decimal(0.1).div(buyableEffect("ev1", 222)).mul(buyableEffect("ev1", 224))
+        player.cb.crateTimers[3].max = new Decimal(0.1).div(buyableEffect("ev1", 232)).mul(buyableEffect("ev1", 234))
+        player.cb.crateTimers[4].max = new Decimal(0.1).div(buyableEffect("ev1", 242)).mul(buyableEffect("ev1", 244))
+        player.cb.crateTimers[5].max = new Decimal(0.1).div(buyableEffect("ev1", 252)).mul(buyableEffect("ev1", 254))
+        player.cb.crateTimers[6].max = new Decimal(0.1).div(buyableEffect("ev1", 262)).mul(buyableEffect("ev1", 264))
         for (let i in player.cb.crateTimers) {
             player.cb.crateTimers[i].max = player.cb.crateTimers[i].max.div(levelableEffect("pet", 105)[0])
             player.cb.crateTimers[i].max = player.cb.crateTimers[i].max.div(levelableEffect("pet", 202)[2])
@@ -376,9 +376,9 @@ addLayer("cb", {
             player.cb.boostTimers[i].base = player.cb.boostTimers[i].base.mul(levelableEffect("ir", 5)[1])
         }
 
-        player.cb.boostTimers[0].max = new Decimal(10800)
-        player.cb.boostTimers[1].max = new Decimal(43200)
-        player.cb.boostTimers[2].max = new Decimal(129600)
+        player.cb.boostTimers[0].max = new Decimal(1)
+        player.cb.boostTimers[1].max = new Decimal(1)
+        player.cb.boostTimers[2].max = new Decimal(1)
         for (let i in player.cb.boostTimers) {
             player.cb.boostTimers[i].max = player.cb.boostTimers[i].max.div(levelableEffect("pet", 401)[2])
             player.cb.boostTimers[i].max = player.cb.boostTimers[i].max.div(buyableEffect("sp", 35))
