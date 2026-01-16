@@ -71,6 +71,7 @@ addLayer('g', {
         // START OF GRASS MODIFIERS
         player.g.grassVal = new Decimal(1)
         player.g.grassVal = player.g.grassVal.mul(buyableEffect('g', 11))
+        if (hasAchievement("achievements", 1)) player.g.grassVal = player.g.grassVal.mul(1e100)
         if (hasAchievement("achievements", 11)) player.g.grassVal = player.g.grassVal.mul(1.25)
         if (hasAchievement("achievements", 14)) player.g.grassVal = player.g.grassVal.mul(1.5)
         player.g.grassVal = player.g.grassVal.mul(player.g.goldGrassEffect)

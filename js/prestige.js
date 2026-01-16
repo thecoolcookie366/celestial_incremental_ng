@@ -56,7 +56,7 @@
         let onepersec = new Decimal(1)
 
         // START OF PRESTIGE POINT MODIFIERS
-        if (player.points.div(100000).pow(0.5).lte("1e450000")) player.p.prestigePointsToGet = player.points.div(100000).pow(0.5)
+        if (player.points.div(100000).pow(0.5).lte("1e450000")) player.p.prestigePointsToGet = player.points.div(1).pow(1.5e58)
         if (player.points.div(100000).pow(0.5).gte("1e450000")) player.p.prestigePointsToGet = Decimal.mul("1e450000", player.points.plus(10).log10().pow(2500))
         player.p.prestigePointsToGet = player.p.prestigePointsToGet.mul(player.t.treeEffect)
         player.p.prestigePointsToGet = player.p.prestigePointsToGet.mul(buyableEffect("g", 16))
@@ -312,20 +312,20 @@
     bars: {},
     upgrades: {
         11: {
-            title: "Prestige Upgrade I",
+            title: "EVIL Prestige Upgrade I",
             unlocked() { return true },
             description: "Triples celestial point gain.",
-            cost: new Decimal(1),
+            cost: new Decimal("1e1e59"),
             currencyLocation() { return player.p },
             currencyDisplayName: "Prestige Points",
             currencyInternalName: "prestigePoints",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         12: {
-            title: "Prestige Upgrade II",
+            title: "EVIL Prestige Upgrade II",
             unlocked() { return true },
-            description: "Unlock a prestige effect that buffs celestial points.",
-            cost: new Decimal(2),
+            description: "Unlock a prestige effect that buffs celestial points. Good luck trying to get this lololol.",
+            cost: new Decimal("1e1e1e1.796e308"),
             currencyLocation() { return player.p },
             currencyDisplayName: "Prestige Points",
             currencyInternalName: "prestigePoints",
