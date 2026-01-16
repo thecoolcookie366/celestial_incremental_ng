@@ -546,7 +546,6 @@ addLayer("achievements", {
                 ["style-row", [
                     ["category-button", ["<span style='color:#9bedff'>★★</span>★★★", "stars", 2], {width: "155px", height: "40px", color: "#aaa", background: "#332600", borderRight: "3px solid white"}],
                 ], () => {return tmp.achievements.microtabs.stars[2].unlocked ? {width: "155px", height: "40px", borderBottom: "3px solid white"} : {display: "none !important"}}],
-                /*
                 ["style-row", [
                     ["category-button", ["<span style='color:#9bedff'>★★★</span>★★<br><small style='color:#c00'>[NOT IMPLEMENTED]</small>", "stars", 3], {width: "155px", height: "40px", color: "#aaa", background: "#354040", borderRight: "3px solid white"}],
                 ], () => {return tmp.achievements.microtabs.stars[3].unlocked ? {width: "155px", height: "40px", borderBottom: "3px solid white"} : {display: "none !important"}}],
@@ -571,7 +570,6 @@ addLayer("achievements", {
                 ["style-row", [
                     ["category-button", ["★★★★★<br><small style='color:#c00'>[NOT IMPLEMENTED]</small>", "stars", 10], {width: "155px", height: "40px", color: "#88e688", background: "#352300", borderRight: "3px solid white"}],
                 ], () => {return tmp.achievements.microtabs.stars[10].unlocked ? {width: "155px", height: "40px"} : {display: "none !important"}}],
-                */
             ], {width: "170px", height: "415px"}],
             ["style-column", [
                 ["buttonless-microtabs", "stars", {borderWidth: "0"}],
