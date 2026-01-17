@@ -66,7 +66,7 @@
         let rankDiv = new Decimal(1)
         if (hasAchievement("achievements", 2)) rankDiv = rankDiv.mul(1.79e308)
         if (hasAchievement("achievements", 4)) rankDiv = rankDiv.mul("1e1.79e308")
-        if (hasAchievement("achievements", 5)) rankDiv = rankDiv.mul(1.1)
+        if (hasAchievement("achievements", 5)) rankDiv = rankDiv.mul("1e1e1e1e1e1e1e1")
         rankDiv = rankDiv.mul(levelableEffect("pet", 204)[0])
 
 
@@ -108,7 +108,7 @@
         // Tier Effects/costs
         let tierDiv = new Decimal(1)
         if (hasAchievement("achievements", 4)) tierDiv = tierDiv.mul(1.79e308)
-        if (hasAchievement("achievements", 5)) tierDiv = tierDiv.mul(1.1)
+        if (hasAchievement("achievements", 5)) tierDiv = tierDiv.mul("1e1e1e1e1e1e1e1")
         tierDiv = tierDiv.mul(levelableEffect("pet", 204)[1])
 
         let tiersGain = player.r.rank.div(3).mul(tierDiv).pow(Decimal.div(10, 11)).floor()
@@ -130,7 +130,7 @@
 
         // Tetr Effects/costs
         let tetrDiv = new Decimal(1)
-        if (hasAchievement("achievements", 5)) tetrDiv = tetrDiv.mul(1.1)
+        if (hasAchievement("achievements", 5)) tetrDiv = tetrDiv.mul("1e1e1e1e1e1e1e1")
         tetrDiv = tetrDiv.mul(levelableEffect("pet", 204)[2])
 
         let tetrGain = player.r.tier.div(2).mul(tetrDiv).pow(Decimal.div(25, 27)).floor()

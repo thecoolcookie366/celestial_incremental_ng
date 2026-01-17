@@ -130,7 +130,7 @@ addLayer('g', {
     
         // GRASS REQUIREMENT
         player.g.grassReq = new Decimal(4).div(buyableEffect('g', 12))
-        if (hasAchievement("achievements", 9)) player.g.grassReq = player.g.grassReq.div(1.1)
+        if (hasAchievement("achievements", 9)) player.g.grassReq = player.g.grassReq.div(1e6)
         player.g.grassReq = player.g.grassReq.div(levelableEffect("pet", 303)[1])
         player.g.grassReq = player.g.grassReq.max(0.25)
 

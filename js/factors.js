@@ -436,7 +436,7 @@
         11: {
             costBase() { return new Decimal(10) },
             costGrowth() { return new Decimal(1.25) },
-            purchaseLimit() { return new Decimal(1) },
+            purchaseLimit() { return new Decimal(10) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -475,7 +475,7 @@
         12: {
             costBase() { return new Decimal(25) },
             costGrowth() { return new Decimal(1.28) },
-            purchaseLimit() { return new Decimal(2) },
+            purchaseLimit() { return new Decimal(10) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -513,7 +513,7 @@
         13: {
             costBase() { return new Decimal(60) },
             costGrowth() { return new Decimal(1.31) },
-            purchaseLimit() { return new Decimal(4) },
+            purchaseLimit() { return new Decimal(10) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -551,7 +551,7 @@
         14: {
             costBase() { return new Decimal(200) },
             costGrowth() { return new Decimal(1.34) },
-            purchaseLimit() { return new Decimal(8) },
+            purchaseLimit() { return new Decimal(10) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -698,23 +698,23 @@
             style: { width: '275px', height: '150px', backgroundColor: "#83cecf" }
         },
         18: {
-            costBase() { return new Decimal(5) },
-            costGrowth() { return new Decimal(1.5) },
-            purchaseLimit() { return new Decimal(2500) },
+            costBase() { return new Decimal(1) },
+            costGrowth() { return new Decimal(500) },
+            purchaseLimit() { return new Decimal("1e3") },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
                 if (hasUpgrade("cs", 201)) return new Decimal(1)
-                return getBuyableAmount(this.layer, this.id).mul(player.f.factorBase).add(1)
+                return getBuyableAmount(this.layer, this.id).mul(player.f.factorBase).add(1).pow(4444.4444)
             },
             unlocked() { return player.r.tetr.gte(4) && tmp.f.buyables[17].unlocked },
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Factor VIII"
+                return "EVIL FACTOR IV"
             },
             display() {
-                return "which are boosting celestial points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are DEFINITELY INCREASING celestial points by some number of " + format(tmp[this.layer].buyables[this.id].effect) + "!!!!\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Celestial Points"
             },
             buy(mult) {

@@ -10,7 +10,7 @@ addLayer("achievements", {
         1: {
             name: "First Reset<br><small>(yet overpowered)</small>",
             image: "resources/achievements/1_01.png",
-            tooltip: "<h3>First Reset <small>(yet overpowered)</small></h3><hr style='margin-bottom:4px'>Obtain your first rank. <br><br>Reward: Grass value x1e100.",
+            tooltip: "<h3>First Reset <small>(yet overpowered)</small></h3><hr style='margin-bottom:4px'>Obtain your first rank. <br><br>Unexpected Reward: Grass value x1e100.",
             color: "white",
             complete() {return hasUpgrade("p", 17)},
             unlocked: true,
@@ -50,9 +50,9 @@ addLayer("achievements", {
             marked: true,
         },
         6: {
-            name: "Octuple Factors",
+            name: "Evil Factors",
             image: "resources/achievements/1_06.png",
-            tooltip: "<h3>Octuple Factors</h3><hr style='margin-bottom:4px'>Buy a Factor VIII.",
+            tooltip: "<h3>Evil Factors</h3><hr style='margin-bottom:4px'>Buy a EVIL FACTOR IV.",
             color: "white",
             complete() {return hasUpgrade("p", 15) || hasUpgrade("cs", 201)},
             unlocked: true,
@@ -74,9 +74,9 @@ addLayer("achievements", {
             unlocked: true,
         },
         9: {
-            name: "Longer Blades",
+            name: "Insane Blades",
             image: "resources/achievements/1_09.png",
-            tooltip: "<h3>Longer Blades</h3><hr style='margin-bottom:4px'>Increase your grass value.<br><br>Reward: Grass spawn time<br>reduced by 10%.",
+            tooltip: "<h3>Insane Blades</h3><hr style='margin-bottom:4px'>Increase your grass value.<br><br>Reward: Grass spawn time<br>reduced by nearly 100%.",
             color: "white",
             complete() {return hasMilestone("r", 13)},
             unlocked: true,
