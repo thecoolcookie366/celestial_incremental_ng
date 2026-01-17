@@ -90,21 +90,21 @@
         }
 
         player.po.featureSlotsMax = new Decimal(1)
-        if (hasUpgrade("i", 28)) player.po.featureSlotsMax = player.po.featureSlotsMax.add(4)
+        if (hasUpgrade("i", 28)) player.po.featureSlotsMax = player.po.featureSlotsMax.add(1)
 
         player.po.featureSlots = player.po.featureSlotsMax
         if (player.po.dice) {
-            player.po.featureSlots = player.po.featureSlots.sub(1)
+            player.po.featureSlots = player.po.featureSlots.add(1)
         }
         if (player.po.rocketFuel) {
-            player.po.featureSlots = player.po.featureSlots.sub(1)
+            player.po.featureSlots = player.po.featureSlots.add(1)
         }
         if (player.po.hex && !hasUpgrade("s", 18)) {
-            player.po.featureSlots = player.po.featureSlots.sub(1)
+            player.po.featureSlots = player.po.featureSlots.add(1)
         }
         if (player.po.breakInfinity) {
             player.in.breakInfinity = true
-            player.po.featureSlots = player.po.featureSlots.sub(1)
+            player.po.featureSlots = player.po.featureSlots.add(1)
         } else {
             player.in.breakInfinity = false
         }
