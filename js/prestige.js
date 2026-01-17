@@ -415,7 +415,7 @@
         21: {
             title: "EVIL Prestige Upgrade XI",
             unlocked() { return hasUpgrade("p", 19) },
-            description: "Autobuys power factors I-VIII",
+            description: "Autobuys power factors I-VIII.",
             cost: new Decimal("1e3e59"),
             currencyLocation() { return player.p },
             currencyDisplayName: "Prestige Points",
@@ -423,7 +423,7 @@
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         22: {
-            title: "Prestige Upgrade XII",
+            title: "EVIL Prestige Upgrade XII",
             unlocked() { return hasUpgrade("p", 21) },
             description: "Automates tetr gain. You love automation, don't you.",
             cost: new Decimal("1e5e59"),
@@ -433,7 +433,7 @@
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         23: {
-            title: "Prestige Upgrade XIII",
+            title: "Normal Prestige Upgrade I?",
             unlocked() { return hasUpgrade("p", 22) && hasMilestone("r", 11) },
             description: "Unlocks Tree Factor IV. Meh, it's really useless anyway.",
             cost: new Decimal("1e1e60"),
