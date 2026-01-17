@@ -783,7 +783,7 @@
                 return player.r.pent.gte(30)
             },
             rewardDescription: "Unlocks infinity point buyables and new milestones.",
-            unlocked() { return hasChallenge("ip", 13) },
+            unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 layers.in.bigCrunch()
                 player.r.pentToGet = new Decimal(0)
@@ -845,7 +845,7 @@
             goal() { return new Decimal("1.79e308") },
             canComplete: function () { return player.p.prestigePoints.gte(1.79e308) },
             rewardDescription: "Unlock new rocket fuel abilities, and gain 20% of rocket fuel per second.",
-            unlocked() { return hasChallenge("ip", 15) },
+            unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 //OTF is reset here and not in crunch to prevent a bug
                 player.po.dice = false
@@ -873,7 +873,7 @@
             goal() { return new Decimal("60") },
             canComplete: function () { return player.cb.IC7shardCount > 0 },
             rewardDescription: "Check back buyables.",
-            unlocked() { return hasChallenge("ip", 16) && player.cb.highestLevel.gte(35) },
+            unlocked() { return hasChallenge("ip", 11) && player.cb.highestLevel.gte(35) },
             onEnter() {
                 layers.in.bigCrunch()
 
@@ -893,7 +893,7 @@
             goal() {return new Decimal("1") },
             canComplete() {return getBuyableAmount("ad", 11).gte(1) },
             rewardDescription() {return hasChallenge("ip", 18) ? "Unlock Gatekeeper, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "....???"},
-            unlocked() { return hasChallenge("ip", 17) },
+            unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 player.ad.antimatter = new Decimal(10)
                 player.ad.antimatterPerSecond = new Decimal(0)
