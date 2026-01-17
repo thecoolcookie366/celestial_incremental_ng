@@ -146,7 +146,7 @@
         if (!player.ta.unlockedReverseBreak) player.ta.negativeInfinityPointsToGet = new Decimal(1)
         if (player.ta.unlockedReverseBreak && !hasMilestone("r", 26)) player.ta.negativeInfinityPointsToGet = Decimal.pow(2, player.ad.antimatter.div(1e308).add(1).log(1e308)).mul(10)
         if (player.ta.unlockedReverseBreak && hasMilestone("r", 26)) player.ta.negativeInfinityPointsToGet = Decimal.pow(5, player.ad.antimatter.div(1e308).add(1).log(1e308)).mul(10)
-        if (hasUpgrade('ta', 12)) player.ta.negativeInfinityPointsToGet = player.ta.negativeInfinityPointsToGet.add(1)
+        if (hasUpgrade('ta', 12)) player.ta.negativeInfinityPointsToGet = player.ta.negativeInfinityPointsToGet.add(1e50)
         player.ta.negativeInfinityPointsToGet = player.ta.negativeInfinityPointsToGet.pow(buyableEffect("m", 16))
 
         // NIP MULTIPLIERS
@@ -449,7 +449,7 @@
         12: {
             title: "Negative Upgrade II",
             unlocked: true,
-            description: "Skip the reverse crunch button, and +1 base NIP gain.",
+            description: "Skip the reverse crunch button, and +1e50 base NIP gain.",
             cost: new Decimal(3),
             currencyLocation() { return player.ta },
             currencyDisplayName: "Negative Infinity Points",

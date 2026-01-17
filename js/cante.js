@@ -1,6 +1,6 @@
 ﻿addLayer("ca", {
-    name: "Cante, Celestial of Replicanti", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol() { return "Ξ"} , // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Cookie, Celestial of NG+", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol() { return "🍪"} , // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "U2",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -67,13 +67,13 @@
     },
     nodeStyle() {
         return {
-            background: "linear-gradient(45deg, #0a82b9 0%, #7dd3f9 100%)",
+            background: "linear-gradient(45deg, #b9930a 0%, #f9e27d 100%)",
             "background-origin": "border-box",
-            "border-color": "#0f354c",
+            "border-color": "#4c440f",
         };
     },
-    tooltip: "Cante, the Celestial of Replicanti",
-    color: "white",
+    tooltip: "Cookie, the Celestial of NG+",
+    color: "orange",
     branches: ["bi"],
     update(delta) {
         let onepersec = new Decimal(1)
@@ -206,8 +206,8 @@
             style: { width: '75px', "min-height": '50px', }
         },
         11: {
-            title() { return "<h1>UNLOCK" },
-            canClick() { return player.cb.level.gte(250) && player.ad.antimatter.gte("1e600") && player.in.infinities.gte(100000) && player.h.hexPoint.gte(1e36) && player.ta.highestDicePoints.gte(1e50) && player.cb.petPoints.gte(500) },
+            title() { return "<h1>You have reached the end. (because i'm not going to continue this lol)" },
+            canClick() { return player.cb.level.gte("1.79e308") && player.ad.antimatter.gte("1e600") && player.in.infinities.gte(100000) && player.h.hexPoint.gte(1e36) && player.ta.highestDicePoints.gte(1e50) && player.cb.petPoints.gte(500) },
             unlocked() { return true},
             onClick() {
                 player.ca.unlockedCante = true
@@ -224,8 +224,8 @@
                 player.ca.replicanti = new Decimal(1)
             },
             style() {
-                let look = {width: "400px", minHeight: "100px", border: '3px solid #241c44', borderRadius: "15px"}
-                this.canClick() ? look.backgroundColor = "#333c81" : look.backgroundColor = "#bf8f8f"
+                let look = {width: "400px", minHeight: "100px", border: '3px solid #443a1c', borderRadius: "15px"}
+                this.canClick() ? look.backgroundColor = "#817033" : look.backgroundColor = "#bf8f8f"
                 this.canClick() ? look.color = "white" : look.color = "black"
                 return look
             },
@@ -255,7 +255,7 @@
             style: {width: "300px", minHeight: "100px", borderRadius: "15px"},
         },
         16: {
-            title() { return "<h2>REMEMBER THE PROTO OVERWORLD.<br>DESTROY CANTE.<br>END THE SUFFERING.</h2><br><br><h3>[REQ: 10 Rememberance Cores]</h3>" },
+            title() { return "<h2>REMEMBER THE PROTO OVERWORLD.<br>DESTROY COOKIE.<br>END THE SUFFERING.</h2><br><br><h3>[REQ: 10 Rememberance Cores]</h3>" },
             canClick() { return player.ca.rememberanceCores.gte(10) },
             unlocked() { return true },
             onClick() {
@@ -353,7 +353,7 @@
             },
             borderStyle: {border: "3px solid white", borderBottom: "0px", borderRadius: "20px 20px 0 0"},
             baseStyle: {backgroundColor: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#05415c"},
+            fillStyle: {backgroundColor: "#5c3f05"},
             display() {
                 return "<h5>" + format(player.ca.canteEnergy) + "/" + formatWhole(player.ca.canteEnergyReq) + "<h5> Cante energy to gain a cante core.</h5>";
             },
@@ -368,7 +368,7 @@
                 return player.ca.replicantiTimer.div(player.ca.replicantiTimerReq)
             },
             baseStyle: {backgroundColor: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#193ceb"},
+            fillStyle: {backgroundColor: "#ebba19"},
             display() {
                 if (player.ca.replicantiTimerReq.lte(0.05)) return "Interval Maxed"
                 return "Time: " + formatTime(player.ca.replicantiTimer) + "/" + formatTime(player.ca.replicantiTimerReq);
@@ -410,7 +410,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9a544", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         12: {
             costBase() { return new Decimal(1e19) },
@@ -444,7 +444,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9be44", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         13: {
             costBase() { return new Decimal(1e20) },
@@ -478,7 +478,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9b144", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         14: {
             costBase() { return new Decimal(1e13) },
@@ -512,7 +512,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9ac44", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         15: {
             costBase() { return new Decimal(1e14) },
@@ -546,7 +546,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d99844", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         16: {
             costBase() { return new Decimal(1e15) },
@@ -580,7 +580,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9aa44", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         17: {
             costBase() { return new Decimal(3) },
@@ -614,7 +614,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9b944", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         18: {
             costBase() { return new Decimal(6) },
@@ -827,13 +827,13 @@
     microtabs: {
         stuff: {
             "Unlock": {
-                buttonStyle() { return { color: "white", borderRadius: "5px" } },
+                buttonStyle() { return { color: "orange", borderRadius: "5px" } },
                 unlocked() { return !player.ca.unlockedCante },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", function () { return "Unlock Replicanti:" }, { "color": "white", "font-size": "36px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "Unlock Cookie:" }, { "color": "orange", "font-size": "36px", "font-family": "monospace" }],
                     ["blank", "25px"],
-                    ["raw-html", function () { return formatWhole(player.cb.level) + "/250 Check Back Level" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return formatWhole(player.cb.level) + "/1.79e308 Check Back Level" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return format(player.ad.antimatter) + "/1e600 Antimatter" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return formatWhole(player.in.infinities) + "/100,000 Infinities" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return format(player.h.hexPoint) + "/1e36 Hex Points" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],

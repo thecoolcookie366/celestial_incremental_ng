@@ -370,7 +370,7 @@
         24: {
             title: "BI IP Upgrade XII",
             unlocked() { return true },
-            description() { return !hasUpgrade("bi", 24) ? "..." : "Unlocks Cante and new pet evolutions." },
+            description() { return !hasUpgrade("bi", 24) ? "..." : "Unlocks Cookie and new pet evolutions." },
             cost: new Decimal(1e22),
             currencyLocation() { return player.in },
             currencyDisplayName: "IP",
@@ -410,7 +410,7 @@
         28: {
             title: "BI IP Upgrade XVI",
             unlocked() { return player.ca.unlockedCante },
-            description() { return !hasUpgrade("bi", 24) ? "Unlock ??? (Check ???)." : !hasUpgrade("bi", 28) ? "Unlock ??? (Check Cante)." : "Unlock Cante's Trials (Check Cante)." },
+            description() { return !hasUpgrade("bi", 24) ? "Unlock ??? (Check ???)." : !hasUpgrade("bi", 28) ? "Unlock ??? (Check Cookie)." : "Unlock Cookie's Trials (Check Cookie)." },
             cost: new Decimal(1e38),
             currencyLocation() { return player.in },
             currencyDisplayName: "IP",

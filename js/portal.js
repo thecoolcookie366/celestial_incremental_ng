@@ -20,8 +20,8 @@
         halterInput: new Decimal(1),
         halter: {
             points: {
-                enabled: 0,
-                halt: new Decimal(1),
+                enabled: 2,
+                halt: new Decimal(1.79e307),
             },
             factor: {
                 enabled: 0,
@@ -760,7 +760,7 @@
                         }],
                         ["blank", "25px"],
                         ["raw-html", "<h3>Enter a number greater than 1. You thought you could get away with dividing by 0?"],
-                        ["raw-html", "<h4>This can help by letting you progress in OTFS while infinity is fixed.<br>(and a whole bunch of other stuff eventually)"],
+                        ["raw-html", "<h4>This can help by letting you progress in OTFS while infinity is fixed. <br>(set point hardcap to 1.79e307 to play the game normally!!!)"],
                     ], {width: "650px", background: "rgba(0,0,0,0.3)", border: "3px solid white", borderRadius: "30px", padding: "10px"}],
                 ],
             },

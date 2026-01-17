@@ -91,7 +91,7 @@ addLayer("in", {
         //----------------------------------------
 
         // INFINITY POINT BASE
-        if (!player.in.breakInfinity) player.in.infinityPointsToGet = new Decimal(1)
+        if (!player.in.breakInfinity) player.in.infinityPointsToGet = new Decimal(1e50)
         if (player.in.breakInfinity && !hasUpgrade("bi", 111)) player.in.infinityPointsToGet = player.points.div(1e308).plus(1).log10().div(10)
         if (player.in.breakInfinity && hasUpgrade("bi", 111)) player.in.infinityPointsToGet = player.points.div(1e308).plus(1).log10().div(2).pow(1.25)
         if (player.in.breakInfinity && hasUpgrade("bi", 115)) player.in.infinityPointsToGet = player.points.div(1e308).plus(1).log10().pow(1.5)
