@@ -37,8 +37,8 @@
 
 // Set your version in num and name
 let VERSION = {
-	num: 190.1, // CHANGED TO NUMBER TO MAKE EASIER IN FUTURE (EX. 150 = v1.5.0)
-	name: "Aleph Update I: The Hive",
+	num: 69, // CHANGED TO NUMBER TO MAKE EASIER IN FUTURE (EX. 150 = v1.5.0)
+	name: "NG+ Update",
 }
 
 function miscCode() {
@@ -628,9 +628,13 @@ let credits = `<h1>Credits:</h1><br>
 		-Art by Jtoh_Sc.<br>
 		-Testing by Nova and Piterpicher.<br>
 		-Bug Fixes by Tsanth and Forwaken.<br>
+		-NG+ by cookie.<br>
 		`
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h2>v1.NG+ - The NG+ Update</h2><br>
+		Content:<br>
+			- A whole bunch of stuff.<br><br>
 	<h4>v1.10.6 - Checklist Update Pt.2</h4><br>
 		Content:<br>
 			- Added 3 new themes.<br>
