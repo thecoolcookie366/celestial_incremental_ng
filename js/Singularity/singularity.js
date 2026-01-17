@@ -34,12 +34,12 @@
         player.s.singularitiesToGet = new Decimal(1)
         if (hasUpgrade("ma", 29)) player.s.singularitiesToGet = player.s.singularityPointsToGet.add(1).log(1e10).add(1).floor()
 
-        if (player.in.infinityPoints.lt(2.5e193)) {
-            player.s.singularityPointsToGet = player.in.infinityPoints.pow(0.125).div(15000)
-        } else if (player.in.infinityPoints.lt("2.71e3793")) {
-            player.s.singularityPointsToGet = player.in.infinityPoints.pow(0.05).mul(2.13e10)
+        if (player.in.infinityPoints.lt("1e1e6")) {
+            player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(8)
+        } else if (player.in.infinityPoints.lt("1e1e12")) {
+            player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(4)
         } else {
-            player.s.singularityPointsToGet = player.in.infinityPoints.pow(0.02).mul(1.35e124)
+            player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(2)
         }
 
         if (hasUpgrade("ev8", 22)) player.s.singularityPointsToGet = player.s.singularityPointsToGet.mul(upgradeEffect("ev8", 22))
@@ -543,7 +543,7 @@
                 if (player.in.infinityPoints.gte(1e40)) {look.color = "white"} else {look.color = "gray"} 
                 return look
             }],
-            ["raw-html", () => {return player.in.infinityPoints.gte("2.71e3793") ? "[SOFTCAPPED<sup>2</sup>]" : player.in.infinityPoints.gte(2.5e193) ? "[SOFTCAPPED]" : ""}, {color: "red", fontSize: "20px", fontFamily: "monospace", marginLeft: "10px"}],
+            ["raw-html", () => {return player.in.infinityPoints.gte("1e1e12") ? "[SOFTCAPPED<sup>2</sup>]" : player.in.infinityPoints.gte(2.5e193) ? "[capped.]" : ""}, {color: "red", fontSize: "20px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["raw-html", () => { return "(Highest: " + format(player.s.highestSingularityPoints) + ")" }, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
         ["microtabs", "stuff", { 'border-width': '0px' }],

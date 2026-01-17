@@ -1521,8 +1521,8 @@ addLayer("co", {
         },
         1000: {
             title() {
-                if (player.ma.matosDefeated) return "<h1>Condense all your power into singularity points.<br><small>(Req: 1e40 infinity points)</small></h1><br><h3>(Singularity gain based on infinity points)</h3>"
-                return "<h1>Condense all of your power into a core.<br><small>(Req: 1e40 infinity points)</small></h1><br><h3'>(Singularity gain based on infinity points)</h3>"
+                if (player.ma.matosDefeated) return "<h1>Condense all your power into singularity points.<br><small>(Req: 1e40 infinity points)</small></h1><br><h3>(Singularity gain based on grass skips)</h3>"
+                return "<h1>Condense all of your power into a core.<br><small>(Req: 1e40 infinity points)</small></h1><br><h3'>(Singularity gain based on grass skips)</h3>"
             },
             canClick() { return player.in.infinityPoints.gte(1e40) },
             unlocked: true,

@@ -1,9 +1,9 @@
 ﻿addLayer("fu", {
     name() {
-        return !player.fu.jocusCelestialActivate ? "Funify" : "Jocus, Celestial of Fun"
+        return !player.fu.jocusCelestialActivate ? "Frify" : "smileyfr, Celestial of Fun"
     }, // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol() {
-        return !player.fu.jocusCelestialActivate ? "Fu" : "☻"
+        return !player.fu.jocusCelestialActivate ? "Fr" : "F"
     },
     universe: "A1",
     row: 1,
@@ -129,7 +129,7 @@
         };
     },
     tooltip() {
-        return !player.fu.jocusCelestialActivate ? "Funify" : "Jocus, Celestial of Fun"
+        return !player.fu.jocusCelestialActivate ? "Frify" : "smileyfr, Celestial of fr"
     },
     color: "#fcff04",
     branches: ["oi", 'gs'],
@@ -380,7 +380,7 @@
             style: { width: '75px', "min-height": '50px', }
         },
         11: {
-            title() { return "<h2>Reset all alt-uni 1 content for fun</h2><br><h3>(Based on oil)</h3>" },
+            title() { return "<h2>Reset all alt-uni 1 content for fr</h2><br><h3>(Based on oil)</h3>" },
             canClick() { return player.fu.funToGet.gte(1) },
             unlocked() { return true },
             onClick() {
@@ -390,8 +390,8 @@
             style: { width: '600px', "min-height": '100px', borderRadius: '15px' },
         },
         12: {
-            title() { return "<h3>LETS HAVE SOME FUN :)<br>(Req: 100 fun)" },
-            canClick() { return player.fu.fun.gte(100) },
+            title() { return "<h3>LETS HAVE SOME FR :)<br>(Req: 1.79e308 fr)" },
+            canClick() { return player.fu.fun.gte(1.79e308) },
             unlocked() { return !player.fu.jocusCelestialActivate },
             onClick() {
                 player.fu.jocusCelestialActivate = true
@@ -672,12 +672,12 @@
     },
     upgrades: {
         11: {
-            title: "Fun Upgrade I",
+            title: "FR Upgrade I",
             unlocked() { return player.fu.jocusCelestialActivate },
             description: "Boost perk point gain based on anonymity.",
             cost: new Decimal(3000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             effect() {
                 return player.an.anonymity.pow(0.06).add(1)
@@ -686,12 +686,12 @@
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         12: {
-            title: "Fun Upgrade II",
+            title: "FR Upgrade II",
             unlocked() { return hasUpgrade("fu", 11) },
             description: "Boost oil gain based on perk points.",
             cost: new Decimal(7000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             effect() {
                 return player.pr.perkPoints.add(1).log(1e5).add(1)
@@ -700,22 +700,22 @@
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         13: {
-            title: "Fun Upgrade III",
+            title: "FR Upgrade III",
             unlocked() { return hasUpgrade("fu", 12) },
-            description: "Keep grass-skip and proto memory buyables on funify reset.",
+            description: "Keep grass-skip and proto memory buyables on frify reset.",
             cost: new Decimal(25000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         14: {
-            title: "Fun Upgrade IV",
+            title: "FR Upgrade IV",
             unlocked() { return hasUpgrade("fu", 13) },
             description: "Boost proto memory production seconds based on time played.",
             cost: new Decimal(70000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             effect() {
                 return player.timePlayed*0.000001 + 1
@@ -724,62 +724,62 @@
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         15: {
-            title: "Fun Upgrade V",
+            title: "FR Upgrade V",
             unlocked() { return hasUpgrade("fu", 14) },
-            description: "Unlock the mood triangle.",
+            description: "Unlock the FR triangle.",
             cost: new Decimal(500000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         16: {
-            title: "Fun Upgrade VI",
+            title: "FR Upgrade VI",
             unlocked() { return hasUpgrade("fu", 15) },
             description: "Keep grass-skip and proto memory buyables on singularity reset.",
             cost: new Decimal(10000000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         17: {
-            title: "Fun Upgrade VII",
+            title: "FR Upgrade VII",
             unlocked() { return hasUpgrade("fu", 16) },
             description() { return hasUpgrade("fu", 17) ? "Unlock Fear." : "..." },
             cost: new Decimal(300000000),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         18: {
-            title: "Fun Upgrade VIII",
+            title: "FR Upgrade VIII",
             unlocked() { return hasUpgrade("fu", 17) },
             description: "You can buy max grass-skip.",
             cost: new Decimal(1e10),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         19: {
-            title: "Fun Upgrade IX",
+            title: "FR Upgrade IX",
             unlocked() { return hasUpgrade("fu", 18) && hasUpgrade("s", 19) },
             description: "Unlock a singularity effect that buffs core scraps.",
             cost: new Decimal(1e25),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         20: {
-            title: "Fun Upgrade X",
+            title: "FR Upgrade X",
             unlocked() { return hasUpgrade("fu", 19) && player.ir.iriditeDefeated},
             description: "Always keep pollinator grass-skip milestones and effect is based on highest grass-skips.",
             cost: new Decimal(1e150),
             currencyLocation() { return player.fu },
-            currencyDisplayName: "Fun",
+            currencyDisplayName: "FR",
             currencyInternalName: "fun",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
@@ -1044,11 +1044,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun SFRGT Generation"
+                return "FR SFRGT Generation"
             },
             display() {
                 return "which are producing +" + format(tmp[this.layer].buyables[this.id].effect) + " SFRGT per second.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 22)) {
@@ -1180,10 +1180,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "SFRGT Fun Generation"
+                return "SFRGT FR Generation"
             },
             display() {
-                return "which are boosting fun gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are boosting FR gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " SFRGT."
             },
             buy(mult) {
@@ -1317,11 +1317,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun Ranks"
+                return "FR Ranks"
             },
             display() {
                 return "which are boosting rank, tier, and tetr point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 22)) {
@@ -1351,11 +1351,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun Softcap"
+                return "FR Softcap"
             },
             display() {
                 return "which are extending and weakening both replicanti point softcaps by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 22)) {
@@ -1385,11 +1385,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun Repli-Grass"
+                return "FR Repli-Grass"
             },
             display() {
                 return "which are adding +" + format(tmp[this.layer].buyables[this.id].effect) + " to the repli-grass multiplier.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 22)) {
@@ -1419,11 +1419,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun Grass-Skip"
+                return "FR Grass-Skip"
             },
             display() {
                 return "which are adding " + formatWhole(tmp[this.layer].buyables[this.id].effect) + " additional grass-skips.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 22)) {
@@ -1460,7 +1460,7 @@
             },
             display() {
                 return "which are generating " + format(tmp[this.layer].buyables[this.id].effect) + " happiness per second.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 27)) {
@@ -1694,10 +1694,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Funner"
+                return "FRner"
             },
             display() {
-                return "which are multiplying fun gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are multiplying fr gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Happiness."
             },
             buy(mult) {
@@ -1734,7 +1734,7 @@
             },
             display() {
                 return "which are generating " + format(tmp[this.layer].buyables[this.id].effect) + " sadness per second.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 27)) {
@@ -2008,7 +2008,7 @@
             },
             display() {
                 return "which are generating " + format(tmp[this.layer].buyables[this.id].effect) + " anger per second.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 27)) {
@@ -2242,7 +2242,7 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Mood Triangler"
+                return "FR Triangler"
             },
             display() {
                 return "which are boosting all 3 emotions by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
@@ -2282,7 +2282,7 @@
             },
             display() {
                 return "which are generating " + format(tmp[this.layer].buyables[this.id].effect) + " fear per second.\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Fun."
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " FR."
             },
             buy(mult) {
                 if (mult != true && !hasUpgrade("s", 27)) {
@@ -2659,7 +2659,7 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Fun Generation"
+                return "FR Generation"
             },
             display() {
                 return "which are producing " + formatWhole(tmp[this.layer].buyables[this.id].effect.mul(100)) + "% of fun gain per second.\n\
@@ -2936,7 +2936,7 @@
                 return "Challenge Reducer"
             },
             display() {
-                return "which are multiplying challenge pre-funify exponent by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are multiplying challenge pre-fr exponent by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Numbness."
             },
             buy(mult) {
@@ -3097,7 +3097,7 @@
     challenges: {
         11: {
             name: "FEAR",
-            challengeDescription() { return "<h4>Alt-Uni 1 automation from singularity milestones is disabled, and a new emotion, fear is unlocked. All pre-funify currencies are raised by ^" + formatSimple(Decimal.mul(0.2, buyableEffect("fu", 88)), 2) + ". Replicanti point softcaps are ^2 stronger." },
+            challengeDescription() { return "<h4>Alt-Uni 1 automation from singularity milestones is disabled, and a new emotion, fear is unlocked. All pre-fr currencies are raised by ^" + formatSimple(Decimal.mul(0.2, buyableEffect("fu", 88)), 2) + ". Replicanti point softcaps are ^2 stronger." },
             goal() { return new Decimal("10") },
             canComplete: function () { return player.gs.grassSkip.gte(10) },
             goalDescription() { return "10 Grass-Skip" },
@@ -3126,7 +3126,7 @@
         },
         12: {
             name: "NUMBNESS",
-            challengeDescription() { return "<h4>All external A1 buffs are disabled, and a new emotion, numbness is unlocked. All pre-funify currencies are raised by ^" + formatSimple(Decimal.mul(0.2, buyableEffect("fu", 88)), 2) + ". All A1 softcaps (excluding replicanti softcap 4) start at 1 resource, and softcap modifiers are disabled." },
+            challengeDescription() { return "<h4>All external A1 buffs are disabled, and a new emotion, numbness is unlocked. All pre-fr currencies are raised by ^" + formatSimple(Decimal.mul(0.2, buyableEffect("fu", 88)), 2) + ". All A1 softcaps (excluding replicanti softcap 4) start at 1 resource, and softcap modifiers are disabled." },
             goal() { return new Decimal("1e75") },
             canComplete: function () { return player.cp.replicantiPoints.gte(1e75) },
             goalDescription() { return "1e75 Replicanti Points" },
@@ -3163,7 +3163,7 @@
                 content: [
                     ["blank", "25px"],
                     ["row", [
-                        ["raw-html", () => {return "You are having " + format(player.fu.fun) + " fun"}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You are being fr " + format(player.fu.fun) + " times"}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.fu.funToGet) + ")"}, () => {
                             let look = {color: "white", fontSize: "24px", fontFamily: "monospace", marginLeft: "10px"}
                             player.fu.funToGet.gte(1) ? look.color = "white" : look.color = "gray"
@@ -3188,25 +3188,25 @@
                 unlocked() { return player.fu.jocusCelestialActivate },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", () => {return "You are having <h3>" + format(player.fu.fun) + "</h3> fun."  }, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                    ["raw-html", () => {return "You are being fr <h3>" + format(player.fu.fun) + "</h3> times."  }, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                     ["raw-html", () => {return "You have <h3>" + format(player.s.singularityPoints) + "</h3> singularity points."  }, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                     ["raw-html", () => {return "You have <h3>" + format(player.in.infinityPoints) + "</h3> infinity points."  }, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                     ["raw-html", () => {return "You have <h3>" + format(player.gh.steel) + "</h3> steel."  }, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                     ["blank", "25px"],
-                    ["raw-html", () => {return "You have <h3>" + format(player.fu.sfrgt) + "</h3> SFRGT (Super fun real good time)."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                    ["raw-html", () => {return "You have <h3>" + format(player.fu.sfrgt) + "</h3> SFRGT (Super fr real good time)."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                     ["raw-html", () => {return "You are gaining <h3>" + format(player.fu.sfrgtPerSecond) + "</h3> SFRGT per second."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                     ["blank", "25px"],
                     ["style-row", [["ex-buyable", 11], ["ex-buyable", 12], ["ex-buyable", 13], ["ex-buyable", 14],
                         ["ex-buyable", 15], ["ex-buyable", 16], ["ex-buyable", 17], ["ex-buyable", 18]], {maxWidth: "1200px"}],
                 ]
             },
-            "Mood Triangle" : {
+            "FR Triangle" : {
                 buttonStyle() { return { color: "white", borderRadius: "5px" } },
                 unlocked() { return hasUpgrade("fu", 15) },
                 content: [
                     ["blank", "10px"],
                     ["row", [
-                        ["raw-html", () => {return "You are having " + format(player.fu.fun) + " fun"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You are being fr " + format(player.fu.fun) + " times"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.fu.funToGet) + ")"}, () => {
                             let look = {color: "white", fontSize: "20px", fontFamily: "monospace", marginLeft: "10px"}
                             player.fu.funToGet.gte(1) ? look.color = "white" : look.color = "gray"
