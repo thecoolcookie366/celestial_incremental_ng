@@ -142,13 +142,13 @@
             canClick() { return player.du.points.gte(player.le.starmetalAlloyReq) },
             unlocked() { return true },
             onClick() {
-                player.le.resetAmount = player.le.resetAmount.add(500)
+                player.le.resetAmount = player.le.resetAmount.add(1)
                 if (player.le.highestReset.lt(player.le.resetAmount)) player.le.highestReset = player.le.resetAmount
                 player.le.starmetalAlloyPause = new Decimal(10)
 
                 player.pu.storedSelections = player.pu.storedSelections.add(1)
 
-                player.le.starmetalAlloyToGet = player.le.starmetalAlloyToGet.add(player.le.starmetalAlloyToGetToGet)
+                player.le.starmetalAlloyToGet = player.le.starmetalAlloyToGet.add(player.le.starmetalAlloyToGetToGet).pow(3)
             },
             style() {
                 let look = {width: "400px", minHeight: "100px", fontSize: "9px", borderRadius: "15px", color: "white", border: "2px solid #384166"}
