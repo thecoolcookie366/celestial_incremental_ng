@@ -339,9 +339,9 @@
             "<img src='resources/eclipse.png'style='width:calc(115%);height:calc(115%);margin:-20%'></img>",
         ]
         player.ma.characterNames = [
-            "Kres",
-            "Nav",
-            "Sel",
+            "Cat",
+            "Teardrop",
+            "Oxygen",
             "Eclipse",
         ]
 
@@ -488,15 +488,15 @@
         }
         if (player.ma.health[0].lt(0) && !player.ma.deadCharacters[0]) {
             player.ma.deadCharacters[0] = true
-            logPrint("<span style='color: #910a27;'>Kres has died!")
+            logPrint("<span style='color: #910a27;'>Cat has died!")
         }
         if (player.ma.health[1].lt(0) && !player.ma.deadCharacters[1]) {
             player.ma.deadCharacters[1] = true
-            logPrint("<span style='color: #710a91;'>Nav has died!")
+            logPrint("<span style='color: #710a91;'>Teardrop has died!")
         }
         if (player.ma.health[2].lt(0) && !player.ma.deadCharacters[2]) {
             player.ma.deadCharacters[2] = true
-            logPrint("<span style='color: #065c19;'>Sel has died!")
+            logPrint("<span style='color: #065c19;'>Oxygen has died!")
         }
         if (player.ma.health[3].lt(0) && !player.ma.deadCharacters[3]) {
             player.ma.deadCharacters[3] = true
@@ -971,7 +971,7 @@
             branches: [[4, "#8a0e79"]]
         },
         11: {
-            title() { return "<h1>Enter the black heart" },
+            title() { return "<h1>Enter the NG+ heart" },
             canClick() { return true },
             unlocked() { return true },
             onClick() {
@@ -990,7 +990,7 @@
             style: {width: "400px", minHeight: "150px", color: "white", backgroundColor: "black", border: "3px solid #8a0e79", borderRadius: "20px"},
         },
         12: {
-            title() { return "<h2>Leave the black heart" },
+            title() { return "<h2>Leave the NG+ heart" },
             canClick() { return true },
             unlocked() { return true },
             onClick() {
@@ -1234,7 +1234,7 @@
         //attacks
         201: {
             title() { return "Main Attack" },
-            tooltip() { return player.ma.airCelestialite ? "Kres can't attack air celestialites" : player.ma.stealthyCelestialite ? "Kres can't attack stealthy celestialites" : "" },
+            tooltip() { return player.ma.airCelestialite ? "Cat can't attack air celestialites" : player.ma.stealthyCelestialite ? "Cat can't attack stealthy celestialites" : "" },
             canClick() { return !player.ma.deadCharacters[0] && !player.ma.airCelestialite && !player.ma.stealthyCelestialite },
             unlocked() { return (player.ma.attackTimer[0].lte(0) || !this.canClick()) && player.ma.selectedCharacters[0] },
             onClick() {
@@ -1246,8 +1246,8 @@
                 if (player.ma.currentCelestialiteType != 5 && !player.ma.airCelestialite) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.gt(0) && player.ma.shieldCelestialite) player.ma.shieldHealth = player.ma.shieldHealth.sub(damage);
-                    if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Kres attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Kres attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Cat attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat attacks Matos for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[0] = player.ma.cooldown[0];
                 
@@ -1271,7 +1271,7 @@
         },
         202: {
             title() { return "Main Attack" },
-            tooltip() { return player.ma.shieldHealth.gt(0) ? "Nav can't attack shields" : player.ma.stealthyCelestialite ? "Nav can't attack stealthy celestialites" : "" },
+            tooltip() { return player.ma.shieldHealth.gt(0) ? "Teardrop can't attack shields" : player.ma.stealthyCelestialite ? "Teardrop can't attack stealthy celestialites" : "" },
             canClick() { return !player.ma.deadCharacters[1] && player.ma.shieldHealth.lte(0) && !player.ma.stealthyCelestialite},
             unlocked() { return (player.ma.attackTimer[1].lte(0) || !this.canClick()) && player.ma.selectedCharacters[1] },
             onClick() {
@@ -1282,8 +1282,8 @@
         
                 if (player.ma.currentCelestialiteType != 5) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #710a91;'>Nav attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #710a91;'>Nav attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #710a91;'>Teardrop attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #710a91;'>Teardrop attacks Matos for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[1] = player.ma.cooldown[1];
 
@@ -1307,7 +1307,7 @@
         },
         203: {
             title() { return "Main Attack" },
-            tooltip() { return player.ma.shieldHealth.gt(0) ? "Sel can't attack shields" : "" },
+            tooltip() { return player.ma.shieldHealth.gt(0) ? "Oxygen can't attack shields" : "" },
             canClick() { return !player.ma.deadCharacters[2] && player.ma.shieldHealth.lte(0)},
             unlocked() { return (player.ma.attackTimer[2].lte(0) || !this.canClick()) && player.ma.selectedCharacters[2] },
             onClick() {
@@ -1318,8 +1318,8 @@
         
                 if (player.ma.currentCelestialiteType != 5) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #065c19;'>Sel attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #065c19;'>Sel attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #065c19;'>Oxygen attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #065c19;'>Oxygen attacks Matos for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[2] = player.ma.cooldown[2];
 
@@ -1343,7 +1343,7 @@
         },
         204: {
             title() { return "Big Attack" },
-            tooltip() { return player.ma.airCelestialite ? "Kres can't attack air celestialites" : player.ma.stealthyCelestialite ? "Kres can't attack stealthy celestialites" : "Deals big damage at the cost of 8-12% of Kres' max HP." },
+            tooltip() { return player.ma.airCelestialite ? "Cat can't attack air celestialites" : player.ma.stealthyCelestialite ? "Cat can't attack stealthy celestialites" : "Deals big damage at the cost of 8-12% of Cat's max HP." },
             canClick() { return !player.ma.deadCharacters[0] && !player.ma.airCelestialite && !player.ma.stealthyCelestialite},
             unlocked() { return (player.ma.attackTimer2[0].lte(0) || !this.canClick()) && hasUpgrade("ma", 11) && player.ma.selectedCharacters[0] },
             onClick() {
@@ -1361,20 +1361,20 @@
                 if (player.ma.currentCelestialiteType != 5) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.gt(0) && player.ma.shieldCelestialite) player.ma.shieldHealth = player.ma.shieldHealth.sub(damage);
-                    if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Kres BIG ATTACKS the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Kres BIG ATTACKS Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Cat BIG ATTACKS the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat BIG ATTACKS Matos for " + format(damage) + " damage.</span>");
                 }
         
                 // Apply self-damage to Kres
                 if (player.ma.shieldDuration.lte(0)) {
                     if (!hasUpgrade("ma", 15) || Decimal.gte(Math.random(), upgradeEffect("ma", 15))) {
                         player.ma.health[0] = player.ma.health[0].sub(selfDamage)
-                        logPrint("<span style='color: #910a27;'>Kres takes " + format(selfDamage) + " self-damage from the Big Attack.</span>")
+                        logPrint("<span style='color: #910a27;'>Cat takes " + format(selfDamage) + " self-damage from the Big Attack.</span>")
                     } else {
-                        logPrint("<span style='color: #ffc5d3;'>Kres avoided taking self-damage from the Big Attack! (Improved Coordination)")
+                        logPrint("<span style='color: #ffc5d3;'>Cat avoided taking self-damage from the Big Attack! (Improved Coordination)")
                     }
                 } else {
-                    logPrint("<span style='color: #910a27;'>Shield blocks Kres's self-damage.</span>")
+                    logPrint("<span style='color: #910a27;'>Shield blocks Cat's self-damage.</span>")
                 }
         
                 // Reset Kres' attack timer
@@ -1430,7 +1430,7 @@
         
                     // Log the healing event
                     logPrint(
-                        `<span style='color: #710a91;'>Nav heals ${player.ma.characterNames[characterIndex]} for ${format(healAmount)} HP.</span>`
+                        `<span style='color: #710a91;'>Teardrop heals ${player.ma.characterNames[characterIndex]} for ${format(healAmount)} HP.</span>`
                     );
                 }
         
@@ -1445,7 +1445,7 @@
         },
         206: {
             title() { return "Turret" },
-            tooltip() { return player.ma.shieldHealth.gt(0) ? "Sel can't attack shields" : "A turret will attack every 0.5s for 12s, dealing 20-30% of Sel's attack damage." },
+            tooltip() { return player.ma.shieldHealth.gt(0) ? "Oxygen can't attack shields" : "A turret will attack every 0.5s for 12s, dealing 20-30% of Oxygen's attack damage." },
             canClick() { return !player.ma.deadCharacters[2] && player.ma.shieldHealth.lte(0)}, // Ensure Sel is alive
             unlocked() { return (player.ma.attackTimer2[2].lte(0) || !this.canClick()) && hasUpgrade("ma", 13) && player.ma.selectedCharacters[2] },
             onClick() {
@@ -1478,10 +1478,10 @@
                     if (player.ma.currentCelestialiteType != 5) {
                         if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(turretDamage);
                         if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint(
-                            `<span style='color: #065c19;'>Sel's turret attacks the ${player.ma.celestialiteNames[player.ma.currentCelestialiteType]} Celestialite for ${format(turretDamage)} damage.</span>`
+                            `<span style='color: #065c19;'>Oxygen's turret attacks the ${player.ma.celestialiteNames[player.ma.currentCelestialiteType]} Celestialite for ${format(turretDamage)} damage.</span>`
                         );
                         if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint(
-                            `<span style='color: #065c19;'>Sel's turret attacks Matos for ${format(turretDamage)} damage.</span>`
+                            `<span style='color: #065c19;'>Oxygen's turret attacks Matos for ${format(turretDamage)} damage.</span>`
                         );
                         if (player.ma.cursedCelestialite) {
                             // 30% chance to reflect damage to attacker
@@ -1515,7 +1515,7 @@
             unlocked() { return (player.ma.attackTimer3[0].lte(0) || !this.canClick()) && hasUpgrade("ma", 23) && player.ma.selectedCharacters[0] },
             onClick() {
 
-                logPrint("<span style='color: #910a27;'>Kres buffs the entire team!</span>");
+                logPrint("<span style='color: #910a27;'>Cat buffs the entire team!</span>");
 
                 player.ma.teamBuffDuration = new Decimal(9); // Set the buff duration to 9 seconds
         
@@ -1536,7 +1536,7 @@
             unlocked() { return (player.ma.attackTimer3[1].lte(0) || !this.canClick()) && hasUpgrade("ma", 24) && player.ma.selectedCharacters[1] },
             onClick() {
 
-                logPrint("<span style='color: #710a91;'>Nav curses the enemy!</span>");
+                logPrint("<span style='color: #710a91;'>Teardrop curses the enemy!</span>");
 
                 player.ma.curseSpellDuration = new Decimal(10); // Set the curse duration to 10 seconds
 
@@ -1564,7 +1564,7 @@
                 if (aliveCharacters.length > 0) {
                     let character = aliveCharacters[getRandomInt(aliveCharacters.length)];
                     player.ma.energyBoostSelected = character; // Store the selected character for the energy boost
-                    logPrint("<span style='color: #065c19;'>Sel gives " + player.ma.characterNames[character] + " an energy boost!</span>");
+                    logPrint("<span style='color: #065c19;'>Oxygen gives " + player.ma.characterNames[character] + " an energy boost!</span>");
 
                 player.ma.cooldown[character] = new Decimal(0)
                 player.ma.cooldown2[character] = new Decimal(0)
@@ -2343,7 +2343,7 @@
             fillStyle: {backgroundColor: "#910a27"},
             textStyle: {userSelect: "none"},
             display() {
-                return player.ma.deadCharacters[0] ? "Kres is dead." : "<h5>" + format(player.ma.health[0]) + "/" + format(player.ma.healthMax[0]) + "<h5> HP.</h5>";
+                return player.ma.deadCharacters[0] ? "Cat is dead." : "<h5>" + format(player.ma.health[0]) + "/" + format(player.ma.healthMax[0]) + "<h5> HP.</h5>";
             },
         },
         navHealth: {
@@ -2360,7 +2360,7 @@
             fillStyle: {backgroundColor: "#710a91"},
             textStyle: {userSelect: "none"},
             display() {
-                return player.ma.deadCharacters[1] ? "Nav is dead." : "<h5>" + format(player.ma.health[1]) + "/" + format(player.ma.healthMax[1]) + "<h5> HP.</h5>";
+                return player.ma.deadCharacters[1] ? "Teardrop is dead." : "<h5>" + format(player.ma.health[1]) + "/" + format(player.ma.healthMax[1]) + "<h5> HP.</h5>";
             },
         },
         selHealth: {
@@ -2377,7 +2377,7 @@
             fillStyle: {backgroundColor: "#065c19"},
             textStyle: {userSelect: "none"},
             display() {
-                return player.ma.deadCharacters[2] ? "Sel is dead." : "<h5>" + format(player.ma.health[2]) + "/" + format(player.ma.healthMax[2]) + "<h5> HP.</h5>";
+                return player.ma.deadCharacters[2] ? "Oxygen is dead." : "<h5>" + format(player.ma.health[2]) + "/" + format(player.ma.healthMax[2]) + "<h5> HP.</h5>";
             },
         },
         eclipseHealth: {
@@ -2721,9 +2721,9 @@
     },
     upgrades: {
         11: {
-            title: "Kres Upgrade I",
+            title: "Cat Upgrade I",
             unlocked: true,
-            description: "Unlock Kres' second skill.",
+            description: "Unlock Cat's second skill.",
             cost: new Decimal("300"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Common Matos Fragments",
@@ -2735,9 +2735,9 @@
             },
         },
         12: {
-            title: "Nav Upgrade I",
+            title: "Teardrop Upgrade I",
             unlocked: true,
-            description: "Unlock Nav's second skill.",
+            description: "Unlock Teardrop's second skill.",
             cost: new Decimal("80"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Rare Matos Fragments",
@@ -2749,9 +2749,9 @@
             },
         },
         13: {
-            title: "Sel Upgrade I",
+            title: "Oxygen Upgrade I",
             unlocked: true,
-            description: "Unlock Sel's second skill.",
+            description: "Unlock Oxygen's second skill.",
             cost: new Decimal("5"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Epic Matos Fragments",
@@ -2780,7 +2780,7 @@
         15: {
             title: "Improved Coordination",
             unlocked: true,
-            description: "Kres' pet level/ascension increases chance to not take self-damage.",
+            description: "Cat's pet level/ascension increases chance to not take self-damage.",
             cost: new Decimal("500"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Common Matos Fragments",
@@ -2799,7 +2799,7 @@
         16: {
             title: "Tonic Toss-up",
             unlocked: true,
-            description: "Nav's pet level/ascension increases chance to heal between celestialites.",
+            description: "Teardrop's pet level/ascension increases chance to heal between celestialites.",
             cost: new Decimal("300"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Rare Matos Fragments",
@@ -2818,7 +2818,7 @@
         17: {
             title: "Random Returns",
             unlocked: true,
-            description: "Sel's pet level/ascension increases chance to double celestialite rewards.",
+            description: "Oxygen's pet level/ascension increases chance to double celestialite rewards.",
             cost: new Decimal("16"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Epic Matos Fragments",
@@ -2895,9 +2895,9 @@
             },
         },
         23: {
-            title: "Kres Upgrade II",
+            title: "Cat Upgrade II",
             unlocked: true,
-            description: "Unlock Kres' third skill.",
+            description: "Unlock Cat's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Legendary Matos Fragments",
@@ -2909,9 +2909,9 @@
             },
         },
         24: {
-            title: "Nav Upgrade II",
+            title: "Teardrop Upgrade II",
             unlocked: true,
-            description: "Unlock Nav's third skill.",
+            description: "Unlock Teardrop's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Legendary Matos Fragments",
@@ -2923,9 +2923,9 @@
             },
         },
         25: {
-            title: "Sel Upgrade II",
+            title: "Oxygen Upgrade II",
             unlocked: true,
-            description: "Unlock Sel's third skill.",
+            description: "Unlock Oxygen's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
             currencyDisplayName: "Legendary Matos Fragments",
@@ -3554,10 +3554,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres Health Regen"
+                return "Cat Health Regen"
             },
             display() {
-                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Kres.\n\
+                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Cat.\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
             },
             buy(mult) {
@@ -3588,10 +3588,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Health Regen"
+                return "Teardrop Health Regen"
             },
             display() {
-                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Nav.\n\
+                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Teardrop.\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
             },
             buy(mult) {
@@ -3622,10 +3622,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel Health Regen"
+                return "Oxygen Health Regen"
             },
             display() {
-                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Sel.\n\
+                return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Oxygen.\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
             },
             buy(mult) {
@@ -3691,10 +3691,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres Boost"
+                return "Cat Boost"
             },
             display() {
-                return "which are boosting Kres' max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are boosting Cat's max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Singularity Points"
             },
             buy(mult) {
@@ -3725,10 +3725,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Boost"
+                return "Teardrop Boost"
             },
             display() {
-                return "which are boosting Nav's max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are boosting Teardrop's max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Singularity Points"
             },
             buy(mult) {
@@ -3759,10 +3759,10 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel Boost"
+                return "Oxygen Boost"
             },
             display() {
-                return "which are boosting Sel's max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
+                return "which are boosting Oxygen's max health and damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
                     Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Singularity Points"
             },
             buy(mult) {
@@ -4141,7 +4141,7 @@
                     ["style-row", [
                         ["style-column", [
                             ["style-column", [
-                                ["raw-html", "Kres: Warrior Class", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                ["raw-html", "Cat: Warrior Class", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                             ], {width: "247px", height: "40px", backgroundColor: "#480513", borderBottom: "3px solid #8a0e79"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Strength: <h3>" + formatWhole(player.ma.kresStats[0])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4152,7 +4152,7 @@
                         ["style-column", [], {width: "3px", height: "130px", backgroundColor: "#8a0e79"}],
                         ["style-column", [
                             ["style-column", [
-                                ["raw-html", "Nav: Mage Class", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                ["raw-html", "Teardrop: Mage Class", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                             ], {width: "250px", height: "40px", backgroundColor: "#380548", borderBottom: "3px solid #8a0e79"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Strength: <h3>" + formatWhole(player.ma.navStats[0])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4163,8 +4163,8 @@
                         ["style-column", [], {width: "3px", height: "130px", backgroundColor: "#8a0e79"}],
                         ["style-column", [
                             ["style-column", [
-                            ["raw-html", () => {return !player.ir.iriditeDefeated ? "Sel: Ranger Class" : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
-                            ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Sel: Ranger Class</s>" : ""}, {color: "red", fontSize: "20px", fontFamily: "monospace"}],
+                            ["raw-html", () => {return !player.ir.iriditeDefeated ? "Oxygen: Ranger Class" : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                            ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Oxygen: Ranger Class</s>" : ""}, {color: "red", fontSize: "20px", fontFamily: "monospace"}],
                             ], {width: "247px", height: "40px", backgroundColor: "#065c19", borderBottom: "3px solid #8a0e79"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Strength: <h3>" + formatWhole(player.ma.selStats[0])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4273,7 +4273,7 @@
                 content: [
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", "Welcome to the black heart.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", "Welcome to the NG+ heart.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", "You must be prepared to fight my celestialites.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", "Now. We must determine if you are truly ready or not.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "750px", height: "110px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
@@ -4285,7 +4285,7 @@
                     ["style-row", [
                         ["style-column", [
                             ["style-column", [
-                                ["raw-html", "Kres", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", "Cat", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                             ], {width: "247px", height: "40px", backgroundColor: "#480513", borderBottom: "3px solid #8a0e79", borderRadius: "17px 0 0 0"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Max Health: <h3>" + format(player.ma.healthMax[0])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4298,7 +4298,7 @@
                         ["style-column", [], {width: "3px", height: "200px", backgroundColor: "#8a0e79"}],
                         ["style-column", [
                             ["style-column", [
-                                ["raw-html", "Nav", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", "Teardrop", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                             ], {width: "250px", height: "40px", backgroundColor: "#380548", borderBottom: "3px solid #8a0e79"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Max Health: <h3>" + format(player.ma.healthMax[1])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4311,8 +4311,8 @@
                         ["style-column", [], {width: "3px", height: "200px", backgroundColor: "#8a0e79"}],
                         ["style-column", [
                             ["style-column", [
-                                ["raw-html", () => {return !player.ir.iriditeDefeated ? "Sel" : ""}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                                ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Sel</s>" : ""}, {color: "red", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return !player.ir.iriditeDefeated ? "Oxygen" : ""}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Oxygen</s>" : ""}, {color: "red", fontSize: "24px", fontFamily: "monospace"}],
                             ], {width: "247px", height: "40px", backgroundColor: "#065c19", borderBottom: "3px solid #8a0e79", borderRadius: "0 17px 0 0"}],
                             ["style-column", [
                                 ["raw-html", () => {return "Max Health: <h3>" + format(player.ma.healthMax[2])}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
@@ -4405,7 +4405,7 @@
                     ["style-row", [
                         ["style-row", [
                             ["style-column", [
-                                ["raw-html", "Kres", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", "Cat", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                                 ["blank", "5px"],
                                 ["bar", "kresHealth"],
                                 ["row", [
@@ -4417,7 +4417,7 @@
                                 ]],
                             ], () => {return player.ma.selectedCharacters[0] ? {width: "215px"} : {display: "none !important"}}],
                             ["style-column", [
-                                ["raw-html", "Nav", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", "Teardrop", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                                 ["blank", "5px"],
                                 ["bar", "navHealth"],
                                 ["row", [
@@ -4429,8 +4429,8 @@
                                 ]],
                             ], () => {return player.ma.selectedCharacters[1] ? {width: "215px"} : {display: "none !important"}}],
                             ["style-column", [
-                                ["raw-html", () => {return !player.ir.iriditeDefeated ? "Sel" : ""}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                                ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Sel</s>" : ""}, {color: "red", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return !player.ir.iriditeDefeated ? "Oxygen" : ""}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return player.ir.iriditeDefeated ? "<s>Oxygen</s>" : ""}, {color: "red", fontSize: "24px", fontFamily: "monospace"}],
                                 ["blank", "5px"],
                                 ["bar", "selHealth"],
                                 ["row", [

@@ -241,8 +241,8 @@ addLayer("sp", {
                 return "Capacity Increaser (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/999)"
             },
             display() {
-                return 'which are boosting nav point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Nav Points'
+                return 'which are boosting teardrop point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
+                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Teardrop Points'
             },
             buy() {
                 this.pay()
@@ -265,11 +265,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Strength"
+                return "Teardrop Strength"
             },
             display() {
-                return 'which are boosting black heart strength by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Nav Points'
+                return 'which are boosting NG+ heart strength by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Teardrop Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -299,11 +299,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Synergy"
+                return "Teardrop Synergy"
             },
             display() {
                 return 'which are boosting dragon points by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Nav Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Teardrop Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -333,11 +333,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Pet Points"
+                return "Teardrop Pet Points"
             },
             display() {
                 return 'which are boosting pet point gain by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Nav Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Teardrop Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -367,11 +367,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Nav Fragments"
+                return "Teardrop Fragments"
             },
             display() {
                 return 'which are multiplying fragmentation fragment gain by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Nav Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Teardrop Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -571,15 +571,15 @@ addLayer("sp", {
                     ], {width: "700px", height: "550px", background: "#2b030b", border: "3px solid white", borderRadius: "20px"}],
                 ],
             },
-            "Nav": {
-                title() {return "Nav<br><small>(" + formatSimple(player.sp.navPoints, 2) + "/" + formatWhole(player.sp.navPointsMax) + ")</small>"},
+            "Teardrop": {
+                title() {return "Teardrop<br><small>(" + formatSimple(player.sp.navPoints, 2) + "/" + formatWhole(player.sp.navPointsMax) + ")</small>"},
                 buttonStyle() { return {color: "white", background: "#710a91", borderColor: "rgba(0,0,0,0.5)", borderRadius: "5px"}},
                 unlocked() { return getLevelableAmount("pet", 405).gte(1) || getLevelableTier("pet", 405).gte(1)},
                 content: [
                     ["blank", "10px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.navPoints, 2) + "/" + formatWhole(player.sp.navPointsMax) + "</h3> nav points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.navPointsPerSecond) + "</h3> nav points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.navPoints, 2) + "/" + formatWhole(player.sp.navPointsMax) + "</h3> Teardrop points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.navPointsPerSecond) + "</h3> Teardrop points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                         ["blank", "20px"],
                         ["buyable", 21],
                         ["blank", "20px"],
