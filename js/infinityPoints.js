@@ -737,7 +737,7 @@
                 return player.hre.refinement.gte(2)
             },
             rewardDescription: "Permanently unlock hex as an otherworldly feature, and change base hex point formula to:<br><small>(log<sub>60</sub>(Celestial Points+1))<sup>0.6</sup></small>",
-            unlocked() { return hasChallenge("ip", 12) },
+            unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 //OTF is reset here and not in crunch to prevent a bug
                 player.po.dice = false
