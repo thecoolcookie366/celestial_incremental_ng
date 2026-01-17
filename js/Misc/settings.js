@@ -598,10 +598,11 @@ addLayer("settings", {
                             "Ideas: Nova<br>" +
                             "Art: Jtoh_Sc Lemonsja<br>" +
                             "Testing: Nova Piterpicher Vel<br>" +
-                            "Bug Fixing: Tsanth Forwaken", {color: "var(--textColor)", fontSize: "12px", fontFamily: "monospace"}],
+                            "Bug Fixing: Tsanth Forwaken<br>" +
+                            "And cookie for making the whole NG+ thing!", {color: "var(--textColor)", fontSize: "12px", fontFamily: "monospace"}],
                     ], {width: "306px", height: "206px"}],
                     ["style-row", [
-                        ["raw-html", () => "<a href=https://discord.gg/icecreamdude-s-incremental-games-850817562040467556><button class=can style='display:flex;align-items:center;justify-content:center;width:306px;height:40px;font-size:20px;color:#dde0fc;background:#5865f2;border:3px solid #2c3279'>Join the Discord!</button></a>", {fontFamily: "monospace",}],
+                        ["raw-html", () => "<a href=https://discord.gg/MhXnz7nzqg><button class=can style='display:flex;align-items:center;justify-content:center;width:306px;height:40px;font-size:20px;color:#dde0fc;background:#5865f2;border:3px solid #2c3279'>Join the Discord!</button></a>", {fontFamily: "monospace",}],
                     ], {width: "306px", height: "40px", borderTop: "3px solid var(--regBorder)"}],
                     ["style-row", [
                         ["raw-html", () => {return "Playtime: " + formatTime(player.timePlayed)}, {color: "var(--textColor)", fontSize: "16px", fontFamily: "monospace"}],
