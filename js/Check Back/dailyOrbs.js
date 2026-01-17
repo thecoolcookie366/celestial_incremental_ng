@@ -12,22 +12,22 @@ addLayer("ev2", {
         timers: {
             0: {
                 current: new Decimal(0),
-                max: new Decimal(86400),
+                max: new Decimal(5),
                 base: new Decimal(1),
             },
             1: {
                 current: new Decimal(0),
-                max: new Decimal(172800),
+                max: new Decimal(5),
                 base: new Decimal(1),
             },
             2: {
                 current: new Decimal(0),
-                max: new Decimal(345600),
+                max: new Decimal(5),
                 base: new Decimal(1),
             },
             3: {
                 current: new Decimal(0),
-                max: new Decimal(604800),
+                max: new Decimal(5),
                 base: new Decimal(1),
             },
         },
