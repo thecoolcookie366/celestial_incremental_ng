@@ -90,7 +90,7 @@
         }
 
         player.po.featureSlotsMax = new Decimal(1)
-        if (hasUpgrade("i", 28)) player.po.featureSlotsMax = player.po.featureSlotsMax.add(1)
+        if (hasUpgrade("i", 28)) player.po.featureSlotsMax = player.po.featureSlotsMax.add(4)
 
         player.po.featureSlots = player.po.featureSlotsMax
         if (player.po.dice) {
