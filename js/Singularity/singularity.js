@@ -34,9 +34,9 @@
         player.s.singularitiesToGet = new Decimal(1)
         if (hasUpgrade("ma", 29)) player.s.singularitiesToGet = player.s.singularityPointsToGet.add(1).log(1e10).add(1).floor()
 
-        if (player.in.infinityPoints.lt("1e1e6")) {
+        if (player.in.infinityPoints.lt("1e1e60")) {
             player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(8)
-        } else if (player.in.infinityPoints.lt("1e1e12")) {
+        } else if (player.in.infinityPoints.lt("1e1e120")) {
             player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(4)
         } else {
             player.s.singularityPointsToGet = player.in.infinityPoints.sub(player.in.infinityPoints).add(player.gs.grassSkip).pow(2)
