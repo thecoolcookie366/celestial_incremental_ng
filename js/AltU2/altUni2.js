@@ -1,5 +1,5 @@
 ﻿addLayer("au2", {
-    name: "Alt-Universe 2: Cosmic Cosmos", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Alt-Universe 2: NaN'd Cosmos", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "A2", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "A2",
     row: 1,
@@ -25,7 +25,7 @@
             "border-color": "#270052",
         }
     },
-    tooltip: "Alt-Universe 2: Cosmic Cosmos",
+    tooltip: "Alt-Universe 2: NaN'd Cosmos",
     color: "#5A4FCF",
     branches: ["in", "cp"],
     update(delta) {

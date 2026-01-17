@@ -326,7 +326,7 @@
             canClick() { return player.ro.rocketCooldown.lt(0) && player.ro.rocketParts.gte(player.ro.rocketPartsReq) && player.ro.activatedFuel.gte(player.ro.activatedFuelReq) && player.cb.evolutionShards.gte(player.ro.evoCost) && player.cb.paragonShards.gte(player.ro.paragonCost)},
             unlocked() { return true },
             onClick() {
-                player.au2.stars = player.au2.stars.add(player.au2.starsToGet)
+                player.au2.stars = player.au2.stars.add(1).pow(5)
                 for (let i = 0; i < player.ro.selectedPassengersCommon.length; i++) {
                     player.st.levelables[Decimal.add(100, Decimal.add(1, player.ro.selectedPassengersCommon[i]))][1] = player.st.levelables[Decimal.add(100, Decimal.add(1, player.ro.selectedPassengersCommon[i]))][1].add(player.ro.commonXPToGet[i])
                 }
@@ -949,7 +949,7 @@
                     ["style-column", [
                     ["blank", "25px"],
                     ["raw-html", function () { return "You have <h3>" + formatWhole(player.au2.stars) + "</h3> stars." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                    ["raw-html", function () { return "You will gain " + formatWhole(player.au2.starsToGet) + " stars on launch." }, { "color": "white", "font-size": "20px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "You will gain " + formatWhole(player.au2.stars) + " stars on launch." }, { "color": "white", "font-size": "20px", "font-family": "monospace" }],
                     ["blank", "25px"],
                     ["raw-html", function () { return "Evolution shard cost: " + formatWhole(player.ro.evoCost) + "" }, { "color": "#d487fd", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return "Paragon shard cost: " + formatWhole(player.ro.paragonCost) + "" }, { "color": "#4b79ff", "font-size": "24px", "font-family": "monospace" }],
