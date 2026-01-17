@@ -1,6 +1,6 @@
 ﻿let modInfo = {
 	name: "Celestial Incremental NG+",
-	id: "celestial", // NEVER CHANGE THIS, IF YOU DO ALL SAVES WILL DIE
+	id: "celestialng", // NEVER CHANGE THIS, IF YOU DO ALL SAVES WILL DIE
 	author: "Icecreamdude (with a bit of cookie)",
 	pointsName: "celestial points",
 	modFiles: [
