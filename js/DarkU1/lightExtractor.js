@@ -142,7 +142,7 @@
             canClick() { return player.du.points.gte(player.le.starmetalAlloyReq) },
             unlocked() { return true },
             onClick() {
-                player.le.resetAmount = player.le.resetAmount.add(1)
+                player.le.resetAmount = player.le.resetAmount.add(500)
                 if (player.le.highestReset.lt(player.le.resetAmount)) player.le.highestReset = player.le.resetAmount
                 player.le.starmetalAlloyPause = new Decimal(10)
 
