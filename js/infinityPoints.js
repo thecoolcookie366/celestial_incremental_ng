@@ -892,7 +892,7 @@
             goalDescription() { return "1 1st Dimension" },
             goal() {return new Decimal("1") },
             canComplete() {return getBuyableAmount("ad", 11).gte(1) },
-            rewardDescription() {return hasChallenge("ip", 18) ? "Unlock Tav, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "....???"},
+            rewardDescription() {return hasChallenge("ip", 18) ? "Unlock Gatekeeper, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "....???"},
             unlocked() { return hasChallenge("ip", 17) },
             onEnter() {
                 player.ad.antimatter = new Decimal(10)
