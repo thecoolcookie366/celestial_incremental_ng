@@ -206,8 +206,8 @@
             style: { width: '75px', "min-height": '50px', }
         },
         11: {
-            title() { return "<h1>You have reached the end. (because i'm not going to continue this lol)" },
-            canClick() { return player.cb.level.gte("1.79e308") && player.ad.antimatter.gte("1e600") && player.in.infinities.gte(100000) && player.h.hexPoint.gte(1e36) && player.ta.highestDicePoints.gte(1e50) && player.cb.petPoints.gte(500) },
+            title() { return "<h1>There's nothing left..?" },
+            canClick() { return player.in.infinityPoints.gte("1.1e1e1e1e1e1e593244") && player.ad.antimatter.gte("1e600") && player.in.infinities.gte(100000) && player.h.hexPoint.gte(1e36) && player.ta.highestDicePoints.gte(1e50) && player.cb.petPoints.gte(500) },
             unlocked() { return true},
             onClick() {
                 player.ca.unlockedCante = true
@@ -246,7 +246,7 @@
             },
         },
         15: {
-            title() { return "<h3>Convert a cante core into a rememberance core</h3><br>Cost: " + format(player.ca.rememberanceCoreCost) + " Proto Memories" },
+            title() { return "<h3>Convert a cookie core into a rememberance core</h3><br>Cost: " + format(player.ca.rememberanceCoreCost) + " Proto Memories" },
             canClick() { return player.ca.canteCores.gte(1) && player.oi.protoMemories.gte(player.ca.rememberanceCoreCost) },
             unlocked: true,
             onClick() {
@@ -255,7 +255,7 @@
             style: {width: "300px", minHeight: "100px", borderRadius: "15px"},
         },
         16: {
-            title() { return "<h2>REMEMBER THE PROTO OVERWORLD.<br>DESTROY COOKIE.<br>END THE SUFFERING.</h2><br><br><h3>[REQ: 10 Rememberance Cores]</h3>" },
+            title() { return "<h2>REMEMBER THE BAKING PROCESS.<br>DESTROY COOKIE.<br>END THE INFLATION.</h2><br><br><h3>[REQ: 10 Rememberance Cores]</h3>" },
             canClick() { return player.ca.rememberanceCores.gte(10) },
             unlocked() { return true },
             onClick() {
@@ -310,9 +310,9 @@
                 if (player.ca.canteTrial3) return "<img src='resources/lock_unlocked.png' width='90px' height='90px' style='margin-bottom:-5px'></img>"
                 return "<img src='resources/lock_locked.png' width='90px' height='90px' style='margin-bottom:-5px'></img>"
             },
-            canClick() {return !player.ca.canteTrial3 && (challengeCompletions("hrm", 13) > 0)},
+            canClick() {return !player.ca.canteTrial3 && (player.ca.canteCores.gte(1))},
             unlocked: true,
-            tooltip: "Survive a remnant of the realm of death.",
+            tooltip: "Get cookie's POWER.",
             onClick() {
                 player.ca.canteTrial3 = true
                 player.ca.canteTrialCount += 1
@@ -355,7 +355,7 @@
             baseStyle: {backgroundColor: "rgba(0,0,0,0.5)"},
             fillStyle: {backgroundColor: "#5c3f05"},
             display() {
-                return "<h5>" + format(player.ca.canteEnergy) + "/" + formatWhole(player.ca.canteEnergyReq) + "<h5> Cante energy to gain a cante core.</h5>";
+                return "<h5>" + format(player.ca.canteEnergy) + "/" + formatWhole(player.ca.canteEnergyReq) + "<h5> Cookie energy to gain a cookie core.</h5>";
             },
         },
         replicantiBar: {
@@ -648,7 +648,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9ac44", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         19: {
             costBase() { return new Decimal(4) },
@@ -682,7 +682,7 @@
                     setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(max))
                 }
             },
-            style: { width: '275px', height: '150px', backgroundColor: "#44ABD9", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
+            style: { width: '275px', height: '150px', backgroundColor: "#d9b144", backgroundImage: "linear-gradient(0deg, #0a82b9 0%, #7dd3f9 100%)", backgroundOrigin: "border-box"},
         },
         21: {
             costBase() { return new Decimal(10) },
@@ -833,7 +833,7 @@
                     ["blank", "25px"],
                     ["raw-html", function () { return "Unlock Cookie:" }, { "color": "orange", "font-size": "36px", "font-family": "monospace" }],
                     ["blank", "25px"],
-                    ["raw-html", function () { return formatWhole(player.cb.level) + "/1.79e308 Check Back Level" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return formatWhole(player.in.infinityPoints) + "/6.886F7 IP" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return format(player.ad.antimatter) + "/1e600 Antimatter" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return formatWhole(player.in.infinities) + "/100,000 Infinities" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return format(player.h.hexPoint) + "/1e36 Hex Points" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
@@ -892,7 +892,7 @@
                     ["row", [["clickable", 13]]],
                 ]
             },
-            "Cante Energy": {
+            "Cookie Energy": {
                 buttonStyle() { return { color: "white", background: "#05415c", borderColor: "#086894", borderRadius: "5px" } },
                 unlocked() { return player.ca.unlockedCante },
                 content: [
@@ -900,15 +900,15 @@
                     ["bar", "bar"],
                     ["style-row", [
                         ["style-column", [
-                            ["raw-html", () => {return "You have <h3>" + formatWhole(player.ca.canteCores) + "</h3> Cante cores."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                            ["raw-html", () => {return "You have <h3>" + formatWhole(player.ca.canteCores) + "</h3> Cookie cores."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                             ["raw-html", () => {return "Energy multiplier: <h3>" + format(player.ca.canteEnergyMult) + "</h3>x"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                             ["blank", "20px"],
-                            ["raw-html", "Cante energy is gained by clicking on check back buttons.", {color: "white", fontSize: "12px", fontFamily: "monospace"}],
+                            ["raw-html", "Cookie energy is gained by clicking on check back buttons.", {color: "white", fontSize: "12px", fontFamily: "monospace"}],
                             ["blank", "10px"],
                         ], () => {return hasUpgrade("cp", 18) ? {width: "347px", height: "220px", borderRight: "3px solid white"} : {width: "700px", height: "220px"}}],
                         ["style-column", [
                             ["raw-html", () => {return "You have <h3>" + formatWhole(player.ca.rememberanceCores) + "</h3> remembrance cores."}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
-                            ["raw-html", () => {return "Boosts cante energy gain by x<h3>" + format(player.ca.rememberanceCoresEffect) + "</h3>."}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                            ["raw-html", () => {return "Boosts cookie energy gain by x<h3>" + format(player.ca.rememberanceCoresEffect) + "</h3>."}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                             ["blank", "10px"],
                             ["raw-html", () => {return "You have <h3>" + format(player.oi.protoMemories) + "</h3> proto memories."}, {color: "white", fontSize: "12px", fontFamily: "monospace"}],
                             ["blank", "20px"],

@@ -1,6 +1,6 @@
 ﻿addLayer("ta", {
-    name: "Tav, Celestial of Limits", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "<h2>→", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Gatekeeper, Celestial of Gates", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "<h2>⚔", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "U2",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -121,7 +121,7 @@
             "color": "#008080",
         };
     },
-    tooltip: "Tav, the Celestial of Limits",
+    tooltip: "Gatekeeper, the Celestial of Gates",
     color: "#b2d8d8",
     branches: ["ad"],
     update(delta) {
@@ -534,7 +534,7 @@
         21: {
             title: "Negative Upgrade X",
             unlocked() { return hasUpgrade("ta", 19) },
-            description: "Unlock TAV'S DOMAIN.",
+            description: "Unlock GATEKEEPER'S DOMAIN.",
             cost: new Decimal(1000000),
             currencyLocation() { return player.ta },
             currencyDisplayName: "Negative Infinity Points",

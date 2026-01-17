@@ -384,12 +384,12 @@
             purchaseLimit() { return new Decimal(1000) },
             currency() { return player.in.infinityPoints},
             pay(amt) { player.in.infinityPoints = this.currency().sub(amt) },
-            effect(x) { return Decimal.pow(2, getBuyableAmount(this.layer, this.id)) },
+            effect(x) { return Decimal.pow("1e1e1e1e1e1e593245", getBuyableAmount(this.layer, this.id)) },
             unlocked: true,
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "IP Doubler"
+                return "IP Doubler but like really strong"
             },
             display() {
                 return "which are multiplying infinity points by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\

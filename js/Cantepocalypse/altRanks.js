@@ -32,7 +32,7 @@
     update(delta) {
         let onepersec = new Decimal(1)
 
-        player.ar.rankPointsToGet = player.cp.replicantiPoints.sub(1).pow(0.35)
+        player.ar.rankPointsToGet = player.cp.replicantiPoints.add(1).pow(500)
         player.ar.rankPointsEffect = player.ar.rankPoints.pow(0.45).mul(0.005)
         player.ar.rankPointsToGet = player.ar.rankPointsToGet.mul(player.ar.tierPointsEffect)
         player.ar.rankPointsToGet = player.ar.rankPointsToGet.mul(buyableEffect("pr", 13))

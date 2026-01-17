@@ -42,8 +42,8 @@ addNode("tst", {
     layerShown() {return hasMilestone("s", 11)},
 })
 addLayer("tad", {
-    name: "Tav's Domain", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "TD", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Gatekeeper's Domain", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "GD", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "U2",
     innerNodes: [["tac", "tco"], ["tma"], ["tst"]],
     row: 1,
@@ -179,7 +179,7 @@ addLayer("tad", {
             color: "#b2d8d8",
         }
     },
-    tooltip: "Tav's Domain",
+    tooltip: "Gatekeeper's Domain",
     color: "#5b629a",
     branches: ["ta", "ip", "om"],
     update(delta) {
@@ -939,7 +939,7 @@ addLayer("tad", {
             },
         },
         201: {
-            title: "KILL TAV AND BREAK INFINITY<br>Req: 250 of each T1 Alt-Infinity",
+            title: "KILL GATEKEEPER AND BREAK INFINITY<br>Req: 250 of each T1 Alt-Infinity",
             canClick() {
                 return !player.in.unlockedBreak && player.tad.altInfinities.broken.amount.gte(250) && player.tad.altInfinities.shattered.amount.gte(250) && player.tad.altInfinities.fragmented.amount.gte(250)
             },
@@ -956,7 +956,7 @@ addLayer("tad", {
             },
         },
         202: {
-            title: "UNLEARN LIMITS AND BREAK NEGATIVE INFINITY<br>Req: 250 of each T2 Alt-Infinity",
+            title: "FORGET WHAT A GATE IS AND BREAK NEGATIVE INFINITY<br>Req: 250 of each T2 Alt-Infinity",
             canClick() {
                 return !player.tad.breakNIP && player.tad.altInfinities.corrupted.amount.gte(250) && player.tad.altInfinities.disfigured.amount.gte(250) && player.tad.altInfinities.distorted.amount.gte(250)
             },
@@ -1314,7 +1314,7 @@ addLayer("tad", {
         153: {
             title: "Infinitum (5:3)",
             unlocked() {return player.al.cocoonLevel >= 5 && hasUpgrade("tad", 145)},
-            description() {return "Increase first accumulator rows caps by +25.<br><span style='font-size:8px'>(First effect stops scaling at 50)"},
+            description() {return "Increase first accumulator rows caps by a lot.<br><span style='font-size:8px'>(First effect stops scaling at 50)"},
             cost: new Decimal(3e12),
             currencyLocation() { return player.tad },
             currencyDisplayName: "Infinitum",
@@ -1361,8 +1361,8 @@ addLayer("tad", {
     buyables: {
         11: {
             costBase() { return new Decimal(1) },
-            costGrowth() { return new Decimal(3).div(player.tad.accumulationCost).max(1.6) },
-            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(75)} else {return new Decimal(50)}},
+            costGrowth() { return new Decimal(1.001).div(player.tad.accumulationCost).max(1.002) },
+            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(1e9)} else {return new Decimal(1e6)}},
             currency() { return player.tad.matter},
             pay(amt) { player.tad.matter = this.currency().sub(amt) },
             effect(x) {
