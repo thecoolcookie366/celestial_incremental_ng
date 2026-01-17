@@ -933,9 +933,9 @@
             style: { width: '175px', height: '100px', borderRadius: "10px" }
         },
         12: {
-            costBase() { return new Decimal(250) },
-            costGrowth() { return new Decimal(2) },
-            purchaseLimit() { return new Decimal(2500) },
+            costBase() { return new Decimal(1) },
+            costGrowth() { return new Decimal(1.02) },
+            purchaseLimit() { return new Decimal(1e9) },
             currency() { return player.d.dicePoints},
             pay(amt) { player.d.dicePoints = this.currency().sub(amt) },
             effect(x) { return new getBuyableAmount(this.layer, this.id) },
