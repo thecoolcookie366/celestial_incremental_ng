@@ -889,9 +889,9 @@
         18: {
             name: "Challenge VIII",
             challengeDescription() { return "<h4>The 8th antimatter dimension is removed. Antimatter Galaxies now cost 7th dimensions." },
-            goalDescription() { return "10 7th Dimensions" },
-            goal() {return new Decimal("10") },
-            canComplete() {return getBuyableAmount("ad", 17).gte(10) },
+            goalDescription() { return "1 1st Dimension" },
+            goal() {return new Decimal("1") },
+            canComplete() {return getBuyableAmount("ad", 11).gte(1) },
             rewardDescription() {return hasChallenge("ip", 18) ? "Unlock Tav, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "....???"},
             unlocked() { return hasChallenge("ip", 17) },
             onEnter() {
