@@ -142,9 +142,9 @@ addLayer("achievements", {
             unlocked: true,
         },
         17: {
-            name: "Hello World",
+            name: "Bye World",
             image: "resources/achievements/1_17.png",
-            tooltip: "<h3>Hello World</h3><hr style='margin-bottom:4px'>Do your first<br>code experience reset.<br><br>Reward: Decrease pent<br>requirement by /8.",
+            tooltip: "<h3>Bye World</h3><hr style='margin-bottom:4px'>Do your first<br>code experience reset.<br><br>Reward: Decrease pent<br>requirement by /ee1.796e308.",
             color: "white",
             unlocked: true,
             marked: true,
