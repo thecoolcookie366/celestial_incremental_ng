@@ -1498,9 +1498,9 @@ addLayer("tad", {
             },
         },
         14: {
-            costBase() { return new Decimal(1e13)},
-            costGrowth() { return new Decimal(16).div(player.tad.accumulationCost).max(1.6) },
-            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(75)} else {return new Decimal(50)}},
+            costBase() { return new Decimal(1)},
+            costGrowth() { return new Decimal(1.008).div(player.tad.accumulationCost).max(1.016) },
+            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(1e9)} else {return new Decimal(1e6)}},
             currency() { return player.tad.matter},
             pay(amt) { player.tad.matter = this.currency().sub(amt) },
             effect(x) {
