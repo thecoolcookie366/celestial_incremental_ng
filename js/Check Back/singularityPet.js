@@ -79,8 +79,8 @@ addLayer("sp", {
                 return "Capacity Increaser (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/999)"
             },
             display() {
-                return 'which are boosting kres point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Kres Points'
+                return 'which are boosting cat point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
+                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Cat Points'
             },
             buy() {
                 this.pay()
@@ -103,11 +103,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres Defense"
+                return "Cat Defense"
             },
             display() {
                 return 'which are boosting black heart defense by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Kres Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Cat Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -137,11 +137,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres Synergy"
+                return "Cat Synergy"
             },
             display() {
                 return 'which are boosting dotknight points by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Kres Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Cat Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -171,11 +171,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres XP"
+                return "Cat XP"
             },
             display() {
                 return 'which are boosting check back XP gain by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Kres Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Cat Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -205,11 +205,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Kres Fragmentation"
+                return "Cat Fragmentation"
             },
             display() {
                 return 'which are dividing fragmentation cooldowns by /' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Kres Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Cat Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -403,8 +403,8 @@ addLayer("sp", {
                 return "Capacity Increaser (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/999)"
             },
             display() {
-                return 'which are boosting sel point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Sel Points'
+                return 'which are boosting oxygen point capacity by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
+                    Cost: ' + formatSimple(tmp[this.layer].buyables[this.id].cost) + ' Oxygen Points'
             },
             buy() {
                 this.pay()
@@ -427,11 +427,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel Agility"
+                return "Oxygen Agility"
             },
             display() {
                 return 'which are boosting black heart agility by +' + formatWhole(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Sel Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Oxygen Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -461,11 +461,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel Synergy"
+                return "Oxygen Synergy"
             },
             display() {
                 return 'which are boosting cookies by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Sel Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Oxygen Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -495,11 +495,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel XPBoost"
+                return "Oxygen XPBoost"
             },
             display() {
                 return 'which are boosting XPBoost gain by x' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Sel Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Oxygen Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -529,11 +529,11 @@ addLayer("sp", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Sel XPBoost Cooldown"
+                return "Oxygen XPBoost Cooldown"
             },
             display() {
                 return 'which are dividing XPBoost button cooldown by /' + format(tmp[this.layer].buyables[this.id].effect) + '.\n\
-                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Sel Points'
+                    Cost: ' + format(tmp[this.layer].buyables[this.id].cost) + ' Oxygen Points'
             },
             buy(mult) {
                 if (mult != true) {
@@ -555,15 +555,15 @@ addLayer("sp", {
     },
     microtabs: {
         stuff: {
-            "Kres": {
-                title() {return "Kres<br><small>(" + formatSimple(player.sp.kresPoints, 2) + "/" + formatWhole(player.sp.kresPointsMax) + ")</small>"},
+            "Cat": {
+                title() {return "Cat<br><small>(" + formatSimple(player.sp.kresPoints, 2) + "/" + formatWhole(player.sp.kresPointsMax) + ")</small>"},
                 buttonStyle() { return {color: "white", background: "#910a27", borderColor: "rgba(0,0,0,0.5)", borderRadius: "5px"}},
                 unlocked() { return getLevelableAmount("pet", 404).gte(1) || getLevelableTier("pet", 404).gte(1)},
                 content: [
                     ["blank", "10px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.kresPoints, 2) + "/" + formatWhole(player.sp.kresPointsMax) + "</h3> kres points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.kresPointsPerSecond) + "</h3> kres points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.kresPoints, 2) + "/" + formatWhole(player.sp.kresPointsMax) + "</h3> cat points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.kresPointsPerSecond) + "</h3> cat points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                         ["blank", "20px"],
                         ["buyable", 11],
                         ["blank", "20px"],
@@ -587,15 +587,15 @@ addLayer("sp", {
                     ], {width: "700px", height: "550px", background: "#21032b", border: "3px solid white", borderRadius: "20px"}],
                 ],
             },
-            "Sel": {
-                title() {return "Sel<br><small>(" + formatSimple(player.sp.selPoints, 2) + "/" + formatWhole(player.sp.selPointsMax) + ")</small>"},
+            "Oxygen": {
+                title() {return "Oxygen<br><small>(" + formatSimple(player.sp.selPoints, 2) + "/" + formatWhole(player.sp.selPointsMax) + ")</small>"},
                 buttonStyle() { return {color: "white", background: "#065c19", borderColor: "rgba(0,0,0,0.5)", borderRadius: "5px"}},
                 unlocked() { return getLevelableAmount("pet", 406).gte(1) || getLevelableTier("pet", 406).gte(1)},
                 content: [
                     ["blank", "10px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.selPoints, 2) + "/" + formatWhole(player.sp.selPointsMax) + "</h3> sel points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.selPointsPerSecond) + "</h3> sel points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatSimple(player.sp.selPoints, 2) + "/" + formatWhole(player.sp.selPointsMax) + "</h3> oxygen points."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You are gaining <h3>" + format(player.sp.selPointsPerSecond) + "</h3> oxygen points per second. (based on level/ascension)"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                         ["blank", "20px"],
                         ["buyable", 31],
                         ["blank", "20px"],

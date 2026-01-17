@@ -1,6 +1,6 @@
 ﻿addLayer("ma", {
-    name: "Matos, Celestial of Machinery", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "⊘", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Domain, Celestial of Silliness", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "🇭", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "U3",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -142,7 +142,7 @@
             color: "rgb(0, 0, 0)",
         };
     },
-    tooltip: "Matos, Celestial of Machinery",
+    tooltip: "Domain, Celestial of Silliness",
     branches: ["sma",],
     color: "#8a0e79",
     update(delta) {
@@ -393,7 +393,7 @@
                 if (player.ma.curseSpellDuration.gt(0)) {
                     player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: hsl(308, 81.70%, 30.00%);'>The " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite is cursed, dealing " + format(damage) + " self damage.");
-                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: rgb(139, 14, 52);'>Matos is cursed, dealing " + format(damage) + " self damage.");
+                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: rgb(139, 14, 52);'>Domain is cursed, dealing " + format(damage) + " self damage.");
                     if (player.ma.cursedCelestialite) {
                         // 30% chance to reflect damage to attacker
                         if (Math.random() < 0.3) {
@@ -409,7 +409,7 @@
                 if (player.ma.shieldDuration.lte(0)) {
                     player.ma.health[character] = player.ma.health[character].sub(damage);
                     if (player.ma.currentCelestialiteType != 25) {logPrint("<span style='color: #8b0e7a'>The " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite attacks " + player.ma.characterNames[character] + " for " +format(damage) + " damage.")}
-                    if (player.ma.currentCelestialiteType == 25) {logPrint("<span style='color: #8b0e34'>Matos attacks " + player.ma.characterNames[character] + " for " +format(damage) + " damage.")}
+                    if (player.ma.currentCelestialiteType == 25) {logPrint("<span style='color: #8b0e34'>Domain attacks " + player.ma.characterNames[character] + " for " +format(damage) + " damage.")}
                 } else {
                     if (player.ma.currentCelestialiteType != 25) {logPrint("<span style='color: #8b0e7a'>Shield blocked damage towards " + player.ma.characterNames[character] + ".</span>")}
                     if (player.ma.currentCelestialiteType == 25) {logPrint("<span style='color: #8b0e34'>Shield blocked damage towards " + player.ma.characterNames[character] + ".</span>")}
@@ -423,7 +423,7 @@
         }
         if (player.ma.celestialiteHealth.lt(0) && player.ma.currentCelestialiteType != 25) {
             if (player.ma.currentCelestialiteType != 25) logPrint("The " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite died!")
-            if (player.ma.currentCelestialiteType == 25) logPrint("Matos has been defeated!")
+            if (player.ma.currentCelestialiteType == 25) logPrint("Domain has been defeated!")
 
             layers.ma.lootCelestialite()
             player.ma.celestialiteHealth = new Decimal(0)
@@ -882,7 +882,7 @@
             style: {width: "200px", minHeight: "80px", background: "black", border: "3px solid #8a0e79", borderRadius: "15px"},
         },
         4: {
-            title() { return "<h2>" + player.ma.matosUnlockConditionCount + "/4<br><h1 style='font-size: 80px;'>⊘</h1>" }, // Increased font size
+            title() { return "<h2>" + player.ma.matosUnlockConditionCount + "/4<br><h1 style='font-size: 80px;'>🇭</h1>" }, // Increased font size
             canClick() { return player.ma.matosUnlockConditions[0] && player.ma.matosUnlockConditions[1] && player.ma.matosUnlockConditions[2] && player.ma.matosUnlockConditions[3] },
             unlocked() { return true },
             onClick() {
@@ -1178,7 +1178,7 @@
             },
         },
         22: {
-            title() {return player.ma.matosToggle ? "<small>Matos Toggle</small><br>ON" : "<small>Matos Toggle</small><br>OFF"},
+            title() {return player.ma.matosToggle ? "<small>Domain Toggle</small><br>ON" : "<small>Domain Toggle</small><br>OFF"},
             canClick: true,
             unlocked() { return player.ma.matosDefeated },
             onClick() {
@@ -1247,7 +1247,7 @@
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.gt(0) && player.ma.shieldCelestialite) player.ma.shieldHealth = player.ma.shieldHealth.sub(damage);
                     if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Cat attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat attacks Domain for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[0] = player.ma.cooldown[0];
                 
@@ -1283,7 +1283,7 @@
                 if (player.ma.currentCelestialiteType != 5) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #710a91;'>Teardrop attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #710a91;'>Teardrop attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #710a91;'>Teardrop attacks Domain for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[1] = player.ma.cooldown[1];
 
@@ -1319,7 +1319,7 @@
                 if (player.ma.currentCelestialiteType != 5) {
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #065c19;'>Oxygen attacks the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #065c19;'>Oxygen attacks Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #065c19;'>Oxygen attacks Domain for " + format(damage) + " damage.</span>");
                 }
                 player.ma.attackTimer[2] = player.ma.cooldown[2];
 
@@ -1362,7 +1362,7 @@
                     if (player.ma.shieldHealth.lte(0)) player.ma.celestialiteHealth = player.ma.celestialiteHealth.sub(damage);
                     if (player.ma.shieldHealth.gt(0) && player.ma.shieldCelestialite) player.ma.shieldHealth = player.ma.shieldHealth.sub(damage);
                     if (player.ma.currentCelestialiteType != 25) logPrint("<span style='color: #910a27;'>Cat BIG ATTACKS the " + player.ma.celestialiteNames[player.ma.currentCelestialiteType] + " Celestialite for " + format(damage) + " damage.</span>");
-                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat BIG ATTACKS Matos for " + format(damage) + " damage.</span>");
+                    if (player.ma.currentCelestialiteType == 25) logPrint("<span style='color: #910a27;'>Cat BIG ATTACKS Domain for " + format(damage) + " damage.</span>");
                 }
         
                 // Apply self-damage to Kres
@@ -1481,7 +1481,7 @@
                             `<span style='color: #065c19;'>Oxygen's turret attacks the ${player.ma.celestialiteNames[player.ma.currentCelestialiteType]} Celestialite for ${format(turretDamage)} damage.</span>`
                         );
                         if (player.ma.shieldHealth.lte(0) && player.ma.currentCelestialiteType == 25) logPrint(
-                            `<span style='color: #065c19;'>Oxygen's turret attacks Matos for ${format(turretDamage)} damage.</span>`
+                            `<span style='color: #065c19;'>Oxygen's turret attacks Domain for ${format(turretDamage)} damage.</span>`
                         );
                         if (player.ma.cursedCelestialite) {
                             // 30% chance to reflect damage to attacker
@@ -1926,63 +1926,63 @@
             if (random < 0.7) {
                 let gain = Decimal.add(8, getRandomInt(5)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 1) {
             if (random < 0.7) {
                 let gain = Decimal.add(5, getRandomInt(8)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(1, getRandomInt(2)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 2) {
             if (random < 0.5) {
                 let gain = Decimal.add(9, getRandomInt(8)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(2, getRandomInt(2)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 3) {
             if (random < 0.6) {
                 let gain = Decimal.add(9, getRandomInt(8)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.6 && random < 0.9) {
                 let gain = Decimal.add(3, getRandomInt(3)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 4) {
             if (random < 0.4) {
                 let gain = Decimal.add(12, getRandomInt(7)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.4 && random < 0.85) {
                 let gain = Decimal.add(4, getRandomInt(3)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             }
 
             if (!player.ma.secondAreaUnlock) {
@@ -1995,318 +1995,318 @@
             if (random < 0.5) {
                 let gain = Decimal.add(18, getRandomInt(12)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.5 && random < 0.8) {
                 let gain = Decimal.add(6, getRandomInt(4)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.8 && random < 0.98) {
                 let gain = Decimal.add(1, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 7) {
             if (random < 0.45) {
                 let gain = Decimal.add(22, getRandomInt(8)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.45 && random < 0.85) {
                 let gain = Decimal.add(7, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.85 && random < 0.985) {
                 let gain = Decimal.add(2, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 8) {
             if (random < 0.3) {
                 let gain = Decimal.add(30, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.30 && random < 0.5) {
                 let gain = Decimal.add(15, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.5 && random < 0.85) {
                 let gain = Decimal.add(1).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 9) {
             if (random < 0.3) {
                 let gain = Decimal.add(22, getRandomInt(8)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.3 && random < 0.8) {
                 let gain = Decimal.add(5, getRandomInt(7)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.8 && random < 0.97) {
                 let gain = Decimal.add(1, getRandomInt(3)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 10) {
             if (random < 0.1) {
                 let gain = Decimal.add(44, getRandomInt(22)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.1 && random < 0.6) {
                 let gain = Decimal.add(3, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.6 && random < 0.98) {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 11) {
             if (random < 0.4) {
                 let gain = Decimal.add(20, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.4 && random < 0.7) {
                 let gain = Decimal.add(10, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.7 && random < 0.85) {
                 let gain = Decimal.add(1, getRandomInt(3)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 12) {
             if (random < 0.5) {
                 let gain = Decimal.add(15, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.5 && random < 0.9) {
                 let gain = Decimal.add(7, getRandomInt(3)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.9 && random < 0.97) {
                 let gain = Decimal.add(3, getRandomInt(3)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 13) {
             if (random < 0.4) {
                 let gain = Decimal.add(25, getRandomInt(15)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.4 && random < 0.8) {
                 let gain = Decimal.add(9, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.8 && random < 0.94) {
                 let gain = Decimal.add(2, getRandomInt(3)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 14) {
             if (random < 0.2) {
                 let gain = Decimal.add(40, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.2 && random < 0.7) {
                 let gain = Decimal.add(10, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.7 && random < 0.85) {
                 let gain = Decimal.add(1, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 15) { //stealthy
             if (random < 0.4) {
                 let gain = Decimal.add(15, getRandomInt(10)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.4 && random < 0.85) {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 16) { 
             if (random < 0.6) {
                 let gain = Decimal.add(10, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.6 && random < 0.95) {
                 let gain = Decimal.add(2, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 17) { 
             if (random < 0.5) {
                 let gain = Decimal.add(5, getRandomInt(15)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.5 && random < 0.8) {
                 let gain = Decimal.add(2, getRandomInt(3)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 18) { //cursed
             if (random < 0.85) {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 19) {
             if (random < 0.75) {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 20) { 
             if (random < 0.75) {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 21) { //explosive
             if (random < 0.3) {
                 let gain = Decimal.add(45, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.30 && random < 0.5) {
                 let gain = Decimal.add(18, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.5 && random < 0.85) {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 22) { 
             if (random < 0.4) {
                 let gain = Decimal.add(25, getRandomInt(15)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.4 && random < 0.7) {
                 let gain = Decimal.add(15, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.7 && random < 0.85) {
                 let gain = Decimal.add(2, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else  {
                 let gain = new Decimal(1).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 23) { 
             if (random < 0.2) {
                 let gain = Decimal.add(45, getRandomInt(15)).mul(player.ma.matosFragmentMult[0])
                 player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain)
-                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+                logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             } else if (random > 0.2 && random < 0.7) {
                 let gain = Decimal.add(15, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
                 player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain)
-                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+                logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             } else if (random > 0.7 && random < 0.85) {
                 let gain = Decimal.add(2, getRandomInt(2)).mul(player.ma.matosFragmentMult[2])
                 player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain)
-                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+                logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             } else {
                 let gain = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[3])
                 player.ma.legendaryMatosFragments = player.ma.legendaryMatosFragments.add(gain)
-                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary matos fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
+                logPrint("<span style='color: #eed200;'>You gained " + formatWhole(gain) + " legendary Domain fragments! (You have " + formatWhole(player.ma.legendaryMatosFragments) + ").")
             }
         }
         if (player.ma.currentCelestialiteType == 24) { //omega
             let gain1 = Decimal.add(25, getRandomInt(10)).mul(player.ma.matosFragmentMult[0])
             player.ma.commonMatosFragments = player.ma.commonMatosFragments.add(gain1)
-            logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain1) + " common matos fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
+            logPrint("<span style='color: #9bedff;'>You gained " + formatWhole(gain1) + " common Domain fragments! (You have " + formatWhole(player.ma.commonMatosFragments) + ").")
             let gain2 = Decimal.add(10, getRandomInt(5)).mul(player.ma.matosFragmentMult[1])
             player.ma.rareMatosFragments = player.ma.rareMatosFragments.add(gain2)
-            logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain2) + " rare matos fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
+            logPrint("<span style='color: #4e7cff;'>You gained " + formatWhole(gain2) + " rare Domain fragments! (You have " + formatWhole(player.ma.rareMatosFragments) + ").")
             let gain3 = Decimal.add(1, getRandomInt(1)).mul(player.ma.matosFragmentMult[2])
             player.ma.epicMatosFragments = player.ma.epicMatosFragments.add(gain3)
-            logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain3) + " epic matos fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
+            logPrint("<span style='color: #cb79ed;'>You gained " + formatWhole(gain3) + " epic Domain fragments! (You have " + formatWhole(player.ma.epicMatosFragments) + ").")
             if (player.ma.omegaCelestialitesKilled.lte(5) && player.ma.matosToggle) {
                 player.ma.omegaCelestialitesKilled = player.ma.omegaCelestialitesKilled.add(1)
                 logPrint("<span style='color: white;'>You killed " + formatWhole(player.ma.omegaCelestialitesKilled) + "/5 omega celestialites...")
@@ -2726,7 +2726,7 @@
             description: "Unlock Cat's second skill.",
             cost: new Decimal("300"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Common Matos Fragments",
+            currencyDisplayName: "Common Domain Fragments",
             currencyInternalName: "commonMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #4d767f", borderRadius: "15px", margin: "2px"}
@@ -2740,7 +2740,7 @@
             description: "Unlock Teardrop's second skill.",
             cost: new Decimal("80"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Rare Matos Fragments",
+            currencyDisplayName: "Rare Domain Fragments",
             currencyInternalName: "rareMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #273e7f", borderRadius: "15px", margin: "2px"}
@@ -2754,7 +2754,7 @@
             description: "Unlock Oxygen's second skill.",
             cost: new Decimal("5"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Epic Matos Fragments",
+            currencyDisplayName: "Epic Domain Fragments",
             currencyInternalName: "epicMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #653c76", borderRadius: "15px", margin: "2px"}
@@ -2768,7 +2768,7 @@
             description: "Gain 100% of time cubes per second.",
             cost: new Decimal("12"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Epic Matos Fragments",
+            currencyDisplayName: "Epic Domain Fragments",
             currencyInternalName: "epicMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #653c76", borderRadius: "15px", margin: "2px"}
@@ -2783,7 +2783,7 @@
             description: "Cat's pet level/ascension increases chance to not take self-damage.",
             cost: new Decimal("500"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Common Matos Fragments",
+            currencyDisplayName: "Common Domain Fragments",
             currencyInternalName: "commonMatosFragments",
             effect() {
                 let amt = getLevelableAmount("pet", 404).add(getLevelableTier("pet", 404).mul(5).min(40))
@@ -2802,7 +2802,7 @@
             description: "Teardrop's pet level/ascension increases chance to heal between celestialites.",
             cost: new Decimal("300"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Rare Matos Fragments",
+            currencyDisplayName: "Rare Domain Fragments",
             currencyInternalName: "rareMatosFragments",
             effect() {
                 let amt = getLevelableAmount("pet", 405).add(getLevelableTier("pet", 405).mul(5).min(40))
@@ -2821,7 +2821,7 @@
             description: "Oxygen's pet level/ascension increases chance to double celestialite rewards.",
             cost: new Decimal("16"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Epic Matos Fragments",
+            currencyDisplayName: "Epic Domain Fragments",
             currencyInternalName: "epicMatosFragments",
             effect() {
                 let amt = getLevelableAmount("pet", 406).add(getLevelableTier("pet", 406).mul(5).min(40))
@@ -2840,7 +2840,7 @@
             description: "Unlock new buyables in the stats tab.",
             cost: new Decimal("200"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Rare Matos Fragments",
+            currencyDisplayName: "Rare Domain Fragments",
             currencyInternalName: "rareMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #273e7f", borderRadius: "15px", margin: "2px"}
@@ -2854,7 +2854,7 @@
             description: "Buff the antimatter formula by ^20.",
             cost: new Decimal("1000"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Common Matos Fragments",
+            currencyDisplayName: "Common Domain Fragments",
             currencyInternalName: "commonMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #4d767f", borderRadius: "15px", margin: "2px"}
@@ -2868,7 +2868,7 @@
             description: "Replicanti can go beyond 1e308, but is heavily softcapped.",
             cost: new Decimal("15"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Epic Matos Fragments",
+            currencyDisplayName: "Epic Domain Fragments",
             currencyInternalName: "epicMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #653c76", borderRadius: "15px", margin: "2px"}
@@ -2882,7 +2882,7 @@
             description: "Boost linking power based on singularity points.",
             cost: new Decimal("400"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Rare Matos Fragments",
+            currencyDisplayName: "Rare Domain Fragments",
             currencyInternalName: "rareMatosFragments",
             effect() {
                 return player.s.singularityPoints.add(1).log10().add(1).pow(1.2)
@@ -2900,7 +2900,7 @@
             description: "Unlock Cat's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Legendary Matos Fragments",
+            currencyDisplayName: "Legendary Domain Fragments",
             currencyInternalName: "legendaryMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #776900", borderRadius: "15px", margin: "2px"}
@@ -2914,7 +2914,7 @@
             description: "Unlock Teardrop's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Legendary Matos Fragments",
+            currencyDisplayName: "Legendary Domain Fragments",
             currencyInternalName: "legendaryMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #776900", borderRadius: "15px", margin: "2px"}
@@ -2928,7 +2928,7 @@
             description: "Unlock Oxygen's third skill.",
             cost: new Decimal("1"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Legendary Matos Fragments",
+            currencyDisplayName: "Legendary Domain Fragments",
             currencyInternalName: "legendaryMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #776900", borderRadius: "15px", margin: "2px"}
@@ -2942,7 +2942,7 @@
             description: "Unlock more buyables in the buyables tab.",
             cost: new Decimal("2"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Legendary Matos Fragments",
+            currencyDisplayName: "Legendary Domain Fragments",
             currencyInternalName: "legendaryMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #776900", borderRadius: "15px", margin: "2px"}
@@ -2956,7 +2956,7 @@
             description: "Unlock the third (and final) depth layer.",
             cost: new Decimal("5"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Legendary Matos Fragments",
+            currencyDisplayName: "Legendary Domain Fragments",
             currencyInternalName: "legendaryMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #776900", borderRadius: "15px", margin: "2px"}
@@ -2970,7 +2970,7 @@
             description: "Unlocks health regen buyables (in buyable tab).",
             cost: new Decimal("40"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Epic Matos Fragments",
+            currencyDisplayName: "Epic Domain Fragments",
             currencyInternalName: "epicMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #653c76", borderRadius: "15px", margin: "2px"}
@@ -2984,7 +2984,7 @@
             description: "Singularity gain is boosted based on SP gain.",
             cost: new Decimal("2000"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Common Matos Fragments",
+            currencyDisplayName: "Common Domain Fragments",
             currencyInternalName: "commonMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #4d767f", borderRadius: "15px", margin: "2px"}
@@ -2995,10 +2995,10 @@
         30: {
             title: "Fragmented Colors",
             unlocked: true,
-            description: "Boost realm essence based on matos fragments.",
+            description: "Boost realm essence based on Domain fragments.",
             cost: new Decimal("800"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Rare Matos Fragments",
+            currencyDisplayName: "Rare Domain Fragments",
             currencyInternalName: "rareMatosFragments",
             effect() {
                 let amt = player.ma.commonMatosFragments.add(1).mul(player.ma.rareMatosFragments.add(1)).mul(player.ma.epicMatosFragments.add(1)).mul(player.ma.legendaryMatosFragments.add(1))
@@ -3019,7 +3019,7 @@
             description: "Unlock combo milestones.",
             cost: new Decimal("3500"),
             currencyLocation() { return player.ma },
-            currencyDisplayName: "Common Matos Fragments",
+            currencyDisplayName: "Common Domain Fragments",
             currencyInternalName: "commonMatosFragments",
             style() {
                 let look = {color: "rgba(0,0,0,0.8)", border: "3px solid #4d767f", borderRadius: "15px", margin: "2px"}
@@ -3146,7 +3146,7 @@
             },
             display() {
                 return "which are boosting all characters' health by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3180,7 +3180,7 @@
             },
             display() {
                 return "which are boosting all characters' damage by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3214,7 +3214,7 @@
             },
             display() {
                 return "which are dividing all characters' cooldowns by /" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3248,7 +3248,7 @@
             },
             display() {
                 return "which are boosting singularity point gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Common Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3282,7 +3282,7 @@
             },
             display() {
                 return "which are boosting infinity points by x" + format(tmp[this.layer].buyables[this.id].effect) + ". (affected by infinity points)\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3319,7 +3319,7 @@
             },
             display() {
                 return "which are post-otf U1 currencies by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3353,7 +3353,7 @@
             },
             display() {
                 return "which are boosting starmetal alloy gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3387,7 +3387,7 @@
             },
             display() {
                 return "which are boosting normality gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Rare Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3421,7 +3421,7 @@
             },
             display() {
                 return "which are boosting star gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3455,7 +3455,7 @@
             },
             display() {
                 return "which are boosting star power gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3489,7 +3489,7 @@
             },
             display() {
                 return "which are adding +" + formatSimple(tmp[this.layer].buyables[this.id].effect.sub(1)) + " to the check back XP button ESC multiplier.\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3523,7 +3523,7 @@
             },
             display() {
                 return "which are multiplying check back crate roll chance by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Epic Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3558,7 +3558,7 @@
             },
             display() {
                 return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Cat.\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3592,7 +3592,7 @@
             },
             display() {
                 return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Teardrop.\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3626,7 +3626,7 @@
             },
             display() {
                 return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Oxygen.\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3660,7 +3660,7 @@
             },
             display() {
                 return "which are providing " + format(tmp[this.layer].buyables[this.id].effect) + " health regen to Eclipse.\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Matos Fragments"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Legendary Domain Fragments"
             },
             buy(mult) {
                 if (mult != true) {
@@ -3966,7 +3966,7 @@
         },
         108: {
             requirementDescription: "<h3>450 Depth 1 Combo",
-            effectDescription: "Double legendary matos fragment gain.",
+            effectDescription: "Double legendary Domain fragment gain.",
             done() { return player.ma.bestComboDepth1.gte(450) && hasUpgrade("ma", 31)},
             style: {boxSizing: "border-box", width: '585px', height: "60px", border: "5px solid rgba(0,0,0,0.5)", borderRadius: "0px", marginBottom: "-5px"},
         },
@@ -4022,7 +4022,7 @@
         },
         208: {
             requirementDescription: "<h3>450 Depth 2 Combo",
-            effectDescription: "Double legendary matos fragment gain.",
+            effectDescription: "Double legendary Domain fragment gain.",
             done() { return player.ma.bestComboDepth2.gte(450) && hasUpgrade("ma", 31)},
             style: {boxSizing: "border-box", width: '585px', height: "60px", border: "5px solid rgba(0,0,0,0.5)", borderRadius: "0px", marginBottom: "-5px"},
         },
@@ -4078,7 +4078,7 @@
         },
         308: {
             requirementDescription: "<h3>450 Depth 3 Combo",
-            effectDescription: "Double legendary matos fragment gain.",
+            effectDescription: "Double legendary Domain fragment gain.",
             done() { return player.ma.bestComboDepth3.gte(450) && hasUpgrade("ma", 31)},
             style: {boxSizing: "border-box", width: '585px', height: "60px", border: "5px solid rgba(0,0,0,0.5)", borderRadius: "0px", marginBottom: "-5px"},
         },
@@ -4104,7 +4104,7 @@
         },
         mystery2: {
             title: "Secret Message II",
-            body() { return "There once was a civilization here a long time ago. We built large cities, filled to the brim with factories. The rich managed to live a comfortable lifestyle while a majority of the population suffered. I ruled that civilization once. I was the civilization's last leader. I thought that giving offerings to the celestials would bring us peace and prosperity. That was a lie. One day, everything changed. A celestial was born in our universe. It was Matos. Matos had been fueled by a deep sense of hatred and anger. He attacked our civilization using large beams of energy, powered by singularity cores. This resulted in the extinction of humanity." },
+            body() { return "There once was a civilization here a long time ago. We built large cities, filled to the brim with factories. The rich managed to live a comfortable lifestyle while a majority of the population suffered. I ruled that civilization once. I was the civilization's last leader. I thought that giving offerings to the celestials would bring us peace and prosperity. That was a lie. One day, everything changed. A celestial was born in our universe. It was Domain. Domain had been fueled by a deep sense of hatred and anger. He attacked our civilization using large beams of energy, powered by singularity cores. This resulted in the extinction of humanity." },
             unlocked() { return player.pet.levelables[501][0].gte(2)},
             style: { "color": "rgb(245, 255, 104)" }
         },
@@ -4212,17 +4212,17 @@
                     ["style-column", [
                         ["raw-html", () => {return "Depth 1 highest combo: " + formatWhole(player.ma.bestComboDepth1) + " kills"}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "Boosts IP gain by x" + format(player.ma.bestComboDepth1Effect)}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return hasMilestone("ma", 102) ? "Boosts common matos fragment gain by x" + formatShort(player.ma.bestComboDepth1Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return hasMilestone("ma", 102) ? "Boosts common Domain fragment gain by x" + formatShort(player.ma.bestComboDepth1Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
 
                         ["style-row", [], () => {return player.ma.secondAreaUnlock ? {width: "600px", height: "5px"} : {display: "none !important"}}],
                         ["raw-html", () => {return player.ma.secondAreaUnlock ? "Depth 2 highest combo: " + formatWhole(player.ma.bestComboDepth2) + " kills" : "" }, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", () => {return player.ma.secondAreaUnlock ? "Boosts NIP gain by x" + format(player.ma.bestComboDepth2Effect) : "" }, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return hasMilestone("ma", 202) ? "Boosts rare matos fragment gain by x" + formatShort(player.ma.bestComboDepth2Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return hasMilestone("ma", 202) ? "Boosts rare Domain fragment gain by x" + formatShort(player.ma.bestComboDepth2Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                         
                         ["style-row", [], () => {return hasUpgrade("ma", 27) ? {width: "600px", height: "5px"} : {display: "none !important"}}],
                         ["raw-html", () => {return hasUpgrade("ma", 27) ? "Depth 3 highest combo: " + formatWhole(player.ma.bestComboDepth3) + " kills" : "" }, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", () => {return hasUpgrade("ma", 27) ? "Boosts SP gain by x" + format(player.ma.bestComboDepth3Effect) : "" }, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return hasMilestone("ma", 302) ? "Boosts epic matos fragment gain by x" + formatShort(player.ma.bestComboDepth3Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return hasMilestone("ma", 302) ? "Boosts epic Domain fragment gain by x" + formatShort(player.ma.bestComboDepth3Effect2) : ""}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                     ], {width: "600px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px", paddingTop: "10px", paddingBottom: "10px"}],
                     ["blank", "25px"],
                     ["microtabs", "combo", {borderWidth: "0px"}],
@@ -4241,7 +4241,7 @@
                 content: [
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", "Perks for defeating Matos", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", "Perks for defeating Domain", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "1000px", border: "3px solid rgb(27, 0, 36)", backgroundImage: "linear-gradient(120deg, #8a0e79 0%, #a80c33 100%)", borderBottom: "5px", paddingTop: "5px", paddingBottom: "5px", borderRadius: "15px 15px 0px 0px"}],
                     ["style-column", [
                         ["raw-html", () => { return "Downside: You can no longer fuel cores, and all your cores are destroyed." }, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
@@ -4493,10 +4493,10 @@
                     ["row", [["clickable", 12]]],
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common matos fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare matos fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic matos fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary matos fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common Domain fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare Domain fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic Domain fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary Domain fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
                     ], {width: "500px", height: "110px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
                 ],  
             },
@@ -4508,15 +4508,15 @@
                     ["style-column", [
                         ["raw-html", "You won.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", "Here are your winnings:", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(700, player.ma.matosFragmentMult[0])) + " common matos fragments."}, {color: "#9bedff", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(300, player.ma.matosFragmentMult[1])) + " rare matos fragments."}, {color: "#4e7cff", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(50, player.ma.matosFragmentMult[2])) + " epic matos fragments."}, {color: "#cb79ed", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(5, player.ma.matosFragmentMult[3])) + " legendary matos fragments."}, {color: "#eed200", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(700, player.ma.matosFragmentMult[0])) + " common Domain fragments."}, {color: "#9bedff", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(300, player.ma.matosFragmentMult[1])) + " rare Domain fragments."}, {color: "#4e7cff", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(50, player.ma.matosFragmentMult[2])) + " epic Domain fragments."}, {color: "#cb79ed", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "+" + formatShortestWhole(Decimal.mul(5, player.ma.matosFragmentMult[3])) + " legendary Domain fragments."}, {color: "#eed200", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "600px", height: "180px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", "Don't forget to check the new tab in the Matos layer for extra rewards.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                        ["raw-html", "Matos is dead, but we can use simulations so you can refight him.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", "Don't forget to check the new tab in the Domain layer for extra rewards.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", "Domain is dead, but we can use simulations so you can refight him.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                         ["raw-html", "Also, a lot of things have changed around here. Good luck.", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "800px", height: "180px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
                     ["blank", "25px"],
@@ -4531,10 +4531,10 @@
                 content: [
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common matos fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare matos fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic matos fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary matos fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common Domain fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare Domain fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic Domain fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary Domain fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
                     ], {width: "500px", height: "110px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
                     ["blank", "25px"],
                     ["style-row", [
@@ -4551,10 +4551,10 @@
                 content: [
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common matos fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare matos fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic matos fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
-                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary matos fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.commonMatosFragments) + "</h3> common Domain fragments."}, {color: "#9bedff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.rareMatosFragments) + "</h3> rare Domain fragments."}, {color: "#4e7cff", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.epicMatosFragments) + "</h3> epic Domain fragments."}, {color: "#cb79ed", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have <h3>" + formatShortWhole(player.ma.legendaryMatosFragments) + "</h3> legendary Domain fragments."}, {color: "#eed200", fontSize: "16px", fontFamily: "monospace"}],
                     ], {width: "500px", height: "110px", backgroundColor: "#1b0218", border: "3px solid #8a0e79", borderRadius: "20px"}],
                     ["blank", "25px"],
                         ["row", [ // Common

@@ -29,7 +29,7 @@
             "Gatekeeper, the Celestial of Gates",
             "Cookie, the Celestial of NG+",
             "smileyfr, the Celestial of fr",
-            "Matos, the Celestial of Machinery",
+            "Domain, the Celestial of Silliness",
             "Iridite, the Astral Celestial",
             "Aleph, the Celestial of Swarms",
             "Tera, the Celestial of Tiers",
@@ -70,10 +70,10 @@
             branches: [12],
         },
         14: {
-            title() { return player.ma.matosDefeated ? "<h1>⊘" : "<h1>?" },
+            title() { return player.ma.matosDefeated ? "<h1>🇭" : "<h1>?" },
             canClick() { return player.ma.matosDefeated },
             unlocked() { return true },
-            tooltip() { return player.ma.matosDefeated ? "Matos, the Celestial of Machinery" : "" },
+            tooltip() { return player.ma.matosDefeated ? "Domain, the Celestial of Silliness" : "" },
             onClick() {
                 player.ch.celestialIndex = new Decimal(3)
             },
@@ -208,7 +208,7 @@
             unlocked() { return player.ch.celestialIndex.eq(2) },      
         },
         4: {
-            title: "Matos, the Celestial of Machinery",
+            title: "Domain, the Celestial of Machinery",
             body() { return "placeholder" },
             unlocked() { return player.ch.celestialIndex.eq(3) },      
         },
