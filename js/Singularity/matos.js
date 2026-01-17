@@ -996,7 +996,7 @@
             onClick() {
                 player.ma.inBlackHeart = false
 
-                player.subtabs["ma"]["stuff"] = "Black Heart"
+                player.subtabs["ma"]["stuff"] = "NG+ Heart"
 
                 pauseUniverse("U1", "unpause", true)
                 pauseUniverse("UA", "unpause", true)
@@ -4202,7 +4202,7 @@
                     ["row", [["ex-buyable", 104]]],
                 ]
             },
-            "Black Heart": {
+            "NG+ Heart": {
                 buttonStyle: {color: "white", borderRadius: "15px"},
                 unlocked() { return player.ma.matosUnlock && !player.ma.inBlackHeart },
                 content: [
