@@ -589,7 +589,7 @@
         15: {
             costBase() { return new Decimal(0.001) },
             costGrowth() { return new Decimal(1.001) },
-            purchaseLimit() { return new Decimal(1e9) },
+            purchaseLimit() { return new Decimal(1e3) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -626,7 +626,7 @@
         16: {
             costBase() { return new Decimal(0.001) },
             costGrowth() { return new Decimal(1.000001) },
-            purchaseLimit() { return new Decimal(1e33) },
+            purchaseLimit() { return new Decimal(1e3) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
@@ -663,7 +663,7 @@
         17: {
             costBase() { return new Decimal(0.001) },
             costGrowth() { return new Decimal(1.000000001) },
-            purchaseLimit() { return new Decimal(1.79e308) },
+            purchaseLimit() { return new Decimal(1e3) },
             currency() { return player.points},
             pay(amt) { player.points = this.currency().sub(amt) },
             effect(x) {
