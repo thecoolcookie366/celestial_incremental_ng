@@ -166,7 +166,7 @@
 
         player.ro.rocketCooldown = player.ro.rocketCooldown.sub(onepersec.mul(delta))
 
-        player.ro.rocketCooldownMax = [new Decimal(300), new Decimal(1200)]
+        player.ro.rocketCooldownMax = [new Decimal(10), new Decimal(30)]
     },
     starReset() {
         clickClickable("co", 1000)
