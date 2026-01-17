@@ -94,17 +94,17 @@
 
         player.po.featureSlots = player.po.featureSlotsMax
         if (player.po.dice) {
-            player.po.featureSlots = player.po.featureSlots.add(1)
+            player.po.featureSlots = player.po.featureSlots.sub(1)
         }
         if (player.po.rocketFuel) {
-            player.po.featureSlots = player.po.featureSlots.add(1)
+            player.po.featureSlots = player.po.featureSlots.sub(1)
         }
         if (player.po.hex && !hasUpgrade("s", 18)) {
-            player.po.featureSlots = player.po.featureSlots.add(1)
+            player.po.featureSlots = player.po.featureSlots.sub(1)
         }
         if (player.po.breakInfinity) {
             player.in.breakInfinity = true
-            player.po.featureSlots = player.po.featureSlots.add(1)
+            player.po.featureSlots = player.po.featureSlots.sub(1)
         } else {
             player.in.breakInfinity = false
         }
@@ -211,7 +211,7 @@
             display() {
                 return player.po.dice ? "<h1>The die will decide your fate.<br>On" : "<h1>The die will decide your fate.<br>Off<br><h2>Req: 1e150 points";
             },
-            canClick() { return player.po.featureSlots.gte(1) && player.points.gte(1e150) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15)) },
+            canClick() { return player.po.featureSlots.gte(-10) && player.points.gte(1e150) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15)) },
             unlocked() { return !inChallenge("ip", 11) && !inChallenge("ip", 13) && !inChallenge("ip", 15) && !inChallenge("ip", 16) },
             onClick() {
                 if (!hasAchievement("achievements", 19)) completeAchievement("achievements", 19)
@@ -231,7 +231,7 @@
             display() {
                 return player.po.rocketFuel ? "<h1>Fly me to the moon.<br>On" : "<h1>Fly me to the moon.<br>Off<br><h2>Req: 1e170 points";
             },
-            canClick() { return player.po.featureSlots.gte(1) && player.points.gte(1e170) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15)) },
+            canClick() { return player.po.featureSlots.gte(-10) && player.points.gte(1e170) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15)) },
             unlocked() { return hasMilestone("ip", 1) && !inChallenge("ip", 11) && !inChallenge("ip", 13) && !inChallenge("ip", 15) && !inChallenge("ip", 16)  },
             onClick() {
                 player.po.rocketFuel = true
@@ -273,7 +273,7 @@
             display() {
                 return player.po.hex ? "<h1>The number 6.<br>On<br><h2>(Progress is kept between infinities)</h2>" : "<h1>The number 6.<br>Off<br><h2>(Progress is kept between infinities)</h2>";
             },
-            canClick() { return player.po.featureSlots.gte(1) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15))},
+            canClick() { return player.po.featureSlots.gte(-10) && (!inChallenge("ip", 14) || inChallenge("ip", 14) && player.r.pent.gte(15))},
             unlocked() { return hasChallenge("ip", 13) && !inChallenge("ip", 11) && !inChallenge("ip", 13) && !inChallenge("ip", 15) && !inChallenge("ip", 16) && !hasUpgrade("s", 18)},
             onClick() {
                 player.po.hex = true
@@ -292,7 +292,7 @@
             display() {
                 return player.po.breakInfinity ? "<h1>Get past limits.<br>On" : "<h1>Get past limits.<br>Off<br><h2>Req: Tav Defeated";
             },
-            canClick() { return player.po.featureSlots.gte(1)},
+            canClick() { return player.po.featureSlots.gte(-10)},
             unlocked() { return player.in.unlockedBreak || hasMilestone("s", 11) },
             onClick() {
                 player.po.breakInfinity = true
