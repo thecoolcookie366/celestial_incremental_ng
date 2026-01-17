@@ -100,9 +100,9 @@ addLayer("achievements", {
             marked: true,
         },
         12: {
-            name: "Golden Scam",
+            name: "Not Actually A Golden Scam",
             image: "resources/achievements/1_12.png",
-            tooltip: "<h3>Golden Scam</h3><hr style='margin-bottom:4px'>Increase your golden grass value.<br><br>Reward: Golden grass spawn time<br>reduced by 10%.",
+            tooltip: "<h3>Not Actually A Golden Scam</h3><hr style='margin-bottom:4px'>Increase your golden grass value.<br><br>Reward: Golden grass spawn time<br>reduced by 100%. Nearly 100%.",
             color: "white",
             complete() {return hasMilestone('r', 13)},
             unlocked: true,

@@ -191,7 +191,7 @@ addLayer('g', {
 
         // GOLDEN GRASS REQUIREMENT
         player.g.goldGrassReq = new Decimal(20)
-        if (hasAchievement("achievements", 12)) player.g.goldGrassReq = player.g.goldGrassReq.div(1.1)
+        if (hasAchievement("achievements", 12)) player.g.goldGrassReq = player.g.goldGrassReq.div(1e6)
         if (hasUpgrade('g', 16)) player.g.goldGrassReq = player.g.goldGrassReq.div(1.3)
         player.g.goldGrassReq = player.g.goldGrassReq.div(buyableEffect('gh', 12))
         player.g.goldGrassReq = player.g.goldGrassReq.div(levelableEffect("pet", 303)[1])
