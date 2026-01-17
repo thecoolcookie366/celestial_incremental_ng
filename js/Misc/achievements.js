@@ -44,7 +44,7 @@ addLayer("achievements", {
         5: {
             name: "PrestigiNO!",
             image: "resources/achievements/1_05.png",
-            tooltip: "<h3>PrestigiNO!</h3><hr style='margin-bottom:4px'>Do your first prestige reset.<br><br>Reward: Ranks, Tiers, and Tetrs<br>are now free. Yes. Free. They will forever be free, as long as you have this achievement.",
+            tooltip: "<h3>PrestigiNO!</h3><hr style='margin-bottom:4px'>Do your first prestige reset.<br><br>Reward: Ranks, Tiers, and Tetrs are now free. Yes. Free.<br> They will forever be free, as long as you have this achievement.",
             color: "white",
             unlocked: true,
             marked: true,
