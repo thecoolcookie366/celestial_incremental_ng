@@ -81,17 +81,17 @@ addLayer("hpr", {
         player.hpr.rankEffect[1][0] = player.hpr.rank[1].pow(1500).mul(2).mul(player.hpr.effectMult).add(1)
         player.hpr.rankEffect[1][1] = player.hpr.rank[1].pow(150).mul(player.hpr.effectMult).add(1)
 
-        player.hpr.rankEffect[2][0] = player.hpr.rank[2].pow(3.1).mul(4).mul(player.hpr.effectMult).add(1)
-        player.hpr.rankEffect[2][1] = player.hpr.rank[2].pow(1.4).mul(2).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[2][0] = player.hpr.rank[2].pow(15e3).mul(4).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[2][1] = player.hpr.rank[2].pow(1500).mul(2).mul(player.hpr.effectMult).add(1)
 
-        player.hpr.rankEffect[3][0] = player.hpr.rank[3].pow(3.4).mul(8).mul(player.hpr.effectMult).add(1)
-        player.hpr.rankEffect[3][1] = player.hpr.rank[3].pow(1.8).mul(4).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[3][0] = player.hpr.rank[3].pow(15e4).mul(8).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[3][1] = player.hpr.rank[3].pow(15e3).mul(4).mul(player.hpr.effectMult).add(1)
 
-        player.hpr.rankEffect[4][0] = player.hpr.rank[4].pow(3.7).mul(16).mul(player.hpr.effectMult).add(1)
-        player.hpr.rankEffect[4][1] = player.hpr.rank[4].pow(2.2).mul(8).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[4][0] = player.hpr.rank[4].pow(15e5).mul(16).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[4][1] = player.hpr.rank[4].pow(15e4).mul(8).mul(player.hpr.effectMult).add(1)
 
-        player.hpr.rankEffect[5][0] = player.hpr.rank[5].pow(4).mul(32).mul(player.hpr.effectMult).add(1)
-        player.hpr.rankEffect[5][1] = player.hpr.rank[5].pow(2.6).mul(16).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[5][0] = player.hpr.rank[5].pow(15e6).mul(32).mul(player.hpr.effectMult).add(1)
+        player.hpr.rankEffect[5][1] = player.hpr.rank[5].pow(15e5).mul(16).mul(player.hpr.effectMult).add(1)
 
         if (hasUpgrade("tad", 1001)) {
             for (let i = 0; i < 6; i++) {
