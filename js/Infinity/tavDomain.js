@@ -1406,9 +1406,9 @@ addLayer("tad", {
             },
         },
         12: {
-            costBase() { return new Decimal(15) },
-            costGrowth() { return new Decimal(4).div(player.tad.accumulationCost).max(1.6) },
-            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(75)} else {return new Decimal(50)}},
+            costBase() { return new Decimal(1) },
+            costGrowth() { return new Decimal(1.002).div(player.tad.accumulationCost).max(1.004) },
+            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(1e9)} else {return new Decimal(1e6)}},
             currency() { return player.tad.matter},
             pay(amt) { player.tad.matter = this.currency().sub(amt) },
             effect(x) {
@@ -1452,9 +1452,9 @@ addLayer("tad", {
             },
         },
         13: {
-            costBase() { return new Decimal(150000) },
-            costGrowth() { return new Decimal(7).div(player.tad.accumulationCost).max(1.6) },
-            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(75)} else {return new Decimal(50)}},
+            costBase() { return new Decimal(1) },
+            costGrowth() { return new Decimal(1.004).div(player.tad.accumulationCost).max(1.008) },
+            purchaseLimit() {if (hasUpgrade("tad", 153)) {return new Decimal(1e9)} else {return new Decimal(1e6)}},
             currency() { return player.tad.matter},
             pay(amt) { player.tad.matter = this.currency().sub(amt) },
             effect(x) {
