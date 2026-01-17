@@ -1,7 +1,7 @@
 ﻿let modInfo = {
-	name: "Celestial Incremental",
+	name: "Celestial Incremental NG+",
 	id: "celestial", // NEVER CHANGE THIS, IF YOU DO ALL SAVES WILL DIE
-	author: "Icecreamdude",
+	author: "Icecreamdude (with a bit of cookie)",
 	pointsName: "celestial points",
 	modFiles: [
 		"layers.js", "cutscene.js", "tree.js", "ranks.js", "factors.js",
