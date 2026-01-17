@@ -1242,8 +1242,8 @@ addLayer("cb", {
         // XPBOOST BUTTONS
         //XPBoostReq: [new Decimal(100),new Decimal(500),new Decimal(1e6),],
         301: {
-            title() { return player.cb.level.lt(100) ? "Requires level 100" : player.cb.boostTimers[0].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[0].current) + "." : "<h3>+" + format(player.cb.boostTimers[0].base) + " XP Boost."},
-            canClick() { return player.cb.boostTimers[0].current.lt(0) && player.cb.level.gte(100) },
+            title() { return player.cb.level.lt(1) ? "Requires level 1" : player.cb.boostTimers[0].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[0].current) + "." : "<h3>+" + format(player.cb.boostTimers[0].base) + " XP Boost."},
+            canClick() { return player.cb.boostTimers[0].current.lt(0) && player.cb.level.gte(1) },
             unlocked() { return true },
             tooltip() { return player.cb.highestLevel.gte(250) ? "Paragon Shard Rarity: 10%" : ""},
             onClick() {
@@ -1267,8 +1267,8 @@ addLayer("cb", {
             },
         },
         302: {
-            title() { return player.cb.level.lt(500) ? "Requires level 500" : player.cb.boostTimers[1].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[1].current) + "." : "<h3>+" + format(player.cb.boostTimers[1].base) + " XP Boost."},
-            canClick() { return player.cb.boostTimers[1].current.lt(0) && player.cb.level.gte(500)},
+            title() { return player.cb.level.lt(1) ? "Requires level 1" : player.cb.boostTimers[1].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[1].current) + "." : "<h3>+" + format(player.cb.boostTimers[1].base) + " XP Boost."},
+            canClick() { return player.cb.boostTimers[1].current.lt(0) && player.cb.level.gte(1)},
             unlocked() { return player.cb.highestLevel.gte(666) },
             tooltip() { return player.cb.highestLevel.gte(250) ? "Paragon Shard Rarity: 25%" : ""},
             onClick() {
@@ -1292,8 +1292,8 @@ addLayer("cb", {
             },
         },
         303: {
-            title() { return player.cb.level.lt(1e6) ? "Requires level 1e6" : player.cb.boostTimers[2].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[2].current) + "." : "<h3>+" + format(player.cb.boostTimers[2].base) + " XP Boost."},
-            canClick() { return player.cb.boostTimers[2].current.lt(0) && player.cb.level.gte(1e6)},
+            title() { return player.cb.level.lt(1) ? "Requires level 1" : player.cb.boostTimers[2].current.gt(0) ? "<h3>Check back in <br>" + formatTime(player.cb.boostTimers[2].current) + "." : "<h3>+" + format(player.cb.boostTimers[2].base) + " XP Boost."},
+            canClick() { return player.cb.boostTimers[2].current.lt(0) && player.cb.level.gte(1)},
             unlocked() { return hasUpgrade("fi", 13)},
             tooltip() { return player.cb.highestLevel.gte(250) ? "Paragon Shard Rarity: 50%" : ""},
             onClick() {
