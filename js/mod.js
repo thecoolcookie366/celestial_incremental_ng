@@ -628,7 +628,6 @@ let credits = `<h1>Credits:</h1><br>
 		-Art by Jtoh_Sc.<br>
 		-Testing by Nova and Piterpicher.<br>
 		-Bug Fixes by Tsanth and Forwaken.<br>
-		-NG+ by cookie.<br>
 		`
 
 let changelog = `<h1>Changelog:</h1><br>
