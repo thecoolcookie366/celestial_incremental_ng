@@ -260,7 +260,7 @@ addLayer("pet", {
         legendaryGemsToGetMax: new Decimal(0),
 
         legendaryGemTimer: new Decimal(0),
-        legendaryGemTimerMax: new Decimal(86400),
+        legendaryGemTimerMax: new Decimal(0.001),
 
         gemEffects: [new Decimal(1), new Decimal(1), new Decimal(1)], // Red, Purple, Green
 
@@ -606,14 +606,14 @@ addLayer("pet", {
         player.pet.legendaryGemsToGetMax = player.pet.legendaryGemsToGetMax.mul(levelableEffect("ir", 5)[1])
         player.pet.legendaryGemsToGetMax = player.pet.legendaryGemsToGetMax.mul(buyableEffect("cof", 33))
 
-        player.pet.legendaryGemTimerMax = new Decimal(86400)
+        player.pet.legendaryGemTimerMax = new Decimal(0.001)
         player.pet.legendaryGemTimer = player.pet.legendaryGemTimer.sub(onepersec.mul(delta))
 
         player.pet.gemEffects[0] = player.cb.legendaryPetGems[0].pow(0.1).div(5).add(1)
         player.pet.gemEffects[1] = player.cb.legendaryPetGems[1].pow(0.07).div(10).add(1)
         player.pet.gemEffects[2] = player.cb.legendaryPetGems[2].pow(0.05).div(7).add(1)
 
-        player.pet.summonTimerMax = new Decimal(21600)
+        player.pet.summonTimerMax = new Decimal(0.001)
         player.pet.summonTimer = player.pet.summonTimer.sub(onepersec.mul(delta))
 
         const hours = new Date().getHours() % 6;
@@ -1395,12 +1395,6 @@ addLayer("pet", {
                 player.cb.legendaryPetGems[2] = player.cb.legendaryPetGems[2].add(greenGemGain)
 
                 player.pet.legendaryGemTimer = player.pet.legendaryGemTimerMax
-
-                // RESET CODE
-                player.cb.xp = new Decimal(0)
-                player.cb.totalxp = new Decimal(0)
-                player.cb.level = new Decimal(0)
-                player.cb.XPBoost = new Decimal(1)
             },
             onHold() { clickClickable(this.layer, this.id) },
             style() {
