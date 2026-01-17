@@ -1258,9 +1258,6 @@ addLayer("cb", {
                 } else {
                     player.cb.pityParaCurrent = player.cb.pityParaCurrent.add(10);
                 }
-                player.cb.level = new Decimal(1)
-                player.cb.xp = new Decimal(0)
-                player.cb.totalxp = new Decimal(4.5)
                 if (player.ca.unlockedCante) player.ca.canteEnergy = player.ca.canteEnergy.add(CANTE_BASES[2][0].mul(player.ca.canteEnergyMult))
             },
             style() {
@@ -1286,9 +1283,6 @@ addLayer("cb", {
                 } else {
                     player.cb.pityParaCurrent = player.cb.pityParaCurrent.add(25);
                 }
-                player.cb.level = new Decimal(1)
-                player.cb.xp = new Decimal(0)
-                player.cb.totalxp = new Decimal(4.5)
                 if (player.ca.unlockedCante) player.ca.canteEnergy = player.ca.canteEnergy.add(CANTE_BASES[2][1].mul(player.ca.canteEnergyMult))
             },
             style() {
@@ -1314,9 +1308,6 @@ addLayer("cb", {
                 } else {
                     player.cb.pityParaCurrent = player.cb.pityParaCurrent.add(50);
                 }
-                player.cb.level = new Decimal(1)
-                player.cb.xp = new Decimal(0)
-                player.cb.totalxp = new Decimal(4.5)
                 if (player.ca.unlockedCante) player.ca.canteEnergy = player.ca.canteEnergy.add(CANTE_BASES[2][2].mul(player.ca.canteEnergyMult))
             },
             style() {
