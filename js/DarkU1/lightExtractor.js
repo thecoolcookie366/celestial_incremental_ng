@@ -148,7 +148,7 @@
 
                 player.pu.storedSelections = player.pu.storedSelections.add(1)
 
-                player.le.starmetalAlloyToGet = player.le.starmetalAlloyToGet.add(player.le.starmetalAlloyToGetToGet).pow(3)
+                player.le.starmetalAlloyToGet = player.le.starmetalAlloyToGet.pow(player.le.starmetalAlloyToGetToGet)
             },
             style() {
                 let look = {width: "400px", minHeight: "100px", fontSize: "9px", borderRadius: "15px", color: "white", border: "2px solid #384166"}
