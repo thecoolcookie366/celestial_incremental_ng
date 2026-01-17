@@ -3031,8 +3031,8 @@
     buyables: {
         11: {
             costBase() { return new Decimal(10) },
-            costGrowth() { return new Decimal(1.5) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.000001) },
+            purchaseLimit() { return new Decimal(1e9) },
             currency() { return player.sma.starmetalAlloy},
             pay(amt) { player.sma.starmetalAlloy = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },
@@ -3065,8 +3065,8 @@
         },
         12: {
             costBase() { return new Decimal(10) },
-            costGrowth() { return new Decimal(1.5) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.000001) },
+            purchaseLimit() { return new Decimal(1e9) },
             currency() { return player.sma.starmetalAlloy},
             pay(amt) { player.sma.starmetalAlloy = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },
@@ -3099,8 +3099,8 @@
         },
         13: {
             costBase() { return new Decimal(10) },
-            costGrowth() { return new Decimal(1.5) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.000001) },
+            purchaseLimit() { return new Decimal(1e9) },
             currency() { return player.sma.starmetalAlloy},
             pay(amt) { player.sma.starmetalAlloy = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },
