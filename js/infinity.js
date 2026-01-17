@@ -166,9 +166,10 @@ addLayer("in", {
         if (hasUpgrade("ep2", 14)) player.in.infinitiesToGet = player.in.infinitiesToGet.mul(upgradeEffect("ep2", 14))
         player.in.infinitiesToGet = player.in.infinitiesToGet.mul(player.co.cores.infinity.effect[2])
         if (hasMilestone("fa", 13)) player.in.infinitiesToGet = player.in.infinitiesToGet.mul(player.fa.milestoneEffect[2])
-        if (hasUpgrade("tad", 152)) player.in.infinitiesToGet = player.in.infinitiesToGet.pow(player.tad.infinitumEffect2)
+        if (hasUpgrade("tad", 152)) player.in.infinitiesToGet = player.in.infinitiesToGet.mul(player.tad.infinitumEffect2)
         player.in.infinitiesToGet = player.in.infinitiesToGet.mul(levelableEffect("ir", 2)[1])
         player.in.infinitiesToGet = player.in.infinitiesToGet.mul(buyableEffect("cof", 23))
+        player.in.infinitiesToGet = player.in.infinitiesToGet.pow(5)
 
         // POWER MODIFIERS
         if (player.tad.altInfinities.infected.milestone.gte(2)) player.in.infinitiesToGet = player.in.infinitiesToGet.pow(player.tad.altInfinities.infected.effect2)
