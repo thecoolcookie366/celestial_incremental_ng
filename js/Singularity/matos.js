@@ -977,6 +977,7 @@
             onClick() {
                 player.ma.combo = new Decimal(0)
                 player.ma.inBlackHeart = true
+                player.devSpeed = 100
 
                 player.subtabs["ma"]["stuff"] = "Prep"
 
@@ -995,6 +996,7 @@
             unlocked() { return true },
             onClick() {
                 player.ma.inBlackHeart = false
+                player.devSpeed = 1
 
                 player.subtabs["ma"]["stuff"] = "NG+ Heart"
 
