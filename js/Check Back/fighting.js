@@ -98,15 +98,15 @@ addLayer("fi", {
         battleTimers: {
             0: {
                 current: new Decimal(0),
-                max: new Decimal(600),
+                max: new Decimal(5),
             },
             1: {
                 current: new Decimal(0),
-                max: new Decimal(1200),
+                max: new Decimal(15),
             },
         },
         battleButtonTimers: [new Decimal(0),new Decimal(0),], 
-        battleButtonTimersMax: [new Decimal(600),new Decimal(1200),], 
+        battleButtonTimersMax: [new Decimal(5),new Decimal(15),], 
 
         battleTier: new Decimal(0),
         inBattle: false,
