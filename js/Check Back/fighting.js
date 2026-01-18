@@ -166,8 +166,8 @@ addLayer("fi", {
             player.fi.battleCapacityCost = new Decimal(2)
         }
 
-        player.fi.battleTimers[0].max = new Decimal(600)
-        player.fi.battleTimers[1].max = new Decimal(1200)
+        player.fi.battleTimers[0].max = new Decimal(5)
+        player.fi.battleTimers[1].max = new Decimal(15)
 
         for (let i in player.fi.battleTimers) {
             player.fi.battleTimers[i].current = player.fi.battleTimers[i].current.sub(delta)
