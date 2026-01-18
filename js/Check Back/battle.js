@@ -843,7 +843,7 @@ celestialiteDeath(index){
 
         let random = Math.random()
 
-        if (random < 0.04)
+        if (random < 0.50)
         {
             player.fi.temporalShards = player.fi.temporalShards.add(1)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
