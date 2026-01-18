@@ -212,8 +212,8 @@ addLayer("ba", {
 
                     if (random < 0.05)
                     {
-                        player.fi.temporalShards = player.fi.temporalShards.add(1)
-                        logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
+                        player.fi.temporalShards = player.fi.temporalShards.add(123456)
+                        logPrintBattle("<span style='color: #625fffff;'>You found 123,456 temporal shards! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
                     }
                     logPrintBattle("<br>New wave has started.<br>" )
 
@@ -836,7 +836,7 @@ celestialiteDeath(index){
     //looting
     if (player.ba.celestialiteIDs[index] == 0)
     {
-        let dustGain = getRandomInt(3) + 1
+        let dustGain = getRandomInt(3) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)"  ) 
