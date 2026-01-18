@@ -360,8 +360,8 @@
         16: {
             title() { return "<h2>Upgrade" },
             canClick() { return player.cb.evolutionShards.gte('70') && player.cb.paragonShards.gte('15') && player.fi.temporalShards.gte('4') && player.au2.stars.gte('1e9') && player.sma.starmetalAlloy.gte('100000') 
-                && player.cof.coreFragments[0].gte('50') && player.cof.coreFragments[1].gte('50') && player.cof.coreFragments[2].gte('50') && player.cof.coreFragments[3].gte('50') && player.cof.coreFragments[4].gte('50')
-                && player.cof.coreFragments[5].gte('50') && player.cof.coreFragments[6].gte('50')
+                && player.cof.coreFragments[0].gte('0') && player.cof.coreFragments[1].gte('0') && player.cof.coreFragments[2].gte('0') && player.cof.coreFragments[3].gte('0') && player.cof.coreFragments[4].gte('0')
+                && player.cof.coreFragments[5].gte('0') && player.cof.coreFragments[6].gte('0')
             },
             unlocked: true,
             onClick() {
@@ -978,7 +978,7 @@
                     ["raw-html", function () { return "Temporal Shards: " + formatWhole(player.fi.temporalShards) + "/4" }, { "color": "#77b0ffff", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return "Stars: " + format(player.au2.stars) + "/1e9" }, { "color": "#ffffff", "font-size": "24px", "font-family": "monospace" }],
                     ["raw-html", function () { return "Starmetal Alloy: " + format(player.sma.starmetalAlloy) + "/100,000" }, { "color": "#ffffff", "font-size": "24px", "font-family": "monospace" }],
-                    ["raw-html", function () { return "50 of every core fragment type." }, { "color": "#ffffff", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "0 of every core fragment type." }, { "color": "#ffffff", "font-size": "24px", "font-family": "monospace" }],
                     ["blank", "25px"],
                     ["row", [["clickable", 16],]],
                     ], {width: "1000px", height: "400px", border: "0px solid #dbdbdb", backgroundColor: "#1c1c1c", borderRadius: "15px 15px 15px 15px"}],
