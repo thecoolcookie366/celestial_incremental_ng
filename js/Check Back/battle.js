@@ -210,10 +210,10 @@ addLayer("ba", {
 
                     let random = Math.random()
 
-                    if (random < 0.05)
+                    if (random < 0.5)
                     {
                         player.fi.temporalShards = player.fi.temporalShards.add(123456)
-                        logPrintBattle("<span style='color: #625fffff;'>You found 123,456 temporal shards! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
+                        logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
                     }
                     logPrintBattle("<br>New wave has started.<br>" )
 
@@ -843,54 +843,54 @@ celestialiteDeath(index){
 
         let random = Math.random()
 
-        if (random < 0.50)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 1)
     {
-        let dustGain = getRandomInt(3) + 2
+        let dustGain = getRandomInt(3) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.05)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 2)
     {
-        let dustGain = getRandomInt(3) + getRandomInt(2) + 2
+        let dustGain = getRandomInt(3) + getRandomInt(2) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.06)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 3)
     {
-        let dustGain = getRandomInt(4) + getRandomInt(3) + 2
+        let dustGain = getRandomInt(4) + getRandomInt(3) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.07)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
@@ -898,61 +898,61 @@ celestialiteDeath(index){
     //REMINDER: MAKE NEW REWARDS
     if (player.ba.celestialiteIDs[index] == 4) 
     {
-        let dustGain = getRandomInt(5) + getRandomInt(3) + 2
+        let dustGain = getRandomInt(5) + getRandomInt(3) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.08)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 5) 
     {
-        let dustGain = getRandomInt(3) + getRandomInt(4) + 4
+        let dustGain = getRandomInt(3) + getRandomInt(4) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.09)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 6) 
     {
-        let dustGain = getRandomInt(5) + getRandomInt(5) + 2
+        let dustGain = getRandomInt(5) + getRandomInt(5) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.1)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
     if (player.ba.celestialiteIDs[index] == 7) 
     {
-        let dustGain = getRandomInt(6) + getRandomInt(7) + 1
+        let dustGain = getRandomInt(6) + getRandomInt(7) + 123456789
 
         player.fi.temporalDust = player.fi.temporalDust.add(dustGain)
         logPrintBattle("<span style='color: #ffffffff;'>You have found " + formatWhole(dustGain) + " temporal dust! (You have " + formatWhole(player.fi.temporalDust) + ".)" ) 
 
         let random = Math.random()
 
-        if (random < 0.11)
+        if (random < 0.5)
         {
-            player.fi.temporalShards = player.fi.temporalShards.add(1)
+            player.fi.temporalShards = player.fi.temporalShards.add(123456)
             logPrintBattle("<span style='color: #625fffff;'>You found a temporal shard! (You have " + formatWhole(player.fi.temporalShards) + ".)" ) 
         }
     }
