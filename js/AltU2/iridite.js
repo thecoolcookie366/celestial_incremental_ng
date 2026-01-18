@@ -129,7 +129,7 @@ function pickUpgrades() {
 }
 
 addLayer("ir", {
-    name: "Iridite",
+    name: "Galaxy",
     symbol: "✦",
     universe: "A2",
     row: 1,
@@ -209,7 +209,7 @@ addLayer("ir", {
             color: "#eaf6f7",
         };
     },
-    tooltip: "Iridite, the Astral Celestial",
+    tooltip: "Galaxy, the Astral Celestial",
     branches: ["pl", "se"],
     color: "#151230",
     update(delta) {
@@ -231,13 +231,13 @@ addLayer("ir", {
         if (hasUpgrade("ir", 17)) player.ir.shipHealthMax = player.ir.shipHealthMax.mul(1.3)
 
         player.ir.timers[0].max = new Decimal(0)
-        player.ir.timers[1].max = new Decimal(600)
-        player.ir.timers[2].max = new Decimal(900)
-        player.ir.timers[3].max = new Decimal(1500)
-        player.ir.timers[4].max = new Decimal(1200)
-        player.ir.timers[5].max = new Decimal(1800)
-        player.ir.timers[6].max = new Decimal(1200)
-        player.ir.timers[7].max = new Decimal(600)
+        player.ir.timers[1].max = new Decimal(1)
+        player.ir.timers[2].max = new Decimal(1)
+        player.ir.timers[3].max = new Decimal(1)
+        player.ir.timers[4].max = new Decimal(1)
+        player.ir.timers[5].max = new Decimal(1)
+        player.ir.timers[6].max = new Decimal(1)
+        player.ir.timers[7].max = new Decimal(1)
         for (let i in player.ir.timers) {
             if (hasUpgrade("ir", 18)) player.ir.timers[i].max = player.ir.timers[i].max.div(upgradeEffect("ir", 18))
 
@@ -628,8 +628,8 @@ addLayer("ir", {
     },
     clickables: {
         1: {
-            title() { return "<h2>Unlock Iridite, the Astral Celestial" },
-            canClick() { return player.au2.stars.gte(5e10) && player.fi.tier2BestWave.gt(2) },
+            title() { return "<h2>Unlock Galaxy, the Astral Celestial" },
+            canClick() { return player.au2.stars.gte(6.7e67) && player.cb.level.gt(1e12) },
             unlocked() { return true },
             onClick() {
                 player.ir.iriditeUnlocked = true
@@ -772,14 +772,14 @@ addLayer("ir", {
         11: {
             title: "Rejuvenation",
             unlocked() { return true },
-            description: "Boosts singularity point gain based on space rocks.",
-            cost: new Decimal(300),
+            description: "Boosts singularity point gain based on warns.",
+            cost: new Decimal(10),
             currencyLocation() { return player.ir },
             effect() {
                 return player.ir.spaceRock.pow(0.75).mul(1000).add(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -790,10 +790,10 @@ addLayer("ir", {
         12: {
             title: "Replenish",
             unlocked() { return true },
-            description: "Boosts oil gain based on space rocks.",
-            cost: new Decimal(500),
+            description: "Boosts oil gain based on warns.",
+            cost: new Decimal(20),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             effect() {
                 return player.ir.spaceRock.pow(2.5).mul(5).add(1)
@@ -808,10 +808,10 @@ addLayer("ir", {
         13: {
             title: "Servitude",
             unlocked() { return true },
-            description: "Boosts check back XP gain based on space gems.",
-            cost: new Decimal(800),
+            description: "Boosts check back XP gain based on bans.",
+            cost: new Decimal(30),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             effect() {
                 return player.ir.spaceGem.pow(0.25).mul(0.3).add(1)
@@ -827,9 +827,9 @@ addLayer("ir", {
             title: "Healing",
             unlocked() { return true },
             description: "All ships start off with 0.5 hp/sec of health regeneration.",
-            cost: new Decimal(1200),
+            cost: new Decimal(40),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -840,10 +840,10 @@ addLayer("ir", {
         15: {
             title: "Civilization",
             unlocked() { return true },
-            description: "Unlock Space Buildings.",
-            cost: new Decimal(2000),
+            description: "Unlock Moderation Buildings.",
+            cost: new Decimal(50),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -855,9 +855,9 @@ addLayer("ir", {
             title: "Miniboss",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
             description: "You are able to fight the UFO miniboss at level 8, and unlock a new legendary pet.",
-            cost: new Decimal(3000),
+            cost: new Decimal(60),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -869,9 +869,9 @@ addLayer("ir", {
             title: "Reinforcement II",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
             description: "All ships have 30% increased max hp.",
-            cost: new Decimal(5000),
+            cost: new Decimal(70),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -880,16 +880,16 @@ addLayer("ir", {
             },
         },
         18: {
-            title: "Timekeeper",
+            title: "Timekeeper- wait, GATEKEEPER?!",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
-            description: "Cut ship cooldown times based on space gems.",
+            description: "Cut ship cooldown times based on bans.",
             effect() {
                 return player.ir.spaceGem.pow(0.75).mul(0.02).add(1)
             },
             effectDisplay() { return "/" + format(upgradeEffect(this.layer, this.id)) }, // Add formatting to the effect
-            cost: new Decimal(8000),
+            cost: new Decimal(80),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -898,12 +898,12 @@ addLayer("ir", {
             },
         },
         19: {
-            title: "Iridite",
+            title: "Galaxy",
             unlocked() { return player.ir.ufoDefeated },
             description: "...",
-            cost: new Decimal(10000),
+            cost: new Decimal(90),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Rocks",
+            currencyDisplayName: "Warns",
             currencyInternalName: "spaceRock",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -917,9 +917,9 @@ addLayer("ir", {
             title: "Impact",
             unlocked() { return true },
             description: "Unlocks the second ship: Impact.",
-            cost: new Decimal(2),
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -931,9 +931,9 @@ addLayer("ir", {
             title: "Reinforcement",
             unlocked() { return true },
             description: "All ships have 25% increased max hp.",
-            cost: new Decimal(3),
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -945,9 +945,9 @@ addLayer("ir", {
             title: "Alleviator",
             unlocked() { return true },
             description: "Battle XP requirements are cut by /1.25.",
-            cost: new Decimal(5),
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -958,10 +958,10 @@ addLayer("ir", {
         104: {
             title: "Treasure",
             unlocked() { return true },
-            description: "Double the probability of getting space gems from asteroids.",
-            cost: new Decimal(7),
+            description: "Double the probability of getting bans from asteroids.",
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -973,9 +973,9 @@ addLayer("ir", {
             title: "Exploration",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
             description: "Unlock more star exploration nodes.",
-            cost: new Decimal(12),
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -987,9 +987,9 @@ addLayer("ir", {
             title: "Alleviator II",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
             description: "Battle XP requirements are cut by /1.4",
-            cost: new Decimal(18),
+            cost: new Decimal(1),
             currencyLocation() { return player.ir },
-            currencyDisplayName: "Space Gems",
+            currencyDisplayName: "Bans",
             currencyInternalName: "spaceGem",
             style() {
                 let look = {borderRadius: "15px", color: "white", border: "3px solid #37078f", margin: "2px"}
@@ -1005,8 +1005,8 @@ addLayer("ir", {
                 unlocked() { return !player.ir.iriditeUnlocked && !player.ir.inBattle },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", function () { return formatWhole(player.au2.stars) + "/5e10 stars." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                    ["raw-html", function () { return formatWhole(player.fi.tier2BestWave) + "/8 tier 2 best wave." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return formatWhole(player.au2.stars) + "/6.7e67 stars." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return formatWhole(player.cb.level) + "/1e12 check back levels." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["blank", "25px"],
                     ["raw-html", function () { return "Not a lot of requirements... I'm trying to be nice." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["blank", "25px"],
@@ -1023,8 +1023,8 @@ addLayer("ir", {
                             ["blank", "25px"],
                             ["clickable", 11],
                             ["blank", "25px"],
-                            ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceRock) + " space rocks." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                            ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceGem) + " space gems." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                            ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceRock) + " warns." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                            ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceGem) + " bans." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                             ["blank", "15px"],
                             ["style-column", [
                                 ["levelable-display", [
@@ -1050,14 +1050,14 @@ addLayer("ir", {
                 unlocked() { return player.ir.iriditeUnlocked && !player.ir.inBattle },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceRock) + " space rocks." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-                    ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceGem) + " space gem." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceRock) + " warns." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "You have " + formatWhole(player.ir.spaceGem) + " bans." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["blank", "25px"],
-                    ["raw-html", function () { return "Space Rocks" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "Warns" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["row", [["upgrade", 11],["upgrade", 12],["upgrade", 13],["upgrade", 14],["upgrade", 15],["upgrade", 16],]],
                     ["row", [["upgrade", 17],["upgrade", 18],["upgrade", 19],]],
                     ["blank", "25px"],
-                    ["raw-html", function () { return "Space Gems" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", function () { return "Bans" }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                     ["row", [["upgrade", 101],["upgrade", 102],["upgrade", 103],["upgrade", 104],["upgrade", 105],["upgrade", 106],]],
                 ]
             },
@@ -1067,7 +1067,7 @@ addLayer("ir", {
                 content: [
                     ["blank", "25px"],
                     ["style-column", [
-                        ["raw-html", "Perks for defeating Iridite", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                        ["raw-html", "Perks for defeating Galaxy", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "1000px", border: "3px solid rgb(27, 0, 36)", backgroundImage: "linear-gradient(120deg, #480e8aff 0%, rgba(20, 7, 24, 1) 100%)", borderBottom: "5px", paddingTop: "5px", paddingBottom: "5px", borderRadius: "15px 15px 0px 0px"}],
                     ["style-column", [
                         ["raw-html", () => { return player.pol.unlockHive == 2 ? "Unlocks: The Hive" : "Unlocks: Larva (In Pollinators)" }, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
@@ -1691,7 +1691,7 @@ class SpaceArena {
                 }
             },
             iriditeBoss: {
-                name: "Iridite, the Astral Celestial",
+                name: "Galaxy, the Astral Celestial",
                 radius: 64,
                 color: "#f3e8ffff",
                 healthMin: 50000,
@@ -4188,7 +4188,7 @@ class SpaceArena {
                 this.lootFlashes.push({
                     x: pos.x,
                     y: pos.y,
-                    text: `+${pos.amount} space rock`,
+                    text: `+${pos.amount} warns`,
                     timer: 120,
                     color: "#ffe066",
                     style: "18px monospace"
@@ -4198,7 +4198,7 @@ class SpaceArena {
                 this.lootFlashes.push({
                     x: pos.x,
                     y: pos.y,
-                    text: `+${pos.amount} space gem`,
+                    text: `+${pos.amount} bans`,
                     timer: 240,
                     color: "#66e8ffff",
                     style: "24px monospace"
@@ -4993,7 +4993,7 @@ function summonIridite() {
     } else {
         console.warn("summonIridite: arena.spawnIridite not available");
     }
-    flashScreen("— Iridite, the Astral Celestial —", 1200)
+    flashScreen("— Galaxy, the Astral Celestial —", 1200)
 }
 window.summonIridite = summonIridite;
 

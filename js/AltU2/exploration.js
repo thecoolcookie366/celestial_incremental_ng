@@ -249,7 +249,7 @@ addLayer("se", {
         }, 
         16: {
             title() { return "A5" },
-            tooltip() { return "UNLOCKS IRIDITE.<br>Visited " + formatWhole(player.se.starsExploreCount[0][5].min(100)) + "/100 times.<br>Boosts steel by ^" + format(player.se.starsExploreEffect[0][5], 3) + "." },
+            tooltip() { return "UNLOCKS GALAXY. (not galaxy.click, the galaxy from WES)<br>Visited " + formatWhole(player.se.starsExploreCount[0][5].min(100)) + "/100 times.<br>Boosts steel by ^" + format(player.se.starsExploreEffect[0][5], 3) + "." },
             canClick() { 
                 return (player.se.currentPosition[0].eq(0) && player.se.currentPosition[1].eq(4)) && !player.se.currentlyTravelling || (player.se.currentPosition[0].eq(1) && player.se.currentPosition[1].eq(2)) && !player.se.currentlyTravelling || (player.se.currentPosition[0].eq(2) && player.se.currentPosition[1].eq(1)) && !player.se.currentlyTravelling
             },
