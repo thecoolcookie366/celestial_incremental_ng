@@ -12,7 +12,7 @@ addLayer("se", {
 
         starsExploreCount: [[new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)], [new Decimal(0), new Decimal(0), new Decimal(0)], [new Decimal(0), new Decimal(0)] ], //first index refers to letter, second refers to number
         starsExploreEffect: [[new Decimal(1), new Decimal(1), new Decimal(1), new Decimal(1), new Decimal(1), new Decimal(1)], [new Decimal(1), new Decimal(1), new Decimal(1)], [new Decimal(1), new Decimal(1)]], //first index refers to letter, second refers to number
-        starExploreTimes: [[new Decimal(180), new Decimal(300), new Decimal(540), new Decimal(1200), new Decimal(2400), new Decimal(7200)], [new Decimal(3600), new Decimal(5400), new Decimal(6000)], [new Decimal(1800), new Decimal(2800)]], //first index refers to letter, second refers to number
+        starExploreTimes: [[new Decimal(1), new Decimal(2), new Decimal(3), new Decimal(4), new Decimal(5), new Decimal(6)], [new Decimal(7), new Decimal(8), new Decimal(9)], [new Decimal(10), new Decimal(11)]], //first index refers to letter, second refers to number
         currentStar: [new Decimal(0), new Decimal(0),], 
         currentlyTravelling: false,
 
@@ -63,21 +63,21 @@ addLayer("se", {
 
         player.se.starExploreTimes = [
             [
-                new Decimal(150),
-                new Decimal(300),
-                new Decimal(450),
-                new Decimal(600),
-                new Decimal(1200),
-                new Decimal(2400),
+                new Decimal(1),
+                new Decimal(2),
+                new Decimal(3),
+                new Decimal(4),
+                new Decimal(5),
+                new Decimal(6),
             ],
             [
-                new Decimal(1500),
-                new Decimal(1800),
-                new Decimal(2100),
+                new Decimal(7),
+                new Decimal(8),
+                new Decimal(9),
             ],
             [
-                new Decimal(750),
-                new Decimal(900),
+                new Decimal(10),
+                new Decimal(11),
             ]
         ]
 
