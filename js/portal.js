@@ -56,8 +56,8 @@
                 halt: new Decimal(1),
             },
             xp: {
-                enabled: 0,
-                halt: new Decimal(1),
+                enabled: 2,
+                halt: new Decimal(1e150),
             },
             antimatter: {
                 enabled: 0,
@@ -91,6 +91,7 @@
 
         player.po.featureSlotsMax = new Decimal(1)
         if (hasUpgrade("i", 28)) player.po.featureSlotsMax = player.po.featureSlotsMax.add(4)
+       
 
         player.po.featureSlots = player.po.featureSlotsMax
         if (player.po.dice) {
@@ -117,6 +118,8 @@
         }
 
         if (player.po.halterInput.lt(1)) player.po.halter[player.po.halterID].halt = new Decimal(1)
+        if (player.points.gte(0)) player.po.halter.xp.enabled = 2
+        if (player.points.gte(0)) player.po.halter.xp.halt = new Decimal ("1e150")
 
     },
     clickables: {

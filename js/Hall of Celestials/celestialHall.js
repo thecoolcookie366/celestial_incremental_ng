@@ -208,7 +208,7 @@
             unlocked() { return player.ch.celestialIndex.eq(2) },      
         },
         4: {
-            title: "Domain, the Celestial of Machinery",
+            title: "Domain, the Celestial of Silliness",
             body() { return "placeholder" },
             unlocked() { return player.ch.celestialIndex.eq(3) },      
         },
