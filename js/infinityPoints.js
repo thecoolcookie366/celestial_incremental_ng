@@ -804,7 +804,7 @@
             goal() { return new Decimal("1.79e308") },
             canComplete: function () { return player.points.gte(1.79e308) },
             rewardDescription: "Unlock new booster dice effects, and booster dice automation.",
-            unlocked() { return hasChallenge("ip", 14) },
+            unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 //OTF is reset here and not in crunch to prevent a bug
                 player.po.dice = false
@@ -892,7 +892,7 @@
             goalDescription() { return "1 1st Dimension" },
             goal() {return new Decimal("1") },
             canComplete() {return getBuyableAmount("ad", 11).gte(1) },
-            rewardDescription() {return hasChallenge("ip", 18) ? "Unlock Gatekeeper, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "....???"},
+            rewardDescription() {return hasChallenge("ip", 18) ? "HA! YOU THOUGHT! Unlock Gatekeeper, antimatter hardcap is now a softcap, and raise the caps for dim-boosts and galaxies" : "Hard reset your progress."},
             unlocked() { return hasChallenge("ip", 11) },
             onEnter() {
                 player.ad.antimatter = new Decimal(10)

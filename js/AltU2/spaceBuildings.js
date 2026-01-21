@@ -43,7 +43,7 @@
             },
             display() {
                 return "which are increasing building caps by +" + formatWhole(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Stored Space Energy"
+                    Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Stored <s>Space</s> Moderation Energy"
             },
             buy(mult) {
                 if (!mult) {
@@ -74,11 +74,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Primary Space Building"
+                return "Primary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts star gain by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Rocks"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Warns"
             },
             buy(mult) {
                 if (!mult) {
@@ -108,11 +108,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Secondary Space Building"
+                return "Secondary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts core fragment scores by x" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Rocks"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Warns"
             },
             buy(mult) {
                 if (!mult) {
@@ -142,11 +142,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Tertiary Space Building"
+                return "Tertiary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts infinity points by ^" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Gems"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Bans"
             },
             buy(mult) {
                 if (!mult) {
@@ -176,11 +176,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Quarternary Space Building"
+                return "Quarternary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts singularity points by ^" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Gems"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Bans"
             },
             buy(mult) {
                 if (!mult) {
@@ -210,11 +210,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Quinary Space Building"
+                return "Quinary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts antimatter gain by ^" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Rocks"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Warns"
             },
             buy(mult) {
                 if (!mult) {
@@ -244,11 +244,11 @@
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()).floor() },
             canAfford() { return this.currency().gte(this.cost()) },
             title() {
-                return "Senary Space Building"
+                return "Senary <s>Space</s> Moderation Building"
             },
             display() {
                 return "Boosts factor power, rank, tier, and tetr effects by ^" + format(tmp[this.layer].buyables[this.id].effect) + ".\n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Space Rocks"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + " Warns"
             },
             buy(mult) {
                 if (!mult) {
@@ -275,8 +275,8 @@
                 unlocked() { return true },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", () => { return "You have <h3>" + format(player.sb.storedSpaceEnergy) + "</h3> space energy. (From Dark Universe)" }, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
-                    ["raw-html", () => { return "Boosts space building effects by " + formatSimple(player.sb.sseEffect.sub(1).mul(100)) + "%" }, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                    ["raw-html", () => { return "You have <h3>" + format(player.sb.storedSpaceEnergy) + "</h3> <s>space</s> moderation energy. (From Dark Universe)" }, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                    ["raw-html", () => { return "Boosts <s>space</s> moderation building effects by " + formatSimple(player.sb.sseEffect.sub(1).mul(100)) + "%" }, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                     ["blank", "25px"],
                     ["row", [["ex-buyable", 12],]],
                     ["blank", "25px"],
@@ -287,8 +287,8 @@
         },
     },
     tabFormat: [
-        ["raw-html", function () { return "You have <h3>" + formatWhole(player.ir.spaceRock) + "</h3> space rocks." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
-        ["raw-html", function () { return "You have <h3>" + formatWhole(player.ir.spaceGem) + "</h3> space gems." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+        ["raw-html", function () { return "You have <h3>" + formatWhole(player.ir.spaceRock) + "</h3> warns." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+        ["raw-html", function () { return "You have <h3>" + formatWhole(player.ir.spaceGem) + "</h3> bans." }, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
         ["microtabs", "stuff", { 'border-width': '0px' }],
         ["blank", "25px"],
     ],

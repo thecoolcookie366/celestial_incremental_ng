@@ -3742,7 +3742,7 @@ addLayer("pet", {
             description() {
                 return "/" + format(this.effect()[0]) + " to star exploration time.<br>" +
                     "x" + format(this.effect()[1]) + " to starmetal essence <small>(based on starmetal alloy)</small>.<br>" +
-                    "x" + format(this.effect()[2]) + " to space rocks."
+                    "x" + format(this.effect()[2]) + " to warns."
             },
             levelLimit() { return getLevelableTier(this.layer, this.id).mul(5).add(10).min(50) },
             effect() {
@@ -3783,7 +3783,7 @@ addLayer("pet", {
         1101: {
             image() { return this.canClick() ? "resources/Pets/voidGwaEvoPet.png" : "resources/secret.png"},
             title() { return "Voidgwa" },
-            lore() { return "Seems to be like gwa, but its appearance is inverted. It has a strange force that prevents you from getting near it." }, 
+            lore() { return "Seems to be like gwa, but its appearance is inverted. It has a strange force that prevents you from getting near it. When trying to get it, the being emitted a timewall - 2,000 dice runs, rocket fuel runs, hex runs..." }, 
             description() {
                 return "x" + format(this.effect()[0]) + " to infinities.<br>" +
                     "x" + format(this.effect()[1]) + " to infinitum.<br>" +

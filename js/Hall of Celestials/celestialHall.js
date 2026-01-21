@@ -30,7 +30,7 @@
             "Cookie, the Celestial of NG+",
             "smileyfr, the Celestial of fr",
             "Domain, the Celestial of Silliness",
-            "Iridite, the Astral Celestial",
+            "Galaxy, the Astral Celestial",
             "Aleph, the Celestial of Swarms",
             "Tera, the Celestial of Tiers",
             "Zar, the Celestial of Chance",
@@ -84,7 +84,7 @@
             title() { return player.ir.iriditeDefeated ? "<h1>✦" : "<h1>?" },
             canClick() { return player.ir.iriditeDefeated },
             unlocked() { return true },
-            tooltip() { return player.ir.iriditeDefeated ? "Iridite, the Astral Celestial" : "" },
+            tooltip() { return player.ir.iriditeDefeated ? "Galaxy, the Astral Celestial" : "" },
             onClick() {
                 player.ch.celestialIndex = new Decimal(4)
             },
@@ -213,8 +213,8 @@
             unlocked() { return player.ch.celestialIndex.eq(3) },      
         },
         5: {
-            title: "Iridite, the Astral Celestial",
-            body() { return "The first of the novasent, Iridite was born as a member of the celestial hunting corporation. Living her entire life under these conditions, she never got to live her life like a normal human being. One day, she went on a mission that somehow got her turned into a celestial. When she was a celestial, she became obsessed with how celestials are made, and conducted many experiments on countless universes. Nova took sight of this, and asked her to join him as a novasent. She agreed, and was tasked with finding a universe suitable enough for Nova to take over as his own. That's how Nova discovered the domain of singularity." },
+            title: "Galaxy, the Astral Celestial",
+            body() { return "placeholder" },
             unlocked() { return player.ch.celestialIndex.eq(4) },      
         },
         6: {

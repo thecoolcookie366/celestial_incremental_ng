@@ -939,9 +939,9 @@ addLayer("tad", {
             },
         },
         201: {
-            title: "KILL GATEKEEPER AND BREAK INFINITY<br>Req: 250 of each T1 Alt-Infinity",
+            title: "KILL GATEKEEPER AND BREAK INFINITY<br>Req: 25 of each T1 Alt-Infinity",
             canClick() {
-                return !player.in.unlockedBreak && player.tad.altInfinities.broken.amount.gte(250) && player.tad.altInfinities.shattered.amount.gte(250) && player.tad.altInfinities.fragmented.amount.gte(250)
+                return !player.in.unlockedBreak && player.tad.altInfinities.broken.amount.gte(25) && player.tad.altInfinities.shattered.amount.gte(25) && player.tad.altInfinities.fragmented.amount.gte(25)
             },
             unlocked: true,
             onClick() {
@@ -956,9 +956,9 @@ addLayer("tad", {
             },
         },
         202: {
-            title: "FORGET WHAT A GATE IS AND BREAK NEGATIVE INFINITY<br>Req: 250 of each T2 Alt-Infinity",
+            title: "FORGET WHAT A GATE IS AND BREAK NEGATIVE INFINITY<br>Req: 25 of each T2 Alt-Infinity",
             canClick() {
-                return !player.tad.breakNIP && player.tad.altInfinities.corrupted.amount.gte(250) && player.tad.altInfinities.disfigured.amount.gte(250) && player.tad.altInfinities.distorted.amount.gte(250)
+                return !player.tad.breakNIP && player.tad.altInfinities.corrupted.amount.gte(25) && player.tad.altInfinities.disfigured.amount.gte(25) && player.tad.altInfinities.distorted.amount.gte(25)
             },
             unlocked: true,
             onClick() {
@@ -973,9 +973,9 @@ addLayer("tad", {
             },
         },
         203: {
-            title: "EXPAND YOUR HIVES LIMITS<br>Req: 5,000 of each T3 Alt-Infinity",
+            title: "BUILD A FINAL CUTSCENE<br>Req: 250 of each T3 Alt-Infinity",
             canClick() {
-                return !player.tad.hiveExpand && player.tad.altInfinities.infected.amount.gte(5000) && player.tad.altInfinities.infested.amount.gte(5000)
+                return !player.tad.hiveExpand && player.tad.altInfinities.infected.amount.gte(250) && player.tad.altInfinities.infested.amount.gte(250)
             },
             unlocked: true,
             onClick() {
