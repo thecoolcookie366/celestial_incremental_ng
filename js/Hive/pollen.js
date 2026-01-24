@@ -1,6 +1,6 @@
 addLayer("bpl", {
-    name: "Pollen", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "PL", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "KittyM Cat", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "<s>KM</s>C", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -53,8 +53,8 @@ addLayer("bpl", {
     nodeStyle() {
         return {borderColor: "#7f6b4e"}
     },
-    tooltip: "Pollen",
-    color: "#ffd69c",
+    tooltip: "<s>KittyM</s> Cat",
+    color: "#ffffff",
     branches: ["bee"],
     update(delta) {
         let onepersec = new Decimal(1)
@@ -67,7 +67,7 @@ addLayer("bpl", {
         player.bpl.pollenGain = player.bpl.pollenGain.mul(player.fl.glossaryEffects.pollen)
         player.bpl.pollenGain = player.bpl.pollenGain.mul(buyableEffect("bee", 31))
         player.bpl.pollenGain = player.bpl.pollenGain.mul(player.bpl.roles.worker.effect)
-        if (hasUpgrade("bpl", 11)) player.bpl.pollenGain = player.bpl.pollenGain.mul(2)
+        if (hasUpgrade("bpl", 11)) player.bpl.pollenGain = player.bpl.pollenGain.mul(1e5)
         if (hasUpgrade("bpl", 15)) player.bpl.pollenGain = player.bpl.pollenGain.mul(upgradeEffect("bpl", 15))
         if (player.bb.breadMilestone >= 2) player.bpl.pollenGain = player.bpl.pollenGain.mul(player.bb.breadEffects[1])
         player.bpl.pollenGain = player.bpl.pollenGain.mul(buyableEffect("al", 101))
@@ -82,8 +82,8 @@ addLayer("bpl", {
 
         // Pollen Timer Calculations
         player.bpl.pollenTimerMax = new Decimal(5)
-        if (hasUpgrade("bpl", 12)) player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.sub(0.5)
-        if (hasUpgrade("bpl", 17)) player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.sub(0.5)
+        if (hasUpgrade("bpl", 12)) player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.sub(2.4)
+        if (hasUpgrade("bpl", 17)) player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.sub(2.4)
         player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.div(buyableEffect("bee", 32))
         if (player.bb.breadMilestone >= 3) player.bpl.pollenTimerMax = player.bpl.pollenTimerMax.div(player.bb.breadEffects[2])
 
@@ -149,46 +149,42 @@ addLayer("bpl", {
     },
     clickables: {
         11: {
-            title: "Convert your Pollen into Drone Bees",
+            title: "Convert your Cats into F2P Cats",
             tooltip() {return "+" + formatSimple(player.bpl.roles.drone.gain, 1) + "<br>On Conversion"},
             canClick() {return player.bpl.roles.drone.gain.gte(0.01)},
             unlocked: true,
             onClick() {
                 player.bpl.roles.drone.amount = player.bpl.roles.drone.amount.add(player.bpl.roles.drone.gain)
-                player.bpl.pollen = new Decimal(0)
             },
             style: { width: '175px', minHeight: '60px', border: "3px solid rgba(0,0,0,0.3)", borderRadius: '0px' },
         },
         12: {
-            title: "Convert your Pollen into Worker Bees",
+            title: "Convert your Cats into P2W Cats",
             tooltip() {return "+" + formatSimple(player.bpl.roles.worker.gain, 1) + "<br>On Conversion"},
             canClick() { return hasUpgrade("bpl", 13) && player.bpl.roles.worker.gain.gte(0.01)},
             unlocked: true,
             onClick() {
                 player.bpl.roles.worker.amount = player.bpl.roles.worker.amount.add(player.bpl.roles.worker.gain)
-                player.bpl.pollen = new Decimal(0)
             },
             style: { width: '175px', minHeight: '60px', border: "3px solid rgba(0,0,0,0.3)", borderRadius: '0px' },
         },
         13: {
-            title: "Convert your Pollen into Queen Bees",
+            title: "Convert your Cats into Admin Cats",
             tooltip() {return "+" + formatSimple(player.bpl.roles.queen.gain, 1) + "<br>On Conversion"},
             canClick() { return hasUpgrade("bpl", 16) && player.bpl.roles.queen.gain.gte(0.01)},
             unlocked: true,
             onClick() {
                 player.bpl.roles.queen.amount = player.bpl.roles.queen.amount.add(player.bpl.roles.queen.gain)
-                player.bpl.pollen = new Decimal(0)
             },
             style: { width: '175px', minHeight: '60px', border: "3px solid rgba(0,0,0,0.3)", borderRadius: '0px' },
         },
         14: {
-            title: "Convert your Pollen into Empress Bees",
+            title: "Convert your Cats into KittyMs",
             tooltip() {return "+" + formatSimple(player.bpl.roles.empress.gain, 1) + "<br>On Conversion"},
             canClick() { return hasUpgrade("al", 120) && player.bpl.roles.empress.gain.gte(0.01)},
             unlocked: true,
             onClick() {
                 player.bpl.roles.empress.amount = player.bpl.roles.empress.amount.add(player.bpl.roles.empress.gain)
-                player.bpl.pollen = new Decimal(0)
             },
             style: { width: '175px', minHeight: '60px', border: "3px solid rgba(0,0,0,0.3)", borderRadius: '0px' },
         },
@@ -215,49 +211,49 @@ addLayer("bpl", {
     },
     upgrades: {
         11: {
-            title: "Pollen Upgrade I",
+            title: "Cat Upgrade I",
             unlocked: true,
-            description: "Doubles pollen gain.",
+            description: "x100,000 cat gain.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(125)
                 return new Decimal(5)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         12: {
-            title: "Pollen Upgrade II",
+            title: "Cat Upgrade II",
             unlocked: true,
             description() {
-                if (hasUpgrade("al", 112)) return "Increase pollen per second by +5%."
-                return "Reduce base pollen cooldown by 0.5s."
+                if (hasUpgrade("al", 112)) return "Increase cats per second by +5%."
+                return "Reduce base cat cooldown by 2.4s."
             },
             cost() {
                 if (player.bee.path != 1) return new Decimal(3375)
                 return new Decimal(15)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         13: {
-            title: "Pollen Upgrade III",
+            title: "Cat Upgrade III",
             unlocked: true,
-            description: "Unlock Worker Bees.",
+            description: "Unlock P2W Cats.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(125000)
                 return new Decimal(50)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         14: {
-            title: "Pollen Upgrade IV",
+            title: "Cat Upgrade IV",
             unlocked: true,
             description: "Unlock blue flowers.",
             cost() {
@@ -265,20 +261,20 @@ addLayer("bpl", {
                 return new Decimal(150)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         15: {
-            title: "Pollen Upgrade V",
+            title: "Cat Upgrade V",
             unlocked: true,
-            description: "Boost Pollen based on total Research.",
+            description: "Boost Cat based on total Research.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(1e9)
                 return new Decimal(1000)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             effect() {
                 return player.bee.totalResearch.div(5).pow(0.5).add(1)
@@ -287,36 +283,36 @@ addLayer("bpl", {
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         16: {
-            title: "Pollen Upgrade VI",
+            title: "Cat Upgrade VI",
             unlocked: true,
-            description: "Unlock Queen Bees.",
+            description: "Unlock Admin Cats.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(1.5625e13)
                 return new Decimal(25000)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         17: {
-            title: "Pollen Upgrade VII",
+            title: "Cat Upgrade VII",
             unlocked: true,
             description() {
-                if (hasUpgrade("al", 112)) return "Increase pollen per second by +5%, again."
-                return "Reduce base pollen cooldown by 0.5s, again."
+                if (hasUpgrade("al", 112)) return "Increase cat per second by +5%, again."
+                return "Reduce base cat cooldown by 2.4s, again."
             },
             cost() {
                 if (player.bee.path != 1) return new Decimal(1.25e17)
                 return new Decimal(500000)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         18: {
-            title: "Pollen Upgrade VIII",
+            title: "Cat Upgrade VIII",
             unlocked: true,
             description: "Decrease time between blue flower growth by /2.",
             cost() {
@@ -324,33 +320,33 @@ addLayer("bpl", {
                 return new Decimal(2500000)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         19: {
-            title: "Pollen Upgrade IX",
+            title: "Cat Upgrade IX",
             unlocked: true,
-            description: "Unlock a new pollen research.",
+            description: "Unlock a new cat research.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(1.25e23)
                 return new Decimal(50000000)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         20: {
-            title: "Pollen Upgrade X",
+            title: "Cat Upgrade X",
             unlocked() {return hasUpgrade("al", 111)},
-            description: "Boost pollen based on nectar α.",
+            description: "Boost cat based on Gold α.",
             cost() {
                 if (player.bee.path != 1) return new Decimal(1e240)
                 return new Decimal(1e60)
             },
             currencyLocation() { return player.bpl },
-            currencyDisplayName: "Pollen",
+            currencyDisplayName: "Cats",
             currencyInternalName: "pollen",
             effect() {
                 return player.ne.alpha.amount.pow(0.1).add(1)
@@ -370,7 +366,7 @@ addLayer("bpl", {
             ["raw-html", () => {return "(+" + format(player.bee.bps) + "/s)" }, {color: "white", fontSize: "14px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["row", [
-            ["raw-html", () => {return "You have <h3>" + format(player.bpl.pollen) + "</h3> pollen"}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+            ["raw-html", () => {return "You have <h3>" + format(player.bpl.pollen) + "</h3> cat"}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
             ["raw-html", () => {return hasUpgrade("al", 112) ? "(+" + format(player.bpl.pollenGain) + "/s)" : "(+" + format(player.bpl.pollenGain) + ")"}, {color: "white", fontSize: "20px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["bar", "pollenBar"],
@@ -381,7 +377,7 @@ addLayer("bpl", {
         ["style-column", [
             ["style-row", [
                 ["style-column", [
-                    ["raw-html", () => { return "You have " + format(player.bpl.roles.drone.amount) + " Drone Bees."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", () => { return "You have " + format(player.bpl.roles.drone.amount) + " F2P Cats."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
                     ["row", [
                         ["raw-html", () => { return "Which boosts bees per second by x" + format(player.bpl.roles.drone.effect)}, { color: "white", fontSize: "16px", fontFamily: "monospace" }],
                         ["raw-html", () => {return player.bpl.roles.drone.amount.gte(1e100) ? "[SOFTCAPPED<sup>2</sup>]" : player.bpl.roles.drone.amount.gte(1e60) ? "[SOFTCAPPED]" : ""}, {color: "#c00", fontSize: "14px", fontFamily: "monospace", marginLeft: "8px"}],
@@ -392,9 +388,9 @@ addLayer("bpl", {
             ], {borderBottom: "4px solid white"}],
             ["style-row", [
                 ["style-column", [
-                    ["raw-html", () => {return "You have " + format(player.bpl.roles.worker.amount) + " Worker Bees."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
+                    ["raw-html", () => {return "You have " + format(player.bpl.roles.worker.amount) + " P2W Cats."}, {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ["row", [
-                        ["raw-html", () => {return "Which boosts pollen gain by x" + format(player.bpl.roles.worker.effect)}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "Which boosts cat gain by x" + format(player.bpl.roles.worker.effect)}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return player.bpl.roles.worker.amount.gte(1e30) ? "[SOFTCAPPED]" : ""}, {color: "#c00", fontSize: "14px", fontFamily: "monospace", marginLeft: "8px"}],
                     ]],
                 ], {width: "525px"}],
@@ -403,15 +399,15 @@ addLayer("bpl", {
             ], () => { return hasUpgrade("bpl", 13) ? {borderBottom: "4px solid white"} : {display: "none !important"} }],
             ["style-row", [
                 ["style-column", [
-                    ["raw-html", () => { return "You have " + format(player.bpl.roles.queen.amount) + " Queen Bees."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
-                    ["raw-html", () => { return "Which improves pollen conversion rate by x" + format(player.bpl.roles.queen.effect)}, { color: "white", fontSize: "16px", fontFamily: "monospace" }],
+                    ["raw-html", () => { return "You have " + format(player.bpl.roles.queen.amount) + " Admin Cats."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", () => { return "Which improves cat conversion rate by x" + format(player.bpl.roles.queen.effect)}, { color: "white", fontSize: "16px", fontFamily: "monospace" }],
                 ], {width: "525px"}],
                 ["style-row", [], {width: "4px", height: "60px", background: "white"}],
                 ["clickable", 13],
             ], () => { return hasUpgrade("bpl", 16) ? {borderBottom: "4px solid white"} : {display: "none !important"} }],
             ["style-row", [
                 ["style-column", [
-                    ["raw-html", () => { return "You have " + format(player.bpl.roles.empress.amount) + " Empress Bees."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", () => { return "You have " + format(player.bpl.roles.empress.amount) + " KittyMs..."}, { color: "white", fontSize: "24px", fontFamily: "monospace" }],
                     ["raw-html", () => { return "Which boosts flower gain by x" + format(player.bpl.roles.empress.effect)}, { color: "white", fontSize: "16px", fontFamily: "monospace" }],
                 ], {width: "525px"}],
                 ["style-row", [], {width: "4px", height: "60px", background: "white"}],

@@ -14,13 +14,13 @@
     automate() {},
     nodeStyle() {
         return {
-            background: "linear-gradient(45deg, #8801aa 0%, #0260fe 100%)",
+            background: "linear-gradient(45deg, #abcdef 0%, #fedcba 100%)",
             "background-origin": "border-box",
-            "border-color": "#2e0054",
+            "border-color": "#aabbcc",
         }
     },
     tooltip: "The Legendary People",
-    color: "#0260fe",
+    color: "#abcdef",
     branches: ["cp"],
     update(delta) {
         let onepersec = new Decimal(1)
@@ -31,9 +31,10 @@
             "smileyfr, the Celestial of fr",
             "Domain, the Celestial of Silliness",
             "Galaxy, the Astral Celestial",
-            "Aleph, the Celestial of Swarms",
-            "Tera, the Celestial of Tiers",
-            "Zar, the Celestial of Chance",
+            "Leca, the Celestial of B...?",
+            "KittyM, the Semi-Celestial of Cats",
+            "Ona, the Non-Celestial of Money",
+            "EVEYTING SMIER, THE ??? OF WES.",
         ]
     },
     clickables: {
@@ -92,39 +93,45 @@
             branches() {return player.ir.iriditeDefeated ? [14] : []},
         },
         16: {
-            title() { return false ? "<h1>ℵ" : "<h1>?" },
-            canClick() { return false },
+            title() { return player.bee.bees.gte("1e1.79e308") ? "<h1>🐝" : "<h1>?" },
+            canClick() { return player.bee.bees.gte("1e1.79e308") },
             unlocked() { return true },
+            tooltip() { return player.bee.bees.gte("1e1.79e308") ? "Leca, the Celestial of B...?" : "" },
             onClick() {
                 player.ch.celestialIndex = new Decimal(5)
             },
             style: { width: '50px', "min-height": '50px' }, // Aleph
-            branches() {return false ? [15] : []},
+            branches() {return player.bee.bees.gte("1e1.79e308") ? [15] : []},
         },
         17: {
-            title() { return "<h1>?" },
-            canClick() { return false },
+            title() { return player.bee.bees.gte("1e1.79e308") && player.sma.eclipseShards.gte(1e3) ? "<h1>Ψ" : "<h1>?" },
+            canClick() { return player.bee.bees.gte("1e1.79e308") && player.sma.eclipseShards.gte(1e3) },
             unlocked() { return true },
+            tooltip() { return player.bee.bees.gte("1e1.79e308") && player.sma.eclipseShards.gte(1e3) ? "KittyM, the Semi-Celestial of Cats" : "" },
             onClick() {
-                //player.ch.celestialIndex = new Decimal(6)
+                player.ch.celestialIndex = new Decimal(6)
             },
             style: { width: '50px', "min-height": '50px' }, // Tera
+            branches() {return player.bee.bees.gte("1e1.79e308") && player.sma.eclipseShards.gte(1e3) ? [16] : []},
         },
         18: {
-            title() { return "<h1>?" },
-            canClick() { return false },
+            title() { return player.bee.bees.gte("1e1.79e308") && player.cb.paragonShards.gte(100) ? "<h1>$" : "<h1>?" },
+            canClick() { return player.bee.bees.gte("1e1.79e308") && player.cb.paragonShards.gte(100) },
             unlocked() { return true },
+            tooltip() { return player.bee.bees.gte("1e1.79e308") && player.cb.paragonShards.gte(100) ? "Ona, the Non-Celestial of Money" : "" },
             onClick() {
-                //player.ch.celestialIndex = new Decimal(7)
+                player.ch.celestialIndex = new Decimal(7)
             },
             style: { width: '50px', "min-height": '50px' }, // Zar
+            branches() {return player.bee.bees.gte("1e1.79e308") && player.cb.paragonShards.gte(100) ? [17,11] : []},
         },
         19: {
             title() { return "<h1>∑" },
-            canClick() { return false },
+            canClick() { return player.tad.hiveExpand && player.sma.eclipseShards.gte(1e3) && player.cb.paragonShards.gte(100) },
             unlocked() { return true },
+            tooltip() { return player.tad.hiveExpand && player.sma.eclipseShards.gte(1e3) && player.cb.paragonShards.gte(100) ? "IT'S HIM." : "???"},
             onClick() {
-                //player.ch.celestialIndex = new Decimal(8)
+                player.ch.celestialIndex = new Decimal(8)
             },
             style: { width: '75px', "min-height": '75px' }, //nova
         },
@@ -218,9 +225,24 @@
             unlocked() { return player.ch.celestialIndex.eq(4) },      
         },
         6: {
-            title: "Aleph, the Celestial of Swarms",
-            body() { return "From everything that I have heard, Aleph has always been a very strange celestial. She has always lived solely for the sake of furthering the existance of her swarm, even if it might be at the cost of her own well-being. It seems the only thing that matters to her is a prosperous swarm." },
+            title: "Leca, the Celestial of B...?",
+            body() { return "placeholder" },
             unlocked() { return player.ch.celestialIndex.eq(5) },      
+        },
+        7: {
+            title: "KittyM, the Semi-Celestial of Cats",
+            body() { return "placeholder" },
+            unlocked() { return player.ch.celestialIndex.eq(6) },      
+        },
+        8: {
+            title: "Ona, the Non-Celestial of Money",
+            body() { return "placeholder" },
+            unlocked() { return player.ch.celestialIndex.eq(7) },      
+        },
+        9: {
+            title: "EVEYTING SMIER, THE ??? OF WES",
+            body() { return "placeholder" },
+            unlocked() { return player.ch.celestialIndex.eq(8) },      
         },
     },
     microtabs: {
@@ -280,6 +302,9 @@
                     ["infobox", 4],
                     ["infobox", 5],
                     ["infobox", 6],
+                    ["infobox", 7],
+                    ["infobox", 8],
+                    ["infobox", 9],
                 ]
             },
             "Matos Perks": {

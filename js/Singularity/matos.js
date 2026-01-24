@@ -3821,8 +3821,8 @@
         //eclipse
         201: {
             costBase() { return new Decimal(5) },
-            costGrowth() { return new Decimal(1.4) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.001) },
+            purchaseLimit() { return new Decimal(1e6) },
             currency() { return player.sma.eclipseShards},
             pay(amt) { player.sma.eclipseShards = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },
@@ -3855,8 +3855,8 @@
         },
         202: {
             costBase() { return new Decimal(5) },
-            costGrowth() { return new Decimal(1.4) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.002) },
+            purchaseLimit() { return new Decimal(1e6) },
             currency() { return player.sma.eclipseShards},
             pay(amt) { player.sma.eclipseShards = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },
@@ -3889,8 +3889,8 @@
         },
         203: {
             costBase() { return new Decimal(5) },
-            costGrowth() { return new Decimal(1.4) },
-            purchaseLimit() { return new Decimal(100) },
+            costGrowth() { return new Decimal(1.003) },
+            purchaseLimit() { return new Decimal(1e6) },
             currency() { return player.sma.eclipseShards},
             pay(amt) { player.sma.eclipseShards = this.currency().sub(amt).floor() },
             effect(x) { return getBuyableAmount(this.layer, this.id) },

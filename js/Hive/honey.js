@@ -147,8 +147,8 @@ addLayer("ho", {
     clickables: {
         1: {
             title() {
-                if (player.bee.path != 2) return "Gain honey-cells, but reset previous content<br><small>Req: 1e16 Nectar δ</small>"
-                return "Gain honey-cells, but reset previous content<br><small>Req: 100 Nectar δ</small>"
+                if (player.bee.path != 2) return "Gain BSS macros, but reset previous content<br><small>Req: 1e16 Gold δ</small>"
+                return "Gain BSS macros, but reset previous content<br><small>Req: 100 Gold δ</small>"
             },
             canClick() { return (player.bee.path == 2 && player.ne.delta.amount.gte(100)) || (player.bee.path != 2 && player.ne.delta.amount.gte(1e16))},
             unlocked: true,
@@ -186,11 +186,11 @@ addLayer("ho", {
                 return player.ho.effects.bee.xp.div(player.ho.effects.bee.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#ffffff"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
-                return "Bee Cell Lv." + formatWhole(player.ho.effects.bee.level) + " | [" + format(player.ho.effects.bee.xp) + "/" + format(player.ho.effects.bee.req) + "] | x" + format(player.ho.effects.bee.effect) + " BPS"
+                return "Common Macro Lv." + formatWhole(player.ho.effects.bee.level) + " | [" + format(player.ho.effects.bee.xp) + "/" + format(player.ho.effects.bee.req) + "] | x" + format(player.ho.effects.bee.effect) + " BPS"
             },
         },
         effect2: {
@@ -203,18 +203,18 @@ addLayer("ho", {
                 return player.ho.effects.flower.xp.div(player.ho.effects.flower.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#48ff00"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
                 if (hasUpgrade("al", 213)) {
-                    return "Flower Cell Lv." + formatWhole(player.ho.effects.flower.level) + " | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB | x" + format(player.ho.effects.flower.effect2) + " Flowers"
+                    return "Uncommon Macro Lv." + formatWhole(player.ho.effects.flower.level) + " | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB | x" + format(player.ho.effects.flower.effect2) + " Flowers"
                 }
                 if (!hasUpgrade("al", 208)) {
-                    if (player.ho.effects.flower.level.gte(25)) return "Flower Cell Lv." + formatWhole(player.ho.effects.flower.level) + "/25 | [MAX] | +" + format(player.ho.effects.flower.effect) + " GEB"
-                    return "Flower Cell Lv." + formatWhole(player.ho.effects.flower.level) + "/25 | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB"
+                    if (player.ho.effects.flower.level.gte(25)) return "Uncommon Macro Lv." + formatWhole(player.ho.effects.flower.level) + "/25 | [MAX] | +" + format(player.ho.effects.flower.effect) + " GEB"
+                    return "Uncommon Macro Lv." + formatWhole(player.ho.effects.flower.level) + "/25 | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB"
                 }
-                return "Flower Cell Lv." + formatWhole(player.ho.effects.flower.level) + " | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB"
+                return "Uncommon Macro Lv." + formatWhole(player.ho.effects.flower.level) + " | [" + format(player.ho.effects.flower.xp) + "/" + format(player.ho.effects.flower.req) + "] | +" + commaFormat(player.ho.effects.flower.effect, 2) + " GEB"
             },
         },
         effect3: {
@@ -226,11 +226,11 @@ addLayer("ho", {
                 return player.ho.effects.alpha.xp.div(player.ho.effects.alpha.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#007bff"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
-                return "Alpha Cell Lv." + formatWhole(player.ho.effects.alpha.level) + " | [" + format(player.ho.effects.alpha.xp) + "/" + format(player.ho.effects.alpha.req) + "] | x" + format(player.ho.effects.alpha.effect) + " Nectar α"
+                return "Rare Macro Lv." + formatWhole(player.ho.effects.alpha.level) + " | [" + format(player.ho.effects.alpha.xp) + "/" + format(player.ho.effects.alpha.req) + "] | x" + format(player.ho.effects.alpha.effect) + " Gold α"
             },
         },
         effect4: {
@@ -242,11 +242,11 @@ addLayer("ho", {
                 return player.ho.effects.nectar.xp.div(player.ho.effects.nectar.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#c300ff"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
-                return "Nectar Cell Lv." + formatWhole(player.ho.effects.nectar.level) + " | [" + format(player.ho.effects.nectar.xp) + "/" + format(player.ho.effects.nectar.req) + "] | x" + format(player.ho.effects.nectar.effect) + " Nectar"
+                return "Epic Macro Lv." + formatWhole(player.ho.effects.nectar.level) + " | [" + format(player.ho.effects.nectar.xp) + "/" + format(player.ho.effects.nectar.req) + "] | x" + format(player.ho.effects.nectar.effect) + " Gold"
             },
         },
         effect5: {
@@ -258,11 +258,11 @@ addLayer("ho", {
                 return player.ho.effects.pollen.xp.div(player.ho.effects.pollen.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#fff700"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
-                return "Pollen Cell Lv." + formatWhole(player.ho.effects.pollen.level) + " | [" + format(player.ho.effects.pollen.xp) + "/" + format(player.ho.effects.pollen.req) + "] | x" + format(player.ho.effects.pollen.effect) + " Pollen"
+                return "Legendary Macro Lv." + formatWhole(player.ho.effects.pollen.level) + " | [" + format(player.ho.effects.pollen.xp) + "/" + format(player.ho.effects.pollen.req) + "] | x" + format(player.ho.effects.pollen.effect) + " Cat"
             },
         },
         effect6: {
@@ -275,12 +275,12 @@ addLayer("ho", {
                 return player.ho.effects.bread.xp.div(player.ho.effects.bread.req)
             },
             baseStyle: {background: "rgba(0,0,0,0.5)"},
-            fillStyle: {backgroundColor: "#a27100"},
+            fillStyle: {backgroundColor: "#ff0000"},
             borderStyle: {border: "3px solid white", borderRadius: "25px"},
             textStyle: {userSelect: "none"},
             display() {
-                if (player.ho.effects.bread.level.gte(20)) return "Bee Bread Cell Lv." + formatWhole(player.ho.effects.bread.level) + "/20 | [MAX] | ^" + format(player.ho.effects.bread.effect) + " Effective BB"
-                return "Bee Bread Cell Lv." + formatWhole(player.ho.effects.bread.level) + "/20 | [" + format(player.ho.effects.bread.xp) + "/" + format(player.ho.effects.bread.req) + "] | ^" + commaFormat(player.ho.effects.bread.effect, 2) + " Effective BB"
+                if (player.ho.effects.bread.level.gte(20)) return "Mythical Macro Lv." + formatWhole(player.ho.effects.bread.level) + "/20 | [MAX] | ^" + format(player.ho.effects.bread.effect) + " Effective CB"
+                return "Mythical Macro Lv." + formatWhole(player.ho.effects.bread.level) + "/20 | [" + format(player.ho.effects.bread.xp) + "/" + format(player.ho.effects.bread.req) + "] | ^" + commaFormat(player.ho.effects.bread.effect, 2) + " Effective CB"
             },
         },
         cellBar: {
@@ -304,27 +304,27 @@ addLayer("ho", {
             textStyle: {fontSize: "11px", userSelect: "none"},
             display() {
                 let str = "<div style='width:250px;height:465px;display:flex;flex-direction:column'>"
-                if (hasUpgrade("al", 222)) str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][9]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Bee Bread Cell</div>")
-                if (hasUpgrade("al", 214)) str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][8]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Pollen Cell</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][7]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Honey Upgrades</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][6]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock a new honey research</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][5]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Nectar Cell</div>")
+                if (hasUpgrade("al", 222)) str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][9]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Mythical Macro</div>")
+                if (hasUpgrade("al", 214)) str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][8]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Legendary Macro</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][7]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Macro Upgrades</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][6]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock a new macro research</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][5]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Epic Macro</div>")
                 str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][4]) + " Cells<hr style='width:200px;margin-bottom:3px'>Half time between Yellow Flower Growth</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][3]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Alpha Cell</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][3]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Rare Macro</div>")
                 str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][2]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Yellow Flowers</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][1]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Flower Cell</div>")
-                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid transparent'>" + formatWhole(CELL_MILESTONES[player.bee.path][0]) + " Cell<hr style='width:200px;margin-bottom:3px'>Unlock Bee Cell</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid white'>" + formatWhole(CELL_MILESTONES[player.bee.path][1]) + " Cells<hr style='width:200px;margin-bottom:3px'>Unlock Uncommon Macro</div>")
+                str = str.concat("<div style='width:250px;flex:1;box-sizing:border-box;padding:5px;border-bottom:2px solid transparent'>" + formatWhole(CELL_MILESTONES[player.bee.path][0]) + " Cell<hr style='width:200px;margin-bottom:3px'>Unlock Common Macro</div>")
                 return str
             },
         },
     },
     upgrades: {
         1: {
-            title: "Honey 1",
+            title: "Macro 1",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
             description() {
-                if (hasUpgrade("al", 223)) return "Triple honey gain per honey upgrade."
-                return "Double honey gain per honey upgrade."
+                if (hasUpgrade("al", 223)) return "Triple honey gain per macro upgrade."
+                return "Double honey gain per macro upgrade."
             },
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e18)
@@ -341,9 +341,9 @@ addLayer("ho", {
             style: {width: "175px", minHeight: "80px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         2: {
-            title: "Honey 2",
+            title: "Macro 2",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
-            description: "Total cell level boosts nectar.",
+            description: "Total macro level boosts gold.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(2.7e19)
                 return new Decimal(3e6)
@@ -363,9 +363,9 @@ addLayer("ho", {
             style: {width: "175px", minHeight: "80px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         3: {
-            title: "Honey 3",
+            title: "Macro 3",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
-            description: "Nectar β boosts picking power.",
+            description: "Gold β boosts picking power.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e21)
                 return new Decimal(1e7)
@@ -381,9 +381,9 @@ addLayer("ho", {
             style: {width: "175px", minHeight: "80px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         4: {
-            title: "Honey 4",
+            title: "Macro 4",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
-            description: "Nectar γ boosts honey-cells.",
+            description: "Gold γ boosts BSS Macros.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(6.4e22)
                 return new Decimal(4e7)
@@ -399,9 +399,9 @@ addLayer("ho", {
             style: {width: "175px", minHeight: "80px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         5: {
-            title: "Honey 5",
+            title: "Macro 5",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
-            description: "Honey-cells boost flower gain.",
+            description: "BSS Macros boost flower gain.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(8e24)
                 return new Decimal(2e8)
@@ -417,7 +417,7 @@ addLayer("ho", {
             style: {width: "175px", minHeight: "80px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         6: {
-            title: "Honey 6",
+            title: "Macro 6",
             unlocked() {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][7])},
             description: "Glossary effect base boosts honey.",
             cost() {
@@ -441,7 +441,7 @@ addLayer("ho", {
             ["raw-html", () => {return "(+" + format(player.bee.bps) + "/s)" }, {color: "white", fontSize: "14px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["row", [
-            ["raw-html", () => {return "You have <h3>" + format(player.ne.delta.amount) + "</h3> Nectar δ"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+            ["raw-html", () => {return "You have <h3>" + format(player.ne.delta.amount) + "</h3> Gold δ"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
             ["raw-html", () => {return "(+" + format(player.ne.delta.gain) + ")"}, {color: "white", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["blank", "10px"],
@@ -472,7 +472,7 @@ addLayer("ho", {
             ], {width: "550px", height: "625px", backgroundColor: "#1e1500", border: "3px solid white", borderRadius: "20px 0 0 20px"}],
             ["style-column", [
                 ["style-column", [
-                    ["raw-html", "Honey-Cells<hr style='width:200px'>", {color: "white", fontSize: "16px", fontFamily: "monospace"}],
+                    ["raw-html", "BSS Macros<hr style='width:200px'>", {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                     ["row", [
                         ["raw-html", () => {return formatWhole(player.ho.cell)}, {color: "white", fontSize: "14px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + formatWhole(player.ho.cellGain) + ")"}, {color: "white", fontSize: "14px", fontFamily: "monospace", marginLeft: "7px"}],

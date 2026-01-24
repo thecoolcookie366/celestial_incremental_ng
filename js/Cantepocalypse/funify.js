@@ -3130,7 +3130,7 @@
             goal() { return new Decimal("1e75") },
             canComplete: function () { return player.cp.replicantiPoints.gte(1e75) },
             goalDescription() { return "1e75 Replicanti Points" },
-            rewardDescription: "Expand your hives limits.",
+            rewardDescription: "Build the final cutscene further. (One-Last-Remembrance)",
             onEnter() {
                 if (!player.fu.enterNumb) player.fu.enterNumb = true
                 player.fu.funifyPause = new Decimal(12)

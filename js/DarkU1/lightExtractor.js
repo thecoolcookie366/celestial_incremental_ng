@@ -192,7 +192,7 @@
             }
         },
         13: {
-            title() { return "<h2>Reset everything in this universe for stored eclipse shards.<br>Req: " + format(player.le.eclipseShardsReq) + " Points" },
+            title() { return "<h2>Reset everything in this universe for stored eclipse shards. Might be useful for a celestial?<br>Req: " + format(player.le.eclipseShardsReq) + " Points" },
             canClick() { return player.du.points.gte(player.le.eclipseShardsReq) },
             unlocked() { return true },
             onClick() {
@@ -202,7 +202,7 @@
 
                 player.pu.storedSelections = player.pu.storedSelections.add(1)
 
-                player.le.eclipseShardsToGet = player.le.eclipseShardsToGet.add(player.le.eclipseShardsToGetToGet)
+                player.le.eclipseShardsToGet = player.le.eclipseShardsToGet.add(player.le.eclipseShardsToGetToGet).mul(200)
             },
             onHold() { clickClickable(this.layer, this.id) },
             style() {

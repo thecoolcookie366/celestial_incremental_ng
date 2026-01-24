@@ -35,7 +35,7 @@
                 unlocked() { return true },
                 content: [
                     ["blank", "25px"],
-                    ["raw-html", () => {return "COMING SOON! (How did you even get here?)"}, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
+                    ["raw-html", () => {return "You shouldn't have been here, because i hard resetted your progress already."}, { "color": "white", "font-size": "24px", "font-family": "monospace" }],
                 ]
             },
         },

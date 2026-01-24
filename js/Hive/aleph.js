@@ -24,9 +24,9 @@ addLayer("al", {
     automate() {},
     nodeStyle() {
         return {
-            background: "linear-gradient(45deg, #3f003f 0%, #a900a9 100%)",
+            background: "linear-gradient(45deg, #ffffff00 0%, #ffffffff 100%)",
             "background-origin": "border-box",
-            "border-color": "#3f003f",
+            "border-color": "#000000",
         };
     },
     tooltip: "Leca, the Celestial of B...?",
@@ -176,7 +176,7 @@ addLayer("al", {
     },
     clickables: {
         1: {
-            title() { return "<h3>Gain Honeycombs, but reset previous content.</h3><br>Req: 1e10 Bee Bread<br>[While in Pollen Path]" },
+            title() { return "<h3>Gain Spoilers, but reset previous content.</h3><br>Req: 1e10 Cat Dough<br>[While in Cat Path]" },
             canClick() { return player.bb.beeBread.gte(1e10) && player.bee.path == 1 },
             unlocked: true,
             onClick() {
@@ -206,12 +206,12 @@ addLayer("al", {
     },
     upgrades: {
         101: {
-            title: "Honeycomb <small>(1, 1)</small>",
+            title: "Spoilers <small>(1, 1)</small>",
             unlocked: true,
             description: "Double BPS and flower gain.",
             cost: new Decimal(1),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycomb",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -220,12 +220,12 @@ addLayer("al", {
             },
         },
         102: {
-            title: "Honeycomb <small>(1, 2)</small>",
+            title: "Spoilers <small>(1, 2)</small>",
             unlocked: true,
-            description: "x2 Picking Power and Bee-Bread.",
+            description: "x2 Picking Power and Cat Dough.",
             cost: new Decimal(3),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -234,12 +234,12 @@ addLayer("al", {
             },
         },
         103: {
-            title: "Honeycomb <small>(1, 3)</small>",
+            title: "Spoilers <small>(1, 3)</small>",
             unlocked: true,
-            description: "Produce 100% of bee drones per second.",
+            description: "Produce 100% of F2P Cats per second.",
             cost: new Decimal(10),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -248,12 +248,12 @@ addLayer("al", {
             },
         },
         104: {
-            title: "Honeycomb <small>(2, 1)</small>",
+            title: "Spoilers <small>(2, 1)</small>",
             unlocked: true,
-            description: "Improve bee queen effect.",
+            description: "Improve Admin Cat effect.",
             cost: new Decimal(20),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -262,12 +262,12 @@ addLayer("al", {
             },
         },
         105: {
-            title: "Honeycomb <small>(2, 2)</small>",
+            title: "Spoilers <small>(2, 2)</small>",
             unlocked: true,
-            description: "Unlock a new pollen research.",
+            description: "Unlock a new cat research.",
             cost: new Decimal(50),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -276,12 +276,12 @@ addLayer("al", {
             },
         },
         106: {
-            title: "Honeycomb <small>(2, 3)</small>",
+            title: "Spoilers <small>(2, 3)</small>",
             unlocked: true,
-            description: "Produce 50% of bee workers per second.",
+            description: "Produce 50% of F2P Cats per second.",
             cost: new Decimal(200),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -290,12 +290,12 @@ addLayer("al", {
             },
         },
         107: {
-            title: "Honeycomb <small>(3, 1)</small>",
+            title: "Spoilers <small>(3, 1)</small>",
             unlocked: true,
-            description: "Boost BB tier multiplier by x10.",
+            description: "Boost CD tier multiplier by x10.",
             cost: new Decimal(350),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -304,12 +304,12 @@ addLayer("al", {
             },
         },
         108: {
-            title: "Honeycomb <small>(3, 2)</small>",
+            title: "Spoilers <small>(3, 2)</small>",
             unlocked: true,
-            description: "Boost pollen gain based on bees.",
+            description: "Boost cat gain based on bees.",
             cost: new Decimal(1200),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             effect() {
                 return player.bee.bees.add(1).log(1e10).add(1)
@@ -322,12 +322,12 @@ addLayer("al", {
             },
         },
         109: {
-            title: "Honeycomb <small>(3, 3)</small>",
+            title: "Spoilers <small>(3, 3)</small>",
             unlocked: true,
-            description: "Produce 25% of bee queens per second.",
+            description: "Produce 25% of Admin Cats per second.",
             cost: new Decimal(5000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -336,12 +336,12 @@ addLayer("al", {
             },
         },
         110: {
-            title: "Honeycomb <small>(4, 1)</small>",
+            title: "Spoilers <small>(4, 1)</small>",
             unlocked() {return player.tad.hiveExpand},
             description: "Triple BPS and flower Gain.",
             cost: new Decimal(100000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -350,12 +350,12 @@ addLayer("al", {
             },
         },
         111: {
-            title: "Honeycomb <small>(4, 2)</small>",
+            title: "Spoilers <small>(4, 2)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Unlock the forgotten pollen upgrade.",
+            description: "Unlock the forgotten cat upgrade.",
             cost: new Decimal(400000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -364,12 +364,12 @@ addLayer("al", {
             },
         },
         112: {
-            title: "Honeycomb <small>(4, 3)</small>",
+            title: "Spoilers <small>(4, 3)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Replace pollen cooldown with constant pollen production.",
+            description: "Replace cat cooldown with constant cat production.",
             cost: new Decimal(1.2e6),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -378,12 +378,12 @@ addLayer("al", {
             },
         },
         113: {
-            title: "Honeycomb <small>(5, 1)</small>",
+            title: "Spoilers <small>(5, 1)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Remove BB GEB milestone cap.",
+            description: "Remove CD GEB milestone cap.",
             cost: new Decimal(4e6),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -392,12 +392,12 @@ addLayer("al", {
             },
         },
         114: {
-            title: "Honeycomb <small>(5, 2)</small>",
+            title: "Spoilers <small>(5, 2)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Unlock a new bee bread milestone.",
+            description: "Unlock a new cat dough milestone.",
             cost: new Decimal(2e7),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -406,12 +406,12 @@ addLayer("al", {
             },
         },
         115: {
-            title: "Honeycomb <small>(5, 3)</small>",
+            title: "Spoilers <small>(5, 3)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Auto-buy pollen upgrades when on pollen path.",
+            description: "Auto-buy cat upgrades when on cat path.",
             cost: new Decimal(8e7),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -420,12 +420,12 @@ addLayer("al", {
             },
         },
         116: {
-            title: "Honeycomb <small>(6, 1)</small>",
+            title: "Spoilers <small>(6, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
             description: "Boost BPS based on picking power.",
             cost: new Decimal(1e14),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             effect() {
                 return player.fl.pickingPower.add(1).log(2).add(1)
@@ -438,12 +438,12 @@ addLayer("al", {
             },
         },
         117: {
-            title: "Honeycomb <small>(6, 2)</small>",
+            title: "Spoilers <small>(6, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock a new bee bread research.",
+            description: "Unlock a new cat dough research.",
             cost: new Decimal(1e15),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -452,12 +452,12 @@ addLayer("al", {
             },
         },
         118: {
-            title: "Honeycomb <small>(6, 3)</small>",
+            title: "Spoilers <small>(6, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "No longer reset when gaining BB tier.",
+            description: "No longer reset when gaining CD tier.",
             cost: new Decimal(1e16),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -466,12 +466,12 @@ addLayer("al", {
             },
         },
         119: {
-            title: "Honeycomb <small>(7, 1)</small>",
+            title: "Spoilers <small>(7, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Boost bee bread based on honey.",
+            description: "Boost cat dough based on honey.",
             cost: new Decimal(1e17),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             effect() {
                 return player.ho.honey.add(1).log(10).add(1).pow(0.5)
@@ -484,12 +484,12 @@ addLayer("al", {
             },
         },
         120: {
-            title: "Honeycomb <small>(7, 2)</small>",
+            title: "Spoilers <small>(7, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock empress bees in pollen.",
+            description: "Unlock KittyMs in cat.",
             cost: new Decimal(1e18),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -498,12 +498,12 @@ addLayer("al", {
             },
         },
         121: {
-            title: "Honeycomb <small>(7, 3)</small>",
+            title: "Spoilers <small>(7, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Automatically gain BB tiers.",
+            description: "Automatically gain CD tiers.",
             cost: new Decimal(1e19),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -512,12 +512,12 @@ addLayer("al", {
             },
         },
         122: {
-            title: "Honeycomb <small>(8, 1)</small>",
+            title: "Spoilers <small>(8, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock a new bee bread milestone.",
+            description: "Unlock a new cat dough milestone.",
             cost: new Decimal(1e20),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -526,12 +526,12 @@ addLayer("al", {
             },
         },
         123: {
-            title: "Honeycomb <small>(8, 2)</small>",
+            title: "Spoilers <small>(8, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Improve BB tier requirement formula.",
+            description: "Improve CD tier requirement formula.",
             cost: new Decimal(1e21),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -540,12 +540,12 @@ addLayer("al", {
             },
         },
         124: {
-            title: "Honeycomb <small>(8, 3)</small>",
+            title: "Spoilers <small>(8, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Produce 10% of empress bees per second.",
+            description: "Produce 10% of KittyMs per second.",
             cost: new Decimal(1e22),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -554,12 +554,12 @@ addLayer("al", {
             },
         },
         125: {
-            title: "Honeycomb <small>(9, 1)</small>",
+            title: "Spoilers <small>(9, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
             description: "Double pre-leca gain.",
             cost: new Decimal(1e23),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -568,12 +568,12 @@ addLayer("al", {
             },
         },
         126: {
-            title: "Honeycomb <small>(9, 2)</small>",
+            title: "Spoilers <small>(9, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Raise pollen gain by ^1.01.",
+            description: "Raise cat gain by ^1.01.",
             cost: new Decimal(1e24),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -582,12 +582,12 @@ addLayer("al", {
             },
         },
         127: {
-            title: "Honeycomb <small>(9, 3)</small>",
+            title: "Spoilers <small>(9, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Automate nectar upgrades when on pollen path.",
+            description: "Automate gold upgrades when on cat path.",
             cost: new Decimal(1e25),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Honeycombs",
+            currencyDisplayName: "Spoilers",
             currencyInternalName: "honeycomb",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -611,12 +611,12 @@ addLayer("al", {
             },
         },
         202: {
-            title: "Royal J. <small>(1, 2)</small>",
+            title: "Gifted B. <small>(1, 2)</small>",
             unlocked: true,
-            description: "x2 Picking Power and Honey-Cells.",
+            description: "x2 Picking Power and BSS Macros.",
             cost: new Decimal(3),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -625,12 +625,12 @@ addLayer("al", {
             },
         },
         203: {
-            title: "Royal J. <small>(1, 3)</small>",
+            title: "Gifted B. <small>(1, 3)</small>",
             unlocked: true,
-            description: "Produce 100% of nectar α per second.",
+            description: "Produce 100% of gold α per second.",
             cost: new Decimal(10),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -639,12 +639,12 @@ addLayer("al", {
             },
         },
         204: {
-            title: "Royal J. <small>(2, 1)</small>",
+            title: "Gifted B. <small>(2, 1)</small>",
             unlocked: true,
-            description: "Improve Nectar δ's effect.",
+            description: "Improve Gold δ's effect.",
             cost: new Decimal(20),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -653,12 +653,12 @@ addLayer("al", {
             },
         },
         205: {
-            title: "Royal J. <small>(2, 2)</small>",
+            title: "Gifted B. <small>(2, 2)</small>",
             unlocked: true,
-            description: "Unlock a new nectar research.",
+            description: "Unlock a new gold research.",
             cost: new Decimal(50),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -667,12 +667,12 @@ addLayer("al", {
             },
         },
         206: {
-            title: "Royal J. <small>(2, 3)</small>",
+            title: "Gifted B. <small>(2, 3)</small>",
             unlocked: true,
-            description: "Produce 50% of nectar β per second.",
+            description: "Produce 50% of gold β per second.",
             cost: new Decimal(200),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -681,12 +681,12 @@ addLayer("al", {
             },
         },
         207: {
-            title: "Royal J. <small>(3, 1)</small>",
+            title: "Gifted B. <small>(3, 1)</small>",
             unlocked: true,
-            description: "Boost cell effect bases by x1.1.",
+            description: "Boost macro effect bases by x1.1.",
             cost: new Decimal(350),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -695,12 +695,12 @@ addLayer("al", {
             },
         },
         208: {
-            title: "Royal J. <small>(3, 2)</small>",
+            title: "Gifted B. <small>(3, 2)</small>",
             unlocked: true,
-            description: "Remove flower cell's cap.",
+            description: "Remove uncommon macro's cap.",
             cost: new Decimal(1200),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -709,12 +709,12 @@ addLayer("al", {
             },
         },
         209: {
-            title: "Royal J. <small>(3, 3)</small>",
+            title: "Gifted B. <small>(3, 3)</small>",
             unlocked: true,
-            description: "Produce 25% of nectar γ per second.",
+            description: "Produce 25% of gold γ per second.",
             cost: new Decimal(5000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -723,12 +723,12 @@ addLayer("al", {
             },
         },
         210: {
-            title: "Royal J. <small>(4, 1)</small>",
+            title: "Gifted B. <small>(4, 1)</small>",
             unlocked() {return player.tad.hiveExpand},
             description: "x1.1 Glossary Effect Base.",
             cost: new Decimal(100000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -737,12 +737,12 @@ addLayer("al", {
             },
         },
         211: {
-            title: "Royal J. <small>(4, 2)</small>",
+            title: "Gifted B. <small>(4, 2)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Unlock a second effect for Nectar δ-3.",
+            description: "Unlock a second effect for Gold δ-3.",
             cost: new Decimal(400000),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -751,12 +751,12 @@ addLayer("al", {
             },
         },
         212: {
-            title: "Royal J. <small>(4, 3)</small>",
+            title: "Gifted B. <small>(4, 3)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Produce 10% of nectar δ per second.",
+            description: "Produce 10% of gold δ per second.",
             cost: new Decimal(1.2e6),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -765,12 +765,12 @@ addLayer("al", {
             },
         },
         213: {
-            title: "Royal J. <small>(5, 1)</small>",
+            title: "Gifted B. <small>(5, 1)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Unlock a second effect for flower cell.",
+            description: "Unlock a second effect for uncommon macro.",
             cost: new Decimal(4e6),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -779,12 +779,12 @@ addLayer("al", {
             },
         },
         214: {
-            title: "Royal J. <small>(5, 2)</small>",
+            title: "Gifted B. <small>(5, 2)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Unlock pollen cell.",
+            description: "Unlock legendary macro.",
             cost: new Decimal(2e7),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -793,12 +793,12 @@ addLayer("al", {
             },
         },
         215: {
-            title: "Royal J. <small>(5, 3)</small>",
+            title: "Gifted B. <small>(5, 3)</small>",
             unlocked() {return player.tad.hiveExpand},
-            description: "Auto-buy nectar upgrades when on nectar path.",
+            description: "Auto-buy gold upgrades when on gold path.",
             cost: new Decimal(8e7),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -807,12 +807,12 @@ addLayer("al", {
             },
         },
         216: {
-            title: "Royal J. <small>(6, 1)</small>",
+            title: "Gifted B. <small>(6, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
             description: "Boost BPS based on GEB Multiplier.",
             cost: new Decimal(1e14),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             effect() {
                 return player.fl.glossaryBase.pow(0.85)
@@ -825,12 +825,12 @@ addLayer("al", {
             },
         },
         217: {
-            title: "Royal J. <small>(6, 2)</small>",
+            title: "Gifted B. <small>(6, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock a new honey-cell research.",
+            description: "Unlock a new BSS macro research.",
             cost: new Decimal(1e15),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -839,12 +839,12 @@ addLayer("al", {
             },
         },
         218: {
-            title: "Royal J. <small>(6, 3)</small>",
+            title: "Gifted B. <small>(6, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Auto-buy honey upgrades when on nectar path.",
+            description: "Auto-buy cat upgrades when on gold path.",
             cost: new Decimal(1e16),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -853,12 +853,12 @@ addLayer("al", {
             },
         },
         219: {
-            title: "Royal J. <small>(7, 1)</small>",
+            title: "Gifted B. <small>(7, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Boost honey-cells based on BB.",
+            description: "Boost BSS macros based on CD.",
             cost: new Decimal(1e17),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             effect() {
                 return player.bb.beeBread.add(1).log(10).add(1).pow(0.5)
@@ -871,12 +871,12 @@ addLayer("al", {
             },
         },
         220: {
-            title: "Royal J. <small>(7, 2)</small>",
+            title: "Gifted B. <small>(7, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock nectar ε upgrades.",
+            description: "Unlock gold ε upgrades.",
             cost: new Decimal(1e18),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -885,12 +885,12 @@ addLayer("al", {
             },
         },
         221: {
-            title: "Royal J. <small>(7, 3)</small>",
+            title: "Gifted B. <small>(7, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Produce 5% of nectar ε per second.",
+            description: "Produce 5% of gold ε per second.",
             cost: new Decimal(1e19),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -899,12 +899,12 @@ addLayer("al", {
             },
         },
         222: {
-            title: "Royal J. <small>(8, 1)</small>",
+            title: "Gifted B. <small>(8, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Unlock bee bread cell.",
+            description: "Unlock mythical macro.",
             cost: new Decimal(1e20),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -913,12 +913,12 @@ addLayer("al", {
             },
         },
         223: {
-            title: "Royal J. <small>(8, 2)</small>",
+            title: "Gifted B. <small>(8, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Improve all honey upgrades.",
+            description: "Improve all cat upgrades.",
             cost: new Decimal(1e21),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -927,12 +927,12 @@ addLayer("al", {
             },
         },
         224: {
-            title: "Royal J. <small>(8, 3)</small>",
+            title: "Gifted B. <small>(8, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Automate nectar ε upgrades on nectar path.",
+            description: "Automate gold ε upgrades on gold path.",
             cost: new Decimal(1e22),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -941,12 +941,12 @@ addLayer("al", {
             },
         },
         225: {
-            title: "Royal J. <small>(9, 1)</small>",
+            title: "Gifted B. <small>(9, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
             description: "Double pre-leca gain.",
             cost: new Decimal(1e23),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -955,12 +955,12 @@ addLayer("al", {
             },
         },
         226: {
-            title: "Royal J. <small>(9, 2)</small>",
+            title: "Gifted B. <small>(9, 2)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Raise nectar gain by ^1.01.",
+            description: "Raise gold gain by ^1.01.",
             cost: new Decimal(1e24),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -969,12 +969,12 @@ addLayer("al", {
             },
         },
         227: {
-            title: "Royal J. <small>(9, 3)</small>",
+            title: "Gifted B. <small>(9, 3)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Automate pollen upgrades when on nectar path.",
+            description: "Automate cat upgrades when on gold path.",
             cost: new Decimal(1e25),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -995,10 +995,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-1</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/50)\n\
-                    Double pollen gain\n\
+                return "<h3>SP-1</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/50)\n\
+                    Double cat gain\n\
                     Currently: x" + formatWhole(tmp[this.layer].buyables[this.id].effect) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1021,9 +1021,9 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-2</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
+                return "<h3>SP-2</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
                     Unlock +" + formatWhole(tmp[this.layer].buyables[this.id].effect) + " cubic blue flowers\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1046,9 +1046,9 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-3</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
+                return "<h3>SP-3</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
                     Unlock +" + formatWhole(tmp[this.layer].buyables[this.id].effect) + " cubic pink flowers\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1071,10 +1071,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-4</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/30)\n\
+                return "<h3>SP-4</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/30)\n\
                     Decuple pollinator gain\n\
                     Currently: x" + formatWhole(tmp[this.layer].buyables[this.id].effect) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1097,10 +1097,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-5</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/15)\n\
+                return "<h3>SP-5</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/15)\n\
                     x1.1 starmetal alloy gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect, 2) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1123,10 +1123,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>HC-6</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/10)\n\
+                return "<h3>SP-6</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/10)\n\
                     Double pre-power hex resource gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Honeycombs"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Spoilers"
             },
             buy() {
                 this.pay(this.cost())
@@ -1150,10 +1150,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-1</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/50)\n\
-                    x1.4 nectar gain\n\
+                return "<h3>GB-1</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/50)\n\
+                    x1.4 gold gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect, 1) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1176,9 +1176,9 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-2</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
+                return "<h3>GB-2</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
                     Unlock +" + formatWhole(tmp[this.layer].buyables[this.id].effect) + " cubic green flowers\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1201,9 +1201,9 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-3</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
+                return "<h3>GB-3</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/5)\n\
                     Unlock +" + formatWhole(tmp[this.layer].buyables[this.id].effect) + " cubic yellow flowers\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1226,10 +1226,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-4</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/30)\n\
+                return "<h3>GB-4</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/30)\n\
                     Double moonstone gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect, 1) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1252,10 +1252,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-5</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/15)\n\
+                return "<h3>GB-5</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/15)\n\
                     x1.05 starmetal essence gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect, 2) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1278,10 +1278,10 @@ addLayer("al", {
             cost(x) { return this.costGrowth().pow(x || getBuyableAmount(this.layer, this.id)).mul(this.costBase()) },
             canAfford() {return this.currency().gte(this.cost())},
             display() {
-                return "<h3>RJ-6</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/10)\n\
+                return "<h3>GB-6</h3> (" + formatWhole(getBuyableAmount(this.layer, this.id)) + "/10)\n\
                     x1.5 hex power gain\n\
                     Currently: x" + formatSimple(tmp[this.layer].buyables[this.id].effect, 2) + "\n\ \n\
-                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Royal Jelly"
+                    Cost: " + formatWhole(tmp[this.layer].buyables[this.id].cost) + "<br>Gifted Bees"
             },
             buy() {
                 this.pay(this.cost())
@@ -1381,7 +1381,7 @@ addLayer("al", {
                         ["style-column", [
                             ["top-column", [
                                 ["blank", "10px"],
-                                ["raw-html", () => {return "You have " + formatWhole(player.al.honeycomb) + " Honeycombs"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return "You have " + formatWhole(player.al.honeycomb) + " Spoilers"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                                 ["raw-html", () => {return "(+" + formatWhole(player.al.honeycombGain) + ")"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                                 ["blank", "10px"],
                                 ["clickable", 1],
@@ -1442,7 +1442,7 @@ addLayer("al", {
                         ["style-row", [
                             ["style-column", [
                                 ["style-column", [
-                                    ["raw-html", "Highest Honeycombs", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                    ["raw-html", "Highest Spoilers", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                                 ], {width: "399px", height: "40px", background: "#2d250c", borderRadius: "17px 0 0 0"}],
                                 ["style-column", [
                                     ["raw-html", () => {return formatWhole(player.al.highestHoneycomb)}, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
@@ -1508,7 +1508,7 @@ addLayer("al", {
                                         ["color-text", [() => {return "10,000"}, true, "white", () => {return player.al.cocoonLevel >= 5}, "gray"]],
                                     ], {width: "115px", height: "35px", borderRight: "2px solid #a900a9"}],
                                     ["style-row", [
-                                        ["color-text", [() => {return player.al.cocoonLevel >= 5 ? "Enhance Tav's Domain" : "Enhance a celestial power"}, true, "white", () => {return player.al.cocoonLevel >= 5}, "gray"]],
+                                        ["color-text", [() => {return player.al.cocoonLevel >= 5 ? "Enhance Gatekeeper's Domain" : "Enhance a celestial power"}, true, "white", () => {return player.al.cocoonLevel >= 5}, "gray"]],
                                     ], {width: "281px", height: "35px"}],
                                 ], () => {return player.al.cocoonLevel >= 4 ? {width: "398px", height: "35px", background: "#190019", borderBottom: "2px solid #a900a9"} : {display: "none !important"}}],
                                 ["style-row", [
@@ -1548,7 +1548,7 @@ addLayer("al", {
                                         ["color-text", [() => {return "1e9"}, true, "white", () => {return player.al.cocoonLevel >= 10}, "gray"]],
                                     ], {width: "115px", height: "35px", borderRight: "2px solid #a900a9"}],
                                     ["style-row", [
-                                        ["color-text", [() => {return player.al.cocoonLevel >= 10 ? "Enhance Funify" : "Enhance a celestial power"}, true, "white", () => {return player.al.cocoonLevel >= 10}, "gray"]],
+                                        ["color-text", [() => {return player.al.cocoonLevel >= 10 ? "Enhance Frify" : "Enhance a celestial power"}, true, "white", () => {return player.al.cocoonLevel >= 10}, "gray"]],
                                     ], {width: "281px", height: "35px"}],
                                 ], () => {return player.al.cocoonLevel >= 9 ? {width: "398px", height: "35px", background: "#190019", borderBottom: "2px solid #a900a9"} : {display: "none !important"}}],
                                 ["style-row", [
@@ -1609,7 +1609,7 @@ addLayer("al", {
     },
     tabFormat: [
         ["style-row", [
-            ["raw-html", () => {return "You have " + format(player.bb.beeBread) + " Bee Bread"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+            ["raw-html", () => {return "You have " + format(player.bb.beeBread) + " Cat Dough"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
             ["raw-html", () => {return "(" + format(player.bb.beeBreadPerSecond) + "/s)"}, {color: "white", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
         ]],
         ["style-row", [

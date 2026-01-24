@@ -254,12 +254,12 @@ addLayer("ir", {
             if (arena) arena.showUpgradeChoice();
         }
 
-        if (player.ir.battleLevel.gte(8) && hasUpgrade("ir", 16) && !player.ir.ufoFought) {
+        if (player.ir.battleLevel.gte(4) && hasUpgrade("ir", 16) && !player.ir.ufoFought) {
             spawnUfoBoss();
             player.ir.ufoFought = true
         }
 
-        if (player.ir.battleLevel.gte(16) && hasUpgrade("ir", 19) && !player.ir.iriditeFought) {
+        if (player.ir.battleLevel.gte(8) && hasUpgrade("ir", 19) && !player.ir.iriditeFought) {
             summonIridite();
             player.ir.iriditeFought = true
         }
@@ -409,13 +409,13 @@ addLayer("ir", {
             lore() {
                 return "Don't underestimate the goat. Wait i think this is from somewhere..."
             },
-            levelLimit() { return new Decimal(1)},
+            levelLimit() { return new Decimal(4)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.35).mul(0.06).add(1), //ad
                     getLevelableAmount(this.layer, this.id).mul(2).pow(1.25).add(1), //core scraps
-                    getLevelableAmount(this.layer, this.id).mul(0.13).add(5), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.13).add(5), //Health
+                    getLevelableAmount(this.layer, this.id).mul(1.11111e6).add(5).pow(2.2412), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(1.11111e6).add(5).pow(2.2412), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -497,15 +497,15 @@ addLayer("ir", {
                 return "x" + format(this.effect()[0]) + " to xpboost.<br>x" + format(this.effect()[1]) + " to legendary gems.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Has omnidirectional movement and shoots shotgun-like bursts towards the mouse."
+                return "Don't you dare touch this one."
             },
-            levelLimit() { return new Decimal(50)},
+            levelLimit() { return new Decimal(2)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.7).mul(0.1).add(1), //xpboost
                     getLevelableAmount(this.layer, this.id).pow(0.4).mul(0.1).add(1), //legendary gems
-                    getLevelableAmount(this.layer, this.id).mul(0.06).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.03).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(1e12).add(1).pow(4), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(1e12).add(1).pow(4), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -587,15 +587,15 @@ addLayer("ir", {
                 return "^" + format(this.effect()[0], 3) + " to pollinators.<br>x" + format(this.effect()[1]) + " to radiation.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Lacks a gun, but makes up for it with spikes."
+                return "Who uses this?!"
             },
-            levelLimit() { return new Decimal(50)},
+            levelLimit() { return new Decimal(8)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.3).mul(0.1).add(1), // pollinators
                     getLevelableAmount(this.layer, this.id).pow(1.5).add(1), // radiation
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(0.8).add(4), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(0.8).add(4), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -854,7 +854,7 @@ addLayer("ir", {
         16: {
             title: "Miniboss",
             unlocked() { return buyableEffect("sb", 12).gte(3) },
-            description: "You are able to fight the UFO miniboss at level 8, and unlock a new legendary pet.",
+            description: "You are able to fight the UFO miniboss at level 4, and unlock a new legendary pet.",
             cost: new Decimal(60),
             currencyLocation() { return player.ir },
             currencyDisplayName: "Warns",
@@ -900,7 +900,7 @@ addLayer("ir", {
         19: {
             title: "Galaxy",
             unlocked() { return player.ir.ufoDefeated },
-            description: "...",
+            description: "Level 8.",
             cost: new Decimal(90),
             currencyLocation() { return player.ir },
             currencyDisplayName: "Warns",
@@ -1070,7 +1070,7 @@ addLayer("ir", {
                         ["raw-html", "Perks for defeating Galaxy", {color: "white", fontSize: "24px", fontFamily: "monospace"}],
                     ], {width: "1000px", border: "3px solid rgb(27, 0, 36)", backgroundImage: "linear-gradient(120deg, #480e8aff 0%, rgba(20, 7, 24, 1) 100%)", borderBottom: "5px", paddingTop: "5px", paddingBottom: "5px", borderRadius: "15px 15px 0px 0px"}],
                     ["style-column", [
-                        ["raw-html", () => { return player.pol.unlockHive == 2 ? "Unlocks: The Hive" : "Unlocks: Larva (In Pollinators)" }, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
+                        ["raw-html", () => { return player.pol.unlockHive == 2 ? "Unlocks: The Remembrance" : "Unlocks: Larva (In Pollinators)" }, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
                         ["blank", "15px"],
                         ["raw-html", () => { return "Greatly weakened antimatter softcap." }, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
                         ["raw-html", "Weakened 3rd replicanti point softcap.", {color: "white", fontSize: "18px", fontFamily: "monospace"}],
@@ -4993,7 +4993,7 @@ function summonIridite() {
     } else {
         console.warn("summonIridite: arena.spawnIridite not available");
     }
-    flashScreen("— Galaxy, the Astral Celestial —", 1200)
+    flashScreen("— Galaxy, the Astral Celestial —", 3000)
 }
 window.summonIridite = summonIridite;
 

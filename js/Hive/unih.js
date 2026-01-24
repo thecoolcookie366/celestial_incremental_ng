@@ -1353,12 +1353,12 @@ addLayer("bee", {
 
             ["style-column", [
                 ["style-row", [
-                    ["raw-html", "Pollen Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", "Cat Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                 ], {borderBottom: "4px solid #8e4200", backgroundColor: "#db6f02", height: "40px"}],
                 ["style-row", [
                     ["style-column", [
-                        ["raw-html", () => { return "Pollen Baskets - " + formatWhole(getBuyableAmount("bee", 31)) + "/18"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Pollen by x" + formatSimple(buyableEffect("bee", 31), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Cat Baskets - " + formatWhole(getBuyableAmount("bee", 31)) + "/18"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "Boosts Cat by x" + formatSimple(buyableEffect("bee", 31), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 31],
@@ -1366,15 +1366,15 @@ addLayer("bee", {
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Improved Hamuli - " + formatWhole(getBuyableAmount("bee", 32)) + "/5"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return hasUpgrade("al", 112) ? "Multiplies Pollen per second by x" + formatSimple(buyableEffect("bee", 32), 1) : "Divides Pollen cooldown by /" + formatSimple(buyableEffect("bee", 32), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return hasUpgrade("al", 112) ? "Multiplies Cat per second by x" + formatSimple(buyableEffect("bee", 32), 1) : "Divides Cat cooldown by /" + formatSimple(buyableEffect("bee", 32), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 32],
                 ], {borderBottom: "4px solid #8e4200", backgroundColor: "#ffb825"}],
                 ["style-row", [
                     ["style-column", [
-                        ["raw-html", () => { return "Pollen Pellet - " + formatWhole(getBuyableAmount("bee", 33)) + "/15"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Improves Pollen conversion rate by x" + formatSimple(buyableEffect("bee", 33), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Cat Pellet - " + formatWhole(getBuyableAmount("bee", 33)) + "/15"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "Improves Cat conversion rate by x" + formatSimple(buyableEffect("bee", 33), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 33],
@@ -1448,12 +1448,12 @@ addLayer("bee", {
 
             ["style-column", [
                 ["style-row", [
-                    ["raw-html", "Bee Bread Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", "Cat Dough Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                 ], {borderBottom: "4px solid #8e4200", backgroundColor: "#db6f02", height: "40px"}],
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Tighter Clumps - " + formatWhole(getBuyableAmount("bee", 51)) + "/15"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Bee Bread by x" + format(buyableEffect("bee", 51))}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Boosts Cat Dough by x" + format(buyableEffect("bee", 51))}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 51],
@@ -1461,7 +1461,7 @@ addLayer("bee", {
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Improved Packing - " + formatWhole(getBuyableAmount("bee", 52)) + "/10"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts BB Tier Effectiveness by x" + formatSimple(buyableEffect("bee", 52), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Boosts Cat Dough Tier Effectiveness by x" + formatSimple(buyableEffect("bee", 52), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 52],
@@ -1487,12 +1487,12 @@ addLayer("bee", {
             // HONEY RESEARCH
             ["style-column", [
                 ["style-row", [
-                    ["raw-html", "Honey Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", "Macro Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                 ], {borderBottom: "4px solid #8e4200", backgroundColor: "#db6f02", height: "40px"}],
                 ["style-row", [
                     ["style-column", [
-                        ["raw-html", () => { return "Denser Honey - " + formatWhole(getBuyableAmount("bee", 61)) + "/15"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Honey-Cell Gain by x" + formatSimple(buyableEffect("bee", 61), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Denser Macro - " + formatWhole(getBuyableAmount("bee", 61)) + "/15"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "Boosts BSS Macro Gain by x" + formatSimple(buyableEffect("bee", 61), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 61],
@@ -1500,7 +1500,7 @@ addLayer("bee", {
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Succulent Sweetness - " + formatWhole(getBuyableAmount("bee", 62)) + "/10"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Honey by x" + format(buyableEffect("bee", 62))}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Boosts BSS Macro by x" + format(buyableEffect("bee", 62))}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 62],

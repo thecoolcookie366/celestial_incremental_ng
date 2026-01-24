@@ -427,7 +427,7 @@ addLayer("ne", {
         502: {
             title: "Gold ε-2",
             unlocked() {return hasUpgrade("al", 220)},
-            description: "Multiply Gold cell base by x1.1",
+            description: "Multiply Epic Macro base by x1.1",
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e75)
                 return new Decimal(1e25)
