@@ -454,7 +454,7 @@ function updateStyles() {
 				sideBG = "radial-gradient(circle, #151230, #000000)"
 				break;
 			case "UB":
-				sideBG = "#150e00"
+				sideBG = "#abcdef"
 				break;
 			case "CB":
 				sideBG = "#010812"

@@ -127,7 +127,7 @@ addUniverse("U2", {
 })
 
 addUniverse("A1", {
-    name: "Alt-Universe 1<br>Cantepocalypse",
+    name: "Alt-Universe 1<br>Cookiepocalypse",
     symbol: "A1",
     tree: [["cp"], ["ar", "pr"], ["an", "rt", "rg"], ["oi", "gs"], ["fu"]],
     nodeStyle() {
@@ -225,7 +225,7 @@ addUniverse("CB", {
 })
 
 addUniverse("CH", {
-    name: "Universe γ<br>Hall of Celestials",
+    name: "Universe γ<br>Hall of Legendary People",
     symbol: "γ",
     tree: [["ch"]],
     nodeStyle() {
@@ -246,18 +246,18 @@ addUniverse("CH", {
 
 addUniverse("UB", {
     name() {
-        if (player.bee.path == 0 && player.bee.extremePath) return "Universe β<br>Hive [Extreme Path]"
-        if (player.bee.path == 1) return "Universe β<br>Hive [Pollen Path]"
-        if (player.bee.path == 2) return "Universe β<br>Hive [Nectar Path]"
-        return "Universe β<br>Hive"
+        if (player.bee.path == 0 && player.bee.extremePath) return "Universe ∞<br>The Remembrance [Leca Path]"
+        if (player.bee.path == 1) return "Universe ∞<br>The Remembrance [Cat Path]"
+        if (player.bee.path == 2) return "Universe ∞<br>The Remembrance [Gold Path]"
+        return "Universe ∞<br>The Remembrance"
     },
-    symbol: "β",
+    symbol: "∞",
     tree: [["bee", "fl"], ["bpl", "ne"], ["bb", "ho"], ["al", "wa"]],
     nodeStyle() {
         let style = {
-            background: "linear-gradient(45deg, #f6e000 0%, #f9c901 100%)",
+            background: "linear-gradient(45deg, #000000 0%, #ffffff 100%)",
             backgroundOrigin: "border-box",
-            borderColor: "#6b4701",
+            borderColor: "#8f8f8f",
         }
         if (player.universe=="UB") {
             style.outline = "2px solid white"

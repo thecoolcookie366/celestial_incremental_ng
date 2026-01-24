@@ -1,7 +1,7 @@
 const COCOON_MILESTONE = [new Decimal(1), new Decimal(10), new Decimal(100), new Decimal(1000), new Decimal(10000), new Decimal(100000), new Decimal(1e6), new Decimal(1e7), new Decimal(1e8), new Decimal(1e9), new Decimal(1e14), new Decimal(1e16), new Decimal(1e18), new Decimal(1e20), new Decimal(1e22), new Decimal(1e25)]
 addLayer("al", {
-    name: "Aleph, Celestial of Swarms", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "ℵ", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Leca, Celestial of B...?", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "🐝", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -29,7 +29,7 @@ addLayer("al", {
             "border-color": "#3f003f",
         };
     },
-    tooltip: "Aleph, the Celestial of Swarms",
+    tooltip: "Leca, the Celestial of B...?",
     color: "white",
     branches: ["bb", "ho"],
     update(delta) {
@@ -190,7 +190,7 @@ addLayer("al", {
             },
         },
         2: {
-            title() { return "<h3>Gain Royal Jelly, but reset previous content.</h3><br>Req: 1e10 Honey<br>[While in Nectar Path]" },
+            title() { return "<h3>Gain Gifted Bees, but reset previous content.</h3><br>Req: 1e10 Honey<br>[While in Gold Path]" },
             canClick() { return player.ho.honey.gte(1e10) && player.bee.path == 2 },
             unlocked: true,
             onClick() {
@@ -556,7 +556,7 @@ addLayer("al", {
         125: {
             title: "Honeycomb <small>(9, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Double pre-aleph gain.",
+            description: "Double pre-leca gain.",
             cost: new Decimal(1e23),
             currencyLocation() { return player.al },
             currencyDisplayName: "Honeycombs",
@@ -597,12 +597,12 @@ addLayer("al", {
         },
 
         201: {
-            title: "Royal J. <small>(1, 1)</small>",
+            title: "Gifted B. <small>(1, 1)</small>",
             unlocked: true,
             description: "x1.2 Glossary Effect Base.",
             cost: new Decimal(1),
             currencyLocation() { return player.al },
-            currencyDisplayName: "Royal Jelly",
+            currencyDisplayName: "Gifted Bees",
             currencyInternalName: "royalJelly",
             style() {
                 let look = {minHeight: "100px", color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"}
@@ -943,7 +943,7 @@ addLayer("al", {
         225: {
             title: "Royal J. <small>(9, 1)</small>",
             unlocked() {return hasChallenge("fu", 12)},
-            description: "Double pre-aleph gain.",
+            description: "Double pre-leca gain.",
             cost: new Decimal(1e23),
             currencyLocation() { return player.al },
             currencyDisplayName: "Royal Jelly",
@@ -1407,7 +1407,7 @@ addLayer("al", {
                         ["style-column", [
                             ["top-column", [
                                 ["blank", "10px"],
-                                ["raw-html", () => {return "You have " + formatWhole(player.al.royalJelly) + " Royal Jelly"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                ["raw-html", () => {return "You have " + formatWhole(player.al.royalJelly) + " Gifted Bees"}, {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                                 ["raw-html", () => {return "(+" + formatWhole(player.al.royalJellyGain) + ")"}, {color: "white", fontSize: "16px", fontFamily: "monospace"}],
                                 ["blank", "10px"],
                                 ["clickable", 2],
@@ -1450,7 +1450,7 @@ addLayer("al", {
                             ], {width: "399px", height: "70px", borderRight: "3px solid #a900a9"}],
                             ["style-column", [
                                 ["style-column", [
-                                    ["raw-html", "Highest Royal Jelly", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
+                                    ["raw-html", "Highest Gifted Bees", {color: "white", fontSize: "20px", fontFamily: "monospace"}],
                                 ], {width: "398px", height: "40px", background: "#2d1624", borderRadius: "0 17px 0 0"}],
                                 ["style-column", [
                                     ["raw-html", () => {return formatWhole(player.al.highestRoyalJelly)}, {color: "white", fontSize: "18px", fontFamily: "monospace"}],
@@ -1476,7 +1476,7 @@ addLayer("al", {
                                         ["color-text", [() => {return "1"}, true, "white", () => {return player.al.cocoonLevel >= 1}, "gray"]],
                                     ], {width: "115px", height: "35px", borderRight: "2px solid #a900a9"}],
                                     ["style-row", [
-                                        ["color-text", [() => {return "x1.5 Aleph Resources"}, true, "white", () => {return player.al.cocoonLevel >= 1}, "gray"]],
+                                        ["color-text", [() => {return "x1.5 Leca Resources"}, true, "white", () => {return player.al.cocoonLevel >= 1}, "gray"]],
                                     ], {width: "281px", height: "35px"}],
                                 ], {width: "398px", height: "35px", background: "#190019", borderBottom: "2px solid #a900a9"}],
                                 ["style-row", [
@@ -1564,8 +1564,8 @@ addLayer("al", {
                                         ["color-text", [() => {return "1e16"}, true, "white", () => {return player.al.cocoonLevel >= 12}, "gray"]],
                                     ], {width: "115px", height: "35px", borderRight: "2px solid #a900a9"}],
                                     ["tooltip-row", [
-                                        ["color-text", [() => {return "Triple Pre-Aleph Resources"}, true, "white", () => {return player.al.cocoonLevel >= 12}, "gray"]],
-                                        ["raw-html", "<div class='bottomTooltip'>Disclaimer<hr><small>Nectar has Pre-Aleph multiplier<br>applied at ^0.5 strength</small></div>"],
+                                        ["color-text", [() => {return "Triple Pre-Leca Resources"}, true, "white", () => {return player.al.cocoonLevel >= 12}, "gray"]],
+                                        ["raw-html", "<div class='bottomTooltip'>Disclaimer<hr><small>Nectar has Pre-Leca multiplier<br>applied at ^0.5 strength</small></div>"],
                                     ], {width: "281px", height: "35px"}],
                                 ], () => {return player.al.cocoonLevel >= 11 ? {width: "398px", height: "35px", background: "#190019", borderBottom: "2px solid #a900a9"} : {display: "none !important"}}],
                                 ["style-row", [
@@ -1589,7 +1589,7 @@ addLayer("al", {
                                         ["color-text", [() => {return "1e22"}, true, "white", () => {return player.al.cocoonLevel >= 15}, "gray"]],
                                     ], {width: "115px", height: "35px", borderRight: "2px solid #a900a9"}],
                                     ["style-row", [
-                                        ["color-text", [() => {return "x2 Aleph Resources"}, true, "white", () => {return player.al.cocoonLevel >= 15}, "gray"]],
+                                        ["color-text", [() => {return "x2 Leca Resources"}, true, "white", () => {return player.al.cocoonLevel >= 15}, "gray"]],
                                     ], {width: "281px", height: "35px"}],
                                 ], () => {return player.al.cocoonLevel >= 14 ? {width: "398px", height: "35px", background: "#190019", borderBottom: "2px solid #a900a9"} : {display: "none !important"}}],
                                 ["style-row", [

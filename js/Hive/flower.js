@@ -1,6 +1,6 @@
 addLayer("fl", {
-    name: "Flowers", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "FL", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Yet Another Grass Copy", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "YAGC", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -155,10 +155,10 @@ addLayer("fl", {
         },
     }},
     nodeStyle() {
-        return {borderColor: "#7e3075"}
+        return {borderColor: "#0c580841"}
     },
-    tooltip: "Flowers",
-    color: "#fc60eb",
+    tooltip: "Yet Another Grass Copy",
+    color: "#15980e71",
     branches: ["bee"],
     update(delta) {
         let onepersec = new Decimal(1)

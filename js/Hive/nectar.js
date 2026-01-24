@@ -1,6 +1,6 @@
 addLayer("ne", {
-    name: "Nectar", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "NE", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Gold?", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "G", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -55,10 +55,10 @@ addLayer("ne", {
         }
     },
     nodeStyle() {
-        return {borderColor: "#6d3701"}
+        return {borderColor: "#606d01b3"}
     },
-    tooltip: "Nectar",
-    color: "#db6f02",
+    tooltip: "Gold?",
+    color: "#d0db02",
     branches: ["fl"],
     update(delta) {
         let onepersec = new Decimal(1)
@@ -161,8 +161,8 @@ addLayer("ne", {
     clickables: {
         1: {
             title() {
-                if (player.bee.path != 2) return "Gain Nectar α, but reset previous content.<br><small>Req: 1e60 Bees</small>"
-                return "Gain Nectar α, but reset previous content.<br><small>Req: 100,000 Bees</small>"
+                if (player.bee.path != 2) return "Gain Gold α, but reset previous content.<br><small>Req: 1e60 Bees</small>"
+                return "Gain Gold α, but reset previous content.<br><small>Req: 100,000 Bees</small>"
             },
             canClick() { return (player.bee.path == 2 && player.bee.bees.gte(1e5)) || (player.bee.path != 2 && player.bee.bees.gte(1e60)) },
             unlocked: true,
@@ -175,8 +175,8 @@ addLayer("ne", {
         },
         2: {
             title() {
-                if (player.bee.path != 2) return "Gain Nectar β, but reset previous content.<br><small>Req: 1e6 Nectar α</small>"
-                return "Gain Nectar β, but reset previous content.<br><small>Req: 100 Nectar α</small>"
+                if (player.bee.path != 2) return "Gain Gold β, but reset previous content.<br><small>Req: 1e6 Gold α</small>"
+                return "Gain Gold β, but reset previous content.<br><small>Req: 100 Gold α</small>"
             },
             canClick() { return (player.bee.path == 2 && player.ne.alpha.amount.gte(100)) || (player.bee.path != 2 && player.ne.alpha.amount.gte(1e6)) },
             unlocked: true,
@@ -190,8 +190,8 @@ addLayer("ne", {
         },
         3: {
             title() {
-                if (player.bee.path != 2) return "Gain Nectar γ, but reset previous content.<br><small>Req: 1e6 Nectar β</small>"
-                return "Gain Nectar γ, but reset previous content.<br><small>Req: 100 Nectar β</small>"
+                if (player.bee.path != 2) return "Gain Gold γ, but reset previous content.<br><small>Req: 1e6 Gold β</small>"
+                return "Gain Gold γ, but reset previous content.<br><small>Req: 100 Gold β</small>"
             },
             canClick() { return (player.bee.path == 2 && player.ne.beta.amount.gte(100)) || (player.bee.path != 2 && player.ne.beta.amount.gte(1e6)) },
             unlocked: true,
@@ -206,8 +206,8 @@ addLayer("ne", {
         },
         4: {
             title() {
-                if (player.bee.path != 2) return "Gain Nectar δ, but reset previous content.<br><small>Req: 1e6 Nectar γ</small>"
-                return "Gain Nectar δ, but reset previous content.<br><small>Req: 100 Nectar γ</small>"
+                if (player.bee.path != 2) return "Gain Gold δ, but reset previous content.<br><small>Req: 1e6 Gold γ</small>"
+                return "Gain Gold δ, but reset previous content.<br><small>Req: 100 Gold γ</small>"
             },
             canClick() { return (player.bee.path == 2 && player.ne.gamma.amount.gte(100)) || (player.bee.path != 2 && player.ne.gamma.amount.gte(1e6)) },
             unlocked: true,
@@ -223,8 +223,8 @@ addLayer("ne", {
         },
         5: {
             title() {
-                if (player.bee.path != 2) return "Gain Nectar ε, but reset previous content.<br><small>Req: 1e120 Nectar δ</small>"
-                return "Gain Nectar ε, but reset previous content.<br><small>Req: 1e40 Nectar δ</small>"
+                if (player.bee.path != 2) return "Gain Gold ε, but reset previous content.<br><small>Req: 1e120 Gold δ</small>"
+                return "Gain Gold ε, but reset previous content.<br><small>Req: 1e40 Gold δ</small>"
             },
             canClick() { return (player.bee.path == 2 && player.ne.delta.amount.gte(1e40)) || (player.bee.path != 2 && player.ne.delta.amount.gte(1e120)) },
             unlocked() {return hasUpgrade("al", 211)},
@@ -242,20 +242,20 @@ addLayer("ne", {
     },
     upgrades: {
         101: {
-            title: "Nectar α-1",
+            title: "Gold α-1",
             unlocked: true,
-            description: "Double Nectar α Gain.",
+            description: "Double Gold α Gain.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(125)
                 return new Decimal(5)
             },
             currencyLocation() { return player.ne.alpha },
-            currencyDisplayName: "Nectar α",
+            currencyDisplayName: "Gold α",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         102: {
-            title: "Nectar α-2",
+            title: "Gold α-2",
             unlocked: true,
             description: "Triple bees per second.",
             cost() {
@@ -263,26 +263,26 @@ addLayer("ne", {
                 return new Decimal(20)
             },
             currencyLocation() { return player.ne.alpha },
-            currencyDisplayName: "Nectar α",
+            currencyDisplayName: "Gold α",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         103: {
-            title: "Nectar α-3",
+            title: "Gold α-3",
             unlocked: true,
-            description: "Unlock Nectar β.",
+            description: "Unlock Gold β.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(100000)
                 return new Decimal(100)
             },
             currencyLocation() { return player.ne.alpha },
-            currencyDisplayName: "Nectar α",
+            currencyDisplayName: "Gold α",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
 
         201: {
-            title: "Nectar β-1",
+            title: "Gold β-1",
             unlocked: true,
             description: "Unlock green flowers.",
             cost() {
@@ -290,20 +290,20 @@ addLayer("ne", {
                 return new Decimal(5)
             },
             currencyLocation() { return player.ne.beta },
-            currencyDisplayName: "Nectar β",
+            currencyDisplayName: "Gold β",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         202: {
-            title: "Nectar β-2",
+            title: "Gold β-2",
             unlocked: true,
-            description: "Buff nectar α based on total nectar upgrades.",
+            description: "Buff Gold α based on total gold upgrades.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(8000)
                 return new Decimal(20)
             },
             currencyLocation() { return player.ne.beta },
-            currencyDisplayName: "Nectar β",
+            currencyDisplayName: "Gold β",
             currencyInternalName: "amount",
             effect() {
                 return Decimal.pow(1.25, player.ne.upgrades.length)
@@ -312,29 +312,29 @@ addLayer("ne", {
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         203: {
-            title: "Nectar β-3",
+            title: "Gold β-3",
             unlocked: true,
-            description: "Unlock Nectar γ.",
+            description: "Unlock Gold γ.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(100000)
                 return new Decimal(100)
             },
             currencyLocation() { return player.ne.beta },
-            currencyDisplayName: "Nectar β",
+            currencyDisplayName: "Gold β",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
 
         301: {
-            title: "Nectar γ-1",
+            title: "Gold γ-1",
             unlocked: true,
-            description: "Boost nectar α based on total research.",
+            description: "Boost Gold α based on total research.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(125)
                 return new Decimal(5)
             },
             currencyLocation() { return player.ne.gamma },
-            currencyDisplayName: "Nectar γ",
+            currencyDisplayName: "Gold γ",
             currencyInternalName: "amount",
             effect() {
                 return player.bee.totalResearch.pow(0.7).div(10).add(1)
@@ -343,47 +343,47 @@ addLayer("ne", {
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         302: {
-            title: "Nectar γ-2",
+            title: "Gold γ-2",
             unlocked: true,
-            description: "Improve nectar α effect.",
+            description: "Improve Gold α effect.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(8000)
                 return new Decimal(20)
             },
             currencyLocation() { return player.ne.gamma },
-            currencyDisplayName: "Nectar γ",
+            currencyDisplayName: "Gold γ",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         303: {
-            title: "Nectar γ-3",
+            title: "Gold γ-3",
             unlocked: true,
-            description: "Unlock Nectar δ.",
+            description: "Unlock Gold δ.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(100000)
                 return new Decimal(100)
             },
             currencyLocation() { return player.ne.gamma },
-            currencyDisplayName: "Nectar γ",
+            currencyDisplayName: "Gold γ",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
 
         401: {
-            title: "Nectar δ-1",
+            title: "Gold δ-1",
             unlocked: true,
-            description: "Unlock a new nectar research.",
+            description: "Unlock a new gold research.",
             cost() {
                 if (player.bee.path != 2) return new Decimal(125)
                 return new Decimal(5)
             },
             currencyLocation() { return player.ne.delta },
-            currencyDisplayName: "Nectar δ",
+            currencyDisplayName: "Gold δ",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         402: {
-            title: "Nectar δ-2",
+            title: "Gold δ-2",
             unlocked: true,
             description: "Decrease time between green flower growth by /2.",
             cost() {
@@ -391,15 +391,15 @@ addLayer("ne", {
                 return new Decimal(20)
             },
             currencyLocation() { return player.ne.delta },
-            currencyDisplayName: "Nectar δ",
+            currencyDisplayName: "Gold δ",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         403: {
-            title: "Nectar δ-3",
+            title: "Gold δ-3",
             unlocked: true,
             description() {
-                if (hasUpgrade("al", 211)) return "Double picking power and unlock nectar ε."
+                if (hasUpgrade("al", 211)) return "Double picking power and unlock Gold ε."
                 return "Double picking power."
             },
             cost() {
@@ -407,46 +407,46 @@ addLayer("ne", {
                 return new Decimal(100)
             },
             currencyLocation() { return player.ne.delta },
-            currencyDisplayName: "Nectar δ",
+            currencyDisplayName: "Gold δ",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         501: {
-            title: "Nectar δ-1",
+            title: "Gold ε-1",
             unlocked() {return hasUpgrade("al", 220)},
-            description: "Improve nectar γ's effect",
+            description: "Improve Gold γ's effect",
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e60)
                 return new Decimal(1e20)
             },
             currencyLocation() { return player.ne.epsilon },
-            currencyDisplayName: "Nectar ε",
+            currencyDisplayName: "Gold ε",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         502: {
-            title: "Nectar δ-2",
+            title: "Gold ε-2",
             unlocked() {return hasUpgrade("al", 220)},
-            description: "Multiply nectar cell base by x1.1",
+            description: "Multiply Gold cell base by x1.1",
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e75)
                 return new Decimal(1e25)
             },
             currencyLocation() { return player.ne.epsilon },
-            currencyDisplayName: "Nectar ε",
+            currencyDisplayName: "Gold ε",
             currencyInternalName: "amount",
             style: {color: "rgba(0,0,0,0.8)", border: "3px solid rgba(0,0,0,0.5)", borderRadius: "15px", margin: "2px"},
         },
         503: {
-            title: "Nectar δ-3",
+            title: "Gold ε-3",
             unlocked() {return hasUpgrade("al", 220)},
-            description: "Divide all flower cooldowns based on nectar ε",
+            description: "Divide all flower cooldowns based on Gold ε",
             cost() {
                 if (player.bee.path != 2) return new Decimal(1e90)
                 return new Decimal(1e30)
             },
             currencyLocation() { return player.ne.epsilon },
-            currencyDisplayName: "Nectar ε",
+            currencyDisplayName: "Gold ε",
             currencyInternalName: "amount",
             effect() {
                 return player.ne.epsilon.amount.add(1).log(1e15).div(10).add(1)
@@ -465,7 +465,7 @@ addLayer("ne", {
             ["style-column", [
                 ["style-column", [
                     ["row", [
-                        ["raw-html", () => {return "You have " + format(player.ne.alpha.amount) + " Nectar α"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have " + format(player.ne.alpha.amount) + " Gold α"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.ne.alpha.gain) + ")"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
                     ]],
                     ["row", [
@@ -482,7 +482,7 @@ addLayer("ne", {
             ["style-column", [
                 ["style-column", [
                     ["row", [
-                        ["raw-html", () => {return "You have " + format(player.ne.beta.amount) + " Nectar β"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have " + format(player.ne.beta.amount) + " Gold β"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.ne.beta.gain) + ")"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
                     ]],
                     ["raw-html", () => {return "Boosts flower gain by x" + formatSimple(player.ne.beta.effect, 2)}, {color: "#161616", fontSize: "14px", fontFamily: "monospace"}],
@@ -496,7 +496,7 @@ addLayer("ne", {
             ["style-column", [
                 ["style-column", [
                     ["row", [
-                        ["raw-html", () => {return "You have " + format(player.ne.gamma.amount) + " Nectar γ"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have " + format(player.ne.gamma.amount) + " Gold γ"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.ne.gamma.gain) + ")"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
                     ]],
                     ["raw-html", () => {return "Boosts glossary effect base by +" + formatSimple(player.ne.gamma.effect, 2)}, {color: "#161616", fontSize: "14px", fontFamily: "monospace"}],
@@ -510,10 +510,10 @@ addLayer("ne", {
             ["style-column", [
                 ["style-column", [
                     ["row", [
-                        ["raw-html", () => {return "You have " + format(player.ne.delta.amount) + " Nectar δ"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have " + format(player.ne.delta.amount) + " Gold δ"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.ne.delta.gain) + ")"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
                     ]],
-                    ["raw-html", () => {return "Boosts nectar gain by x" + formatSimple(player.ne.delta.effect, 2)}, {color: "#161616", fontSize: "14px", fontFamily: "monospace"}],
+                    ["raw-html", () => {return "Boosts Gold gain by x" + formatSimple(player.ne.delta.effect, 2)}, {color: "#161616", fontSize: "14px", fontFamily: "monospace"}],
                     ["blank", "10px"],
                     ["clickable", 4],
                 ], {width: "400px", height: "147px", borderBottom: "3px solid #6d3701"}],
@@ -524,7 +524,7 @@ addLayer("ne", {
             ["style-column", [
                 ["style-column", [
                     ["row", [
-                        ["raw-html", () => {return "You have " + format(player.ne.epsilon.amount) + " Nectar ε"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
+                        ["raw-html", () => {return "You have " + format(player.ne.epsilon.amount) + " Gold ε"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace"}],
                         ["raw-html", () => {return "(+" + format(player.ne.epsilon.gain) + ")"}, {color: "#161616", fontSize: "16px", fontFamily: "monospace", marginLeft: "10px"}],
                     ]],
                     ["raw-html", () => {return "Boosts pollen gain by x" + formatSimple(player.ne.epsilon.effect, 2)}, {color: "#161616", fontSize: "14px", fontFamily: "monospace"}],

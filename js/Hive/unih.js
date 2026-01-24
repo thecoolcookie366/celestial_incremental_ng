@@ -1,5 +1,5 @@
 addLayer("bee", {
-    name: "Bees", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "B...?", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "B", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
@@ -22,11 +22,11 @@ addLayer("bee", {
     automate() {},
     nodeStyle() {
         return {
-            background: "#f9c901",
+            background: "#646464",
             backgroundOrigin: "border-box",
-            borderColor: "#7c6400",
+            borderColor: "#000000",
     }},
-    tooltip: "Bees",
+    tooltip: "B...?",
     color: "white",
     update(delta) {
         let onepersec = new Decimal(1)
@@ -51,6 +51,7 @@ addLayer("bee", {
         if (hasUpgrade("al", 116)) player.bee.bps = player.bee.bps.mul(upgradeEffect("al", 116))
         if (hasUpgrade("al", 216)) player.bee.bps = player.bee.bps.mul(upgradeEffect("al", 216))
         player.bee.bps = player.bee.bps.mul(player.bee.preAlephMult)
+        player.bee.bps = player.bee.bps.pow(5)
 
         // POWER MODIFIERS
         player.bee.bps = player.bee.bps.pow(buyableEffect("bee", 15))
@@ -1399,12 +1400,12 @@ addLayer("bee", {
             // NECTAR RESEARCH
             ["style-column", [
                 ["style-row", [
-                    ["raw-html", "Nectar Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                    ["raw-html", "Gold Research", { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                 ], {borderBottom: "4px solid #8e4200", backgroundColor: "#db6f02", height: "40px"}],
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Second Stomach - " + formatWhole(getBuyableAmount("bee", 41)) + "/18"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Nectar α by x" + formatSimple(buyableEffect("bee", 41), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Boosts Gold α by x" + formatSimple(buyableEffect("bee", 41), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 41],
@@ -1412,7 +1413,7 @@ addLayer("bee", {
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Increased Density - " + formatWhole(getBuyableAmount("bee", 42)) + "/10"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Boosts Nectar by x" + formatSimple(buyableEffect("bee", 42), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
+                        ["raw-html", () => { return "Boosts Gold by x" + formatSimple(buyableEffect("bee", 42), 1)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 42],
@@ -1420,7 +1421,7 @@ addLayer("bee", {
                 ["style-row", [
                     ["style-column", [
                         ["raw-html", () => { return "Efficient Gathering - " + formatWhole(getBuyableAmount("bee", 43)) + "/5"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
-                        ["raw-html", () => { return "Increase Nectar gain exponent by +" + commaFormat(buyableEffect("bee", 43), 2)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "Increase Gold gain exponent by +" + commaFormat(buyableEffect("bee", 43), 2)}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }],
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
                     ["buyable", 43],
@@ -1435,7 +1436,7 @@ addLayer("bee", {
                 ], () => {return hasUpgrade("ne", 401) ? {borderBottom: "4px solid #8e4200", backgroundColor: "#ffb825"} : {display: "none !important"}}],
                 ["style-row", [
                     ["style-column", [
-                        ["raw-html", () => { return "More Nectaries - " + formatWhole(getBuyableAmount("bee", 45)) + "/10"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "More Goldies - " + formatWhole(getBuyableAmount("bee", 45)) + "/10"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                         ["raw-html", () => { return "Green flowers are " + formatWhole(buyableEffect("bee", 45).mul(100)) + "% stronger"}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],
@@ -1522,7 +1523,7 @@ addLayer("bee", {
                 ], () => {return player.ho.cell.gte(CELL_MILESTONES[player.bee.path][6]) ? {borderBottom: "4px solid #8e4200", backgroundColor: "#ffb825"} : {display: "none !important"}}],
                 ["style-row", [
                     ["style-column", [
-                        ["raw-html", () => { return "Enhanced Nectaries - " + formatWhole(getBuyableAmount("bee", 65)) + "/5"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
+                        ["raw-html", () => { return "Enhanced Goldies - " + formatWhole(getBuyableAmount("bee", 65)) + "/5"}, { color: "#312f17", fontSize: "24px", fontFamily: "monospace" }],
                         ["raw-html", () => { return "Yellow flowers are " + formatWhole(buyableEffect("bee", 65).mul(100)) + "% stronger"}, { color: "#312f17", fontSize: "16px", fontFamily: "monospace" }]
                     ], {width: "396px"}],
                     ["style-row", [], {width: "4px", height: "60px", background: "#8e4200"}],

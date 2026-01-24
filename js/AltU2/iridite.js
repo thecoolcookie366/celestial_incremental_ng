@@ -319,7 +319,7 @@ addLayer("ir", {
                 return "x" + format(this.effect()[0]) + " to stars.<br>x" + format(this.effect()[1]) + " to singularity points.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Fast, slim, and rapid-firing bullets. Pretty average ship ngl."
+                return "No insane person would use this. Right?"
             },
             levelLimit() { return new Decimal(50)},
             effect() { 
@@ -363,15 +363,15 @@ addLayer("ir", {
                 return "^" + format(this.effect()[0], 3) + " to points.<br>x" + format(this.effect()[1]) + " to infinities.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Bigger, slower, but larger and more powerful bullets."
+                return "This one actually does an impact."
             },
-            levelLimit() { return new Decimal(50)},
+            levelLimit() { return new Decimal(15)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.3).mul(0.07).add(1), //points
                     getLevelableAmount(this.layer, this.id).mul(0.5).add(1), //infinities
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.03).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(15235).add(1), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(1555).add(1), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -407,15 +407,15 @@ addLayer("ir", {
                 return "^" + format(this.effect()[0], 3) + " to antimatter dimensions.<br>x" + format(this.effect()[1]) + " to core scraps.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Don't underestimate the goat."
+                return "Don't underestimate the goat. Wait i think this is from somewhere..."
             },
-            levelLimit() { return new Decimal(50)},
+            levelLimit() { return new Decimal(1)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.35).mul(0.06).add(1), //ad
                     getLevelableAmount(this.layer, this.id).mul(2).pow(1.25).add(1), //core scraps
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(0.13).add(5), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(0.13).add(5), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -454,13 +454,13 @@ addLayer("ir", {
             lore() {
                 return "This one just does infinite damage. Whoops."
             },
-            levelLimit() { return new Decimal(50)},
+            levelLimit() { return new Decimal(3)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).mul(0.3).add(1), //space energy
                     getLevelableAmount(this.layer, this.id).pow(0.3).mul(0.08).add(1), // infinity points
-                    getLevelableAmount(this.layer, this.id).mul(200).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(20).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(200).add(1).pow(1.001), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(20).add(1).pow(1.001), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
@@ -542,15 +542,15 @@ addLayer("ir", {
                 return "^" + format(this.effect()[0], 3) + " to mastery point effects.<br>^" + format(this.effect()[1], 3) + " to negative infinity points.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Shoots very fast streams of bullets, but with slow movement speed."
+                return "No, you can't start a stream with this one."
             },
-            levelLimit() {return new Decimal(50)},
+            levelLimit() {return new Decimal(1)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).pow(0.5).add(1), //mastery point effects
                     getLevelableAmount(this.layer, this.id).pow(0.3).mul(0.07).add(1), //neginf
-                    getLevelableAmount(this.layer, this.id).mul(0.06).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.03).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(3000).add(1).pow(1.5), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(3000).add(1).pow(1.5), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},

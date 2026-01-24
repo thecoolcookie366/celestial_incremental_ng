@@ -4,8 +4,8 @@ const CELL_MILESTONES = [
     [new Decimal(1), new Decimal(5), new Decimal(15), new Decimal(50), new Decimal(100), new Decimal(200), new Decimal(1000), new Decimal(2500), new Decimal(1e30), new Decimal(1e85)],
 ]
 addLayer("ho", {
-    name: "Honey", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "HO", // This appears on the layer's node. Default is the id with the first letter capitalized
+    name: "Bee Swarm Simulator", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "BSS", // This appears on the layer's node. Default is the id with the first letter capitalized
     universe: "UB",
     row: 1,
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -69,10 +69,10 @@ addLayer("ho", {
         }
     },
     nodeStyle() {
-        return {borderColor: "#654700"}
+        return {borderColor: "#004865"}
     },
-    tooltip: "Honey",
-    color: "#cb8e00",
+    tooltip: "Bee Swarm Simulator",
+    color: "#00adcb",
     branches: ["ne"],
     update(delta) {
         let onepersec = new Decimal(1)
