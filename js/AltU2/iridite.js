@@ -452,15 +452,15 @@ addLayer("ir", {
                 return "x" + format(this.effect()[0]) + " to space energy.<br>^" + format(this.effect()[1], 3) + " to infinity points.<br>x" + format(this.effect()[2]) + " to ship damage.<br>x" + format(this.effect()[3]) + " to ship health.<br>"
             },
             lore() {
-                return "Shoots extremely fast piercing bullets with precision. Automatically aims at cosmic celestialites, might affect movement."
+                return "This one just does infinite damage. Whoops."
             },
             levelLimit() { return new Decimal(50)},
             effect() { 
                 return [
                     getLevelableAmount(this.layer, this.id).mul(0.3).add(1), //space energy
                     getLevelableAmount(this.layer, this.id).pow(0.3).mul(0.08).add(1), // infinity points
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Damage
-                    getLevelableAmount(this.layer, this.id).mul(0.02).add(1), //Health
+                    getLevelableAmount(this.layer, this.id).mul(200).add(1), //Damage
+                    getLevelableAmount(this.layer, this.id).mul(20).add(1), //Health
                 ]
             },
             sacValue() { return new Decimal(1)},
